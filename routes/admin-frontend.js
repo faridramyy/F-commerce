@@ -8,6 +8,7 @@ router.use((req, res, next) => {
 });
 
 // Route mappings
+router.get("/dashboard", (req, res) => res.render("admin/dashboard"));
 router.get("/users", (req, res) => res.render("admin/users"));
 router.get("/products", (req, res) => res.render("admin/products"));
 router.get("/orders", (req, res) => res.render("admin/orders"));
