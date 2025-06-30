@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Phoenix</title>
+    <title>Admin Panel</title>
     <style type="text/css">
       :host,
       :root {
@@ -858,396 +858,61 @@
         color: var(--fa-inverse, #fff);
       }
     </style>
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="https://prium.github.io/phoenix/v1.22.0/assets/img/favicons/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="https://prium.github.io/phoenix/v1.22.0/assets/img/favicons/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="https://prium.github.io/phoenix/v1.22.0/assets/img/favicons/favicon-16x16.png"
-    />
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="https://prium.github.io/phoenix/v1.22.0/assets/img/favicons/favicon.ico"
-    />
-    <link
-      rel="manifest"
-      href="https://prium.github.io/phoenix/v1.22.0/assets/img/favicons/manifest.json"
-    />
-    <meta
-      name="msapplication-TileImage"
-      content="../../../assets/img/favicons/mstile-150x150.png"
-    />
     <meta name="theme-color" content="#ffffff" />
     <script src="/js/phoenix/simplebar.min.js"></script>
     <script src="/js/phoenix/config.js"></script>
-
-    <!-- ===============================================-->
-    <!--    Stylesheets-->
-    <!-- ===============================================-->
-    <link href="/css/phoenix/dropzone.css" rel="stylesheet" />
-    <link href="/css/phoenix/choices.min.css" rel="stylesheet" />
-    <link href="/css/phoenix/flatpickr.min.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com/" />
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link href="/css/phoenix/css2" rel="stylesheet" />
-    <link href="/css/phoenix/simplebar.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/phoenix/line.css" />
     <link
-      href="/css/phoenix/theme-rtl.min.css"
-      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      id="style-rtl"
-      disabled="true"
     />
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/phoenix/line.css" />
+    <link
       href="/css/phoenix/theme.min.css"
-      type="text/css"
       rel="stylesheet"
       id="style-default"
     />
-    <link
-      href="/css/phoenix/user-rtl.min.css"
-      type="text/css"
-      rel="stylesheet"
-      id="user-style-rtl"
-      disabled="true"
-    />
-    <link
-      href="/css/phoenix/user.min.css"
-      type="text/css"
-      rel="stylesheet"
-      id="user-style-default"
-    />
-    <script>
-      var phoenixIsRTL = window.config.config.phoenixIsRTL;
-      if (phoenixIsRTL) {
-        var linkDefault = document.getElementById("style-default");
-        var userLinkDefault = document.getElementById("user-style-default");
-        linkDefault.setAttribute("disabled", true);
-        userLinkDefault.setAttribute("disabled", true);
-        document.querySelector("html").setAttribute("dir", "rtl");
-      } else {
-        var linkRTL = document.getElementById("style-rtl");
-        var userLinkRTL = document.getElementById("user-style-rtl");
-        linkRTL.setAttribute("disabled", true);
-        userLinkRTL.setAttribute("disabled", true);
-      }
-    </script>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      id="mce-u0"
-      href="/css/phoenix/skin.min.css"
-    />
+    <link rel="stylesheet" id="mce-u0" href="/css/phoenix/skin.min.css" />
   </head>
 
   <body data-new-gr-c-s-check-loaded="14.1241.0" data-gr-ext-installed="">
     <%- body %>
-    <script src="/js/phoenix/popper.min.js"></script>
-    <script src="/js/phoenix/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.1/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script
+      src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js"
+      referrerpolicy="origin"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script src="/js/phoenix/all.min.js"></script>
     <script src="/js/phoenix/anchor.min.js"></script>
     <script src="/js/phoenix/is.min.js"></script>
-    <script src="/js/phoenix/all.min.js"></script>
-    <script src="/js/phoenix/lodash.min.js"></script>
     <script src="/js/phoenix/list.min.js"></script>
-    <script src="/js/phoenix/feather.min.js"></script>
-    <script src="/js/phoenix/dayjs.min.js"></script>
-    <script src="/js/phoenix/tinymce.min.js"></script>
-    <script src="/js/phoenix/dropzone-min.js"></script>
-    <script src="/js/phoenix/choices.min.js"></script>
-    <script src="/js/phoenix/flatpickr.min.js"></script>
     <script src="/js/phoenix/phoenix.js"></script>
-
-    <input
-      type="file"
-      multiple="multiple"
-      class="dz-hidden-input"
-      tabindex="-1"
-      style="
-        visibility: hidden;
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        height: 0px;
-        width: 0px;
-      "
-    />
-    <div class="flatpickr-calendar animate" tabindex="-1">
-      <div class="flatpickr-months">
-        <span class="flatpickr-prev-month"
-          ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-            <!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-            <path
-              d="M224 480c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l169.4 169.4c12.5 12.5 12.5 32.75 0 45.25C240.4 476.9 232.2 480 224 480z"
-            ></path></svg
-        ></span>
-        <div class="flatpickr-month">
-          <div class="flatpickr-current-month">
-            <span class="cur-month">June </span>
-            <div class="numInputWrapper">
-              <input
-                class="numInput cur-year"
-                type="number"
-                tabindex="-1"
-                aria-label="Year"
-              /><span class="arrowUp"></span><span class="arrowDown"></span>
-            </div>
-          </div>
-        </div>
-        <span class="flatpickr-next-month"
-          ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-            <!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-            <path
-              d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"
-            ></path></svg
-        ></span>
-      </div>
-      <div class="flatpickr-innerContainer">
-        <div class="flatpickr-rContainer">
-          <div class="flatpickr-weekdays">
-            <div class="flatpickr-weekdaycontainer">
-              <span class="flatpickr-weekday"> Mon</span
-              ><span class="flatpickr-weekday">Tue</span
-              ><span class="flatpickr-weekday">Wed</span
-              ><span class="flatpickr-weekday">Thu</span
-              ><span class="flatpickr-weekday">Fri</span
-              ><span class="flatpickr-weekday">Sat</span
-              ><span class="flatpickr-weekday">Sun </span>
-            </div>
-          </div>
-          <div class="flatpickr-days" tabindex="-1">
-            <div class="dayContainer">
-              <span
-                class="flatpickr-day prevMonthDay"
-                aria-label="May 26, 2025"
-                tabindex="-1"
-                >26</span
-              ><span
-                class="flatpickr-day prevMonthDay"
-                aria-label="May 27, 2025"
-                tabindex="-1"
-                >27</span
-              ><span
-                class="flatpickr-day prevMonthDay"
-                aria-label="May 28, 2025"
-                tabindex="-1"
-                >28</span
-              ><span
-                class="flatpickr-day prevMonthDay"
-                aria-label="May 29, 2025"
-                tabindex="-1"
-                >29</span
-              ><span
-                class="flatpickr-day prevMonthDay"
-                aria-label="May 30, 2025"
-                tabindex="-1"
-                >30</span
-              ><span
-                class="flatpickr-day prevMonthDay weekend-days"
-                aria-label="May 31, 2025"
-                tabindex="-1"
-                >31</span
-              ><span
-                class="flatpickr-day weekend-days"
-                aria-label="June 1, 2025"
-                tabindex="-1"
-                >1</span
-              ><span
-                class="flatpickr-day"
-                aria-label="June 2, 2025"
-                tabindex="-1"
-                >2</span
-              ><span
-                class="flatpickr-day"
-                aria-label="June 3, 2025"
-                tabindex="-1"
-                >3</span
-              ><span
-                class="flatpickr-day"
-                aria-label="June 4, 2025"
-                tabindex="-1"
-                >4</span
-              ><span
-                class="flatpickr-day"
-                aria-label="June 5, 2025"
-                tabindex="-1"
-                >5</span
-              ><span
-                class="flatpickr-day"
-                aria-label="June 6, 2025"
-                tabindex="-1"
-                >6</span
-              ><span
-                class="flatpickr-day weekend-days"
-                aria-label="June 7, 2025"
-                tabindex="-1"
-                >7</span
-              ><span
-                class="flatpickr-day weekend-days"
-                aria-label="June 8, 2025"
-                tabindex="-1"
-                >8</span
-              ><span
-                class="flatpickr-day"
-                aria-label="June 9, 2025"
-                tabindex="-1"
-                >9</span
-              ><span
-                class="flatpickr-day"
-                aria-label="June 10, 2025"
-                tabindex="-1"
-                >10</span
-              ><span
-                class="flatpickr-day"
-                aria-label="June 11, 2025"
-                tabindex="-1"
-                >11</span
-              ><span
-                class="flatpickr-day"
-                aria-label="June 12, 2025"
-                tabindex="-1"
-                >12</span
-              ><span
-                class="flatpickr-day"
-                aria-label="June 13, 2025"
-                tabindex="-1"
-                >13</span
-              ><span
-                class="flatpickr-day weekend-days"
-                aria-label="June 14, 2025"
-                tabindex="-1"
-                >14</span
-              ><span
-                class="flatpickr-day weekend-days"
-                aria-label="June 15, 2025"
-                tabindex="-1"
-                >15</span
-              ><span
-                class="flatpickr-day"
-                aria-label="June 16, 2025"
-                tabindex="-1"
-                >16</span
-              ><span
-                class="flatpickr-day"
-                aria-label="June 17, 2025"
-                tabindex="-1"
-                >17</span
-              ><span
-                class="flatpickr-day"
-                aria-label="June 18, 2025"
-                tabindex="-1"
-                >18</span
-              ><span
-                class="flatpickr-day"
-                aria-label="June 19, 2025"
-                tabindex="-1"
-                >19</span
-              ><span
-                class="flatpickr-day"
-                aria-label="June 20, 2025"
-                tabindex="-1"
-                >20</span
-              ><span
-                class="flatpickr-day weekend-days"
-                aria-label="June 21, 2025"
-                tabindex="-1"
-                >21</span
-              ><span
-                class="flatpickr-day weekend-days"
-                aria-label="June 22, 2025"
-                tabindex="-1"
-                >22</span
-              ><span
-                class="flatpickr-day"
-                aria-label="June 23, 2025"
-                tabindex="-1"
-                >23</span
-              ><span
-                class="flatpickr-day"
-                aria-label="June 24, 2025"
-                tabindex="-1"
-                >24</span
-              ><span
-                class="flatpickr-day"
-                aria-label="June 25, 2025"
-                tabindex="-1"
-                >25</span
-              ><span
-                class="flatpickr-day"
-                aria-label="June 26, 2025"
-                tabindex="-1"
-                >26</span
-              ><span
-                class="flatpickr-day"
-                aria-label="June 27, 2025"
-                tabindex="-1"
-                >27</span
-              ><span
-                class="flatpickr-day weekend-days"
-                aria-label="June 28, 2025"
-                tabindex="-1"
-                >28</span
-              ><span
-                class="flatpickr-day weekend-days"
-                aria-label="June 29, 2025"
-                tabindex="-1"
-                >29</span
-              ><span
-                class="flatpickr-day today"
-                aria-label="June 30, 2025"
-                aria-current="date"
-                tabindex="-1"
-                >30</span
-              ><span
-                class="flatpickr-day nextMonthDay"
-                aria-label="July 1, 2025"
-                tabindex="-1"
-                >1</span
-              ><span
-                class="flatpickr-day nextMonthDay"
-                aria-label="July 2, 2025"
-                tabindex="-1"
-                >2</span
-              ><span
-                class="flatpickr-day nextMonthDay"
-                aria-label="July 3, 2025"
-                tabindex="-1"
-                >3</span
-              ><span
-                class="flatpickr-day nextMonthDay"
-                aria-label="July 4, 2025"
-                tabindex="-1"
-                >4</span
-              ><span
-                class="flatpickr-day nextMonthDay weekend-days"
-                aria-label="July 5, 2025"
-                tabindex="-1"
-                >5</span
-              ><span
-                class="flatpickr-day nextMonthDay weekend-days"
-                aria-label="July 6, 2025"
-                tabindex="-1"
-                >6</span
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="tox tox-silver-sink tox-tinymce-aux"
-      style="position: relative"
-    ></div>
   </body>
 </html>

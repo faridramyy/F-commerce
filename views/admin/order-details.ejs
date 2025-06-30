@@ -9,46 +9,35 @@
       </ol>
     </nav>
     <div class="mb-9">
-      <h2 class="mb-2">Refund</h2>
-      <div class="row align-items-center mb-3 gx-3 gy-2">
-        <div class="col-12 col-sm-auto">
-          <p class="text-body-secondary lh-sm mb-0">
-            Order : <a class="fw-bold ms-1" href="#!">#349</a>
-          </p>
-        </div>
-        <div class="col-12 col-sm-auto flex-grow-1">
-          <div class="row align-items-center flex-wrap gy-1">
-            <div class="col-auto flex-grow-1">
-              <p class="text-body-secondary lh-sm mb-0">
-                Customer ID : <a class="fw-bold ms-1" href="#!">2364847</a>
-              </p>
-            </div>
-            <div class="col-auto">
-              <div class="dropdown">
-                <button
-                  class="btn dropdown-toggle dropdown-caret-none px-0 text-body"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  More action<span
-                    class="fas fa-chevron-down ms-2 fs-10"
-                  ></span>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
-                  <li><a class="dropdown-item" href="#">Cancel</a></li>
-                </ul>
-              </div>
-            </div>
+      <h2 class="mb-0">Order <span>#349</span></h2>
+      <div class="d-sm-flex flex-between-center mb-3">
+        <p class="text-body-secondary lh-sm mb-0 mt-2 mt-sm-0">
+          Customer ID : <a class="fw-bold" href="#!"> 2364847</a>
+        </p>
+        <div class="d-flex">
+          <button class="btn btn-link pe-3 ps-0 text-body">
+            <span class="fas fa-print me-2"></span>Print</button
+          ><button class="btn btn-link px-3 text-body">
+            <span class="fas fa-undo me-2"></span>Refund
+          </button>
+          <div class="dropdown">
+            <button
+              class="btn text-body dropdown-toggle dropdown-caret-none ps-3 pe-0"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              More action<span class="fas fa-chevron-down ms-2"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
           </div>
         </div>
       </div>
-      <div class="row gx-5">
+      <div class="row g-5 gy-7">
         <div class="col-12 col-xl-8 col-xxl-9">
           <div
             id="orderTable"
@@ -405,6 +394,203 @@
             </p>
             <p class="text-body-emphasis fw-bold lh-sm mb-0">$1690</p>
           </div>
+          <div
+            class="row gx-4 gy-6 g-xl-7 justify-content-sm-center justify-content-xl-start"
+          >
+            <div class="col-12 col-sm-auto">
+              <h4 class="mb-5">Billing details</h4>
+              <div class="row g-4 flex-sm-column">
+                <div class="col-6 col-sm-12">
+                  <div class="d-flex align-items-center mb-1">
+                    <span
+                      class="me-2"
+                      data-feather="user"
+                      style="stroke-width: 2.5"
+                    ></span>
+                    <h6 class="mb-0">Customer</h6>
+                  </div>
+                  <a class="d-block fs-9 ms-4" href="#!">Shatinon Mekalan</a>
+                </div>
+                <div class="col-6 col-sm-12">
+                  <div class="d-flex align-items-center mb-1">
+                    <span
+                      class="me-2"
+                      data-feather="mail"
+                      style="stroke-width: 2.5"
+                    ></span>
+                    <h6 class="mb-0">Email</h6>
+                  </div>
+                  <a
+                    class="d-block fs-9 ms-4"
+                    href="mailto:shatinon@jeemail.com:"
+                    >shatinon@jeemail.com</a
+                  >
+                </div>
+                <div class="col-6 col-sm-12 order-sm-1">
+                  <div class="d-flex align-items-center mb-1">
+                    <span
+                      class="me-2"
+                      data-feather="home"
+                      style="stroke-width: 2.5"
+                    ></span>
+                    <h6 class="mb-0">Address</h6>
+                  </div>
+                  <div class="ms-4">
+                    <p class="text-body-secondary mb-0 fs-9">
+                      Shatinon Mekalan
+                    </p>
+                    <p class="text-body-secondary mb-0 fs-9">
+                      Vancouver, British Columbia,<br
+                        class="d-none d-sm-block"
+                      />Canada
+                    </p>
+                  </div>
+                </div>
+                <div class="col-6 col-sm-12">
+                  <div class="d-flex align-items-center mb-1">
+                    <span
+                      class="me-2"
+                      data-feather="phone"
+                      style="stroke-width: 2.5"
+                    >
+                    </span>
+                    <h6 class="mb-0">Phone</h6>
+                  </div>
+                  <a class="d-block fs-9 ms-4" href="tel:+1234567890"
+                    >+1234567890</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-auto">
+              <h4 class="mb-5">Shipping details</h4>
+              <div class="row g-4 flex-sm-column">
+                <div class="col-6 col-sm-12">
+                  <div class="d-flex align-items-center mb-1">
+                    <span
+                      class="me-2"
+                      data-feather="mail"
+                      style="stroke-width: 2.5"
+                    >
+                    </span>
+                    <h6 class="mb-0">Email</h6>
+                  </div>
+                  <a
+                    class="d-block fs-9 ms-4"
+                    href="mailto:shatinon@jeemail.com:"
+                    >shatinon@jeemail.com</a
+                  >
+                </div>
+                <div class="col-6 col-sm-12">
+                  <div class="d-flex align-items-center mb-1">
+                    <span
+                      class="me-2"
+                      data-feather="phone"
+                      style="stroke-width: 2.5"
+                    >
+                    </span>
+                    <h6 class="mb-0">Phone</h6>
+                  </div>
+                  <a class="d-block fs-9 ms-4" href="tel:+1234567890"
+                    >+1234567890</a
+                  >
+                </div>
+                <div class="col-6 col-sm-12 order-sm-1">
+                  <div class="d-flex align-items-center mb-1">
+                    <span
+                      class="me-2"
+                      data-feather="home"
+                      style="stroke-width: 2.5"
+                    >
+                    </span>
+                    <h6 class="mb-0">Address</h6>
+                  </div>
+                  <div class="ms-4">
+                    <p class="text-body-secondary mb-0 fs-9">
+                      Shatinon Mekalan
+                    </p>
+                    <p class="text-body-secondary mb-0 fs-9">
+                      Vancouver, British Columbia <br />Canada
+                    </p>
+                  </div>
+                </div>
+                <div class="col-6 col-sm-12">
+                  <div class="d-flex align-items-center mb-1">
+                    <span
+                      class="me-2"
+                      data-feather="calendar"
+                      style="stroke-width: 2.5"
+                    ></span>
+                    <h6 class="mb-0">Shipping Date</h6>
+                  </div>
+                  <p class="mb-0 text-body-secondary fs-9 ms-4">12 Nov, 2021</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-auto">
+              <h4 class="mb-5">Other details</h4>
+              <div class="row g-4 flex-sm-column">
+                <div class="col-6 col-sm-12">
+                  <div class="d-flex align-items-center mb-1">
+                    <span
+                      class="me-2"
+                      data-feather="shopping-bag"
+                      style="stroke-width: 2.5"
+                    ></span>
+                    <h6 class="mb-0">Gift order</h6>
+                  </div>
+                  <p class="mb-0 text-body-secondary fs-9 ms-4">Yes</p>
+                </div>
+                <div class="col-6 col-sm-12">
+                  <div class="d-flex align-items-center mb-1">
+                    <span
+                      class="me-2"
+                      data-feather="package"
+                      style="stroke-width: 2.5"
+                    >
+                    </span>
+                    <h6 class="mb-0">Wraping</h6>
+                  </div>
+                  <p class="mb-0 text-body-secondary fs-9 ms-4">
+                    Magic wrapper
+                  </p>
+                </div>
+                <div class="col-6 col-sm-12">
+                  <div class="d-flex align-items-center mb-1">
+                    <span
+                      class="me-2"
+                      data-feather="file-text"
+                      style="stroke-width: 2.5"
+                    >
+                    </span>
+                    <h6 class="mb-0">Recipient</h6>
+                  </div>
+                  <p class="mb-0 text-body-secondary fs-9 ms-4">
+                    Monjito Shiniga
+                  </p>
+                </div>
+                <div class="col-6 col-sm-12">
+                  <div class="d-flex align-items-center mb-1">
+                    <span
+                      class="me-2"
+                      data-feather="mail"
+                      style="stroke-width: 2.5"
+                    >
+                    </span>
+                    <h6 class="mb-0">Gift Meaasge</h6>
+                  </div>
+                  <div class="ms-4">
+                    <p class="text-body-secondary fs-9 mb-0">
+                      Happy Birthday Shiniga <br />Lots of Love Buga Buga!!
+                    </p>
+                    <p class="mb-0 text-body-secondary fs-9">
+                      Yours, <br />Mekalan
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="col-12 col-xl-4 col-xxl-3">
           <div class="row">
@@ -446,13 +632,19 @@
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title mb-4">Refund Amount</h4>
-                  <input
-                    class="form-control mb-4"
-                    id="refundInput"
-                    type="text"
-                    placeholder="Amount"
-                  /><button class="btn btn-primary w-100">Refund $500</button>
+                  <h3 class="card-title mb-4">Order Status</h3>
+                  <h6 class="mb-2">Payment status</h6>
+                  <select class="form-select mb-4" aria-label="delivery type">
+                    <option value="cod">Processing</option>
+                    <option value="card">Canceled</option>
+                    <option value="paypal">Completed</option>
+                  </select>
+                  <h6 class="mb-2">Fulfillment status</h6>
+                  <select class="form-select" aria-label="delivery type">
+                    <option value="cod">Unfulfilled</option>
+                    <option value="card">Fulfilled</option>
+                    <option value="paypal">Pending</option>
+                  </select>
                 </div>
               </div>
             </div>

@@ -9,9 +9,9 @@
       </ol>
     </nav>
     <div class="mb-9">
-      <div class="row g-3 mb-4">
+      <div class="row g-2 mb-4">
         <div class="col-auto">
-          <h2 class="mb-0">Orders</h2>
+          <h2 class="mb-0">Users</h2>
         </div>
       </div>
       <ul class="nav nav-links mb-3 mb-lg-2 mx-n3">
@@ -23,38 +23,38 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#"
-            ><span>Pending payment </span
+            ><span>New </span
             ><span class="text-body-tertiary fw-semibold">(6)</span></a
           >
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#"
-            ><span>Unfulfilled </span
+            ><span>Abandoned checkouts </span
             ><span class="text-body-tertiary fw-semibold">(17)</span></a
           >
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#"
-            ><span>Completed</span
+            ><span>Locals </span
             ><span class="text-body-tertiary fw-semibold">(6,810)</span></a
           >
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#"
-            ><span>Refunded</span
+            ><span>Email subscribers </span
             ><span class="text-body-tertiary fw-semibold">(8)</span></a
           >
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#"
-            ><span>Failed</span
+            ><span>Top reviews </span
             ><span class="text-body-tertiary fw-semibold">(2)</span></a
           >
         </li>
       </ul>
       <div
-        id="orderTable"
-        data-list='{"valueNames":["order","total","customer","payment_status","fulfilment_status","delivery_type","date"],"page":10,"pagination":true}'
+        id="products"
+        data-list='{"valueNames":["customer","email","total-orders","total-spent","city","last-seen","last-order"],"page":10,"pagination":true}'
       >
         <div class="mb-4">
           <div class="row g-3">
@@ -64,7 +64,7 @@
                   <input
                     class="form-control search-input search"
                     type="search"
-                    placeholder="Search orders"
+                    placeholder="Search User"
                     aria-label="Search"
                   />
                   <span class="fas fa-search search-box-icon"></span>
@@ -73,7 +73,7 @@
             </div>
             <div class="col-auto scrollbar overflow-hidden-y flex-grow-1">
               <div class="btn-group position-static" role="group">
-                <div class="btn-group position-static text-nowrap" role="group">
+                <div class="btn-group position-static text-nowrap">
                   <button
                     class="btn btn-phoenix-secondary px-7 flex-shrink-0"
                     type="button"
@@ -83,25 +83,15 @@
                     aria-expanded="false"
                     data-bs-reference="parent"
                   >
-                    Payment status<span class="fas fa-angle-down ms-2"></span>
+                    Country<span class="fas fa-angle-down ms-2"></span>
                   </button>
-                  <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Another action</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
-                    <li>
-                      <hr class="dropdown-divider" />
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Separated link</a>
-                    </li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">US</a></li>
+                    <li><a class="dropdown-item" href="#">Uk</a></li>
+                    <li><a class="dropdown-item" href="#">Australia</a></li>
                   </ul>
                 </div>
-                <div class="btn-group position-static text-nowrap" role="group">
+                <div class="btn-group position-static text-nowrap">
                   <button
                     class="btn btn-sm btn-phoenix-secondary px-7 flex-shrink-0"
                     type="button"
@@ -111,29 +101,16 @@
                     aria-expanded="false"
                     data-bs-reference="parent"
                   >
-                    Fulfilment status<span
-                      class="fas fa-angle-down ms-2"
-                    ></span>
+                    VIP<span class="fas fa-angle-down ms-2"></span>
                   </button>
-                  <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Another action</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
-                    <li>
-                      <hr class="dropdown-divider" />
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Separated link</a>
-                    </li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">VIP 1</a></li>
+                    <li><a class="dropdown-item" href="#">VIP 2</a></li>
+                    <li><a class="dropdown-item" href="#">VIP 3</a></li>
+                    <li></li>
                   </ul>
                 </div>
-                <button
-                  class="btn btn-sm btn-phoenix-secondary px-7 flex-shrink-0"
-                >
+                <button class="btn btn-phoenix-secondary px-7 flex-shrink-0">
                   More filters
                 </button>
               </div>
@@ -143,7 +120,7 @@
                 <span class="fa-solid fa-file-export fs-9 me-2"></span
                 >Export</button
               ><button class="btn btn-primary">
-                <span class="fas fa-plus me-2"></span>Add order
+                <span class="fas fa-plus me-2"></span>Add customer
               </button>
             </div>
           </div>
@@ -151,105 +128,95 @@
         <div
           class="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-body-emphasis border-top border-bottom border-translucent position-relative top-1"
         >
-          <div class="table-responsive scrollbar mx-n1 px-1">
+          <div class="table-responsive scrollbar-overlay mx-n1 px-1">
             <table class="table table-sm fs-9 mb-0">
               <thead>
                 <tr>
-                  <th
-                    class="white-space-nowrap fs-9 align-middle ps-0"
-                    style="width: 26px"
-                  >
+                  <th class="white-space-nowrap fs-9 align-middle ps-0">
                     <div class="form-check mb-0 fs-8">
                       <input
                         class="form-check-input"
-                        id="checkbox-bulk-order-select"
+                        id="checkbox-bulk-customers-select"
                         type="checkbox"
-                        data-bulk-select='{"body":"order-table-body"}'
+                        data-bulk-select='{"body":"customers-table-body"}'
                       />
                     </div>
                   </th>
                   <th
-                    class="sort white-space-nowrap align-middle pe-3"
+                    class="sort align-middle pe-5"
                     scope="col"
-                    data-sort="order"
-                    style="width: 5%"
+                    data-sort="customer"
+                    style="width: 10%"
                   >
-                    ORDER
+                    USER
+                  </th>
+                  <th
+                    class="sort align-middle pe-5"
+                    scope="col"
+                    data-sort="email"
+                    style="width: 20%"
+                  >
+                    EMAIL
                   </th>
                   <th
                     class="sort align-middle text-end"
                     scope="col"
-                    data-sort="total"
-                    style="width: 6%"
-                  >
-                    TOTAL
-                  </th>
-                  <th
-                    class="sort align-middle ps-8"
-                    scope="col"
-                    data-sort="customer"
-                    style="width: 28%; min-width: 250px"
-                  >
-                    CUSTOMER
-                  </th>
-                  <th
-                    class="sort align-middle pe-3"
-                    scope="col"
-                    data-sort="payment_status"
+                    data-sort="total-orders"
                     style="width: 10%"
                   >
-                    PAYMENT STATUS
+                    ORDERS
                   </th>
                   <th
-                    class="sort align-middle text-start pe-3"
+                    class="sort align-middle text-end ps-3"
                     scope="col"
-                    data-sort="fulfilment_status"
-                    style="width: 12%; min-width: 200px"
+                    data-sort="total-spent"
+                    style="width: 10%"
                   >
-                    FULFILMENT STATUS
+                    TOTAL SPENT
                   </th>
                   <th
-                    class="sort align-middle text-start"
+                    class="sort align-middle ps-7"
                     scope="col"
-                    data-sort="delivery_type"
-                    style="width: 30%"
+                    data-sort="city"
+                    style="width: 25%"
                   >
-                    DELIVERY TYPE
+                    CITY
+                  </th>
+                  <th
+                    class="sort align-middle text-end"
+                    scope="col"
+                    data-sort="last-seen"
+                    style="width: 15%"
+                  >
+                    LAST SEEN
                   </th>
                   <th
                     class="sort align-middle text-end pe-0"
                     scope="col"
-                    data-sort="date"
+                    data-sort="last-order"
+                    style="width: 10%; min-width: 150px"
                   >
-                    DATE
+                    LAST ORDER
                   </th>
                 </tr>
               </thead>
-              <tbody class="list" id="order-table-body">
+              <tbody class="list" id="customers-table-body">
                 <tr
                   class="hover-actions-trigger btn-reveal-trigger position-static"
                 >
-                  <td class="fs-9 align-middle px-0 py-3">
+                  <td class="fs-9 align-middle ps-0 py-3">
                     <div class="form-check mb-0 fs-8">
                       <input
                         class="form-check-input"
                         type="checkbox"
-                        data-bulk-select-row='{"order":2453,"total":87,"customer":{"avatar":"/team/32.webp","name":"Carry Anna"},"payment_status":{"label":"Complete","type":"badge-phoenix-success","icon":"check"},"fulfilment_status":{"label":"Cancelled","type":"badge-phoenix-secondary","icon":"x"},"delivery_type":"Cash on delivery","date":"Dec 12, 12:56 PM"}'
+                        data-bulk-select-row='{"customer":{"avatar":"/team/32.webp","name":"Carry Anna"},"email":"annac34@gmail.com","city":"Budapest","totalOrders":89,"totalSpent":23987,"lastSeen":"34 min ago","lastOrder":"Dec 12, 12:56 PM"}'
                       />
                     </div>
                   </td>
-                  <td class="order align-middle white-space-nowrap py-0">
-                    <a class="fw-semibold" href="#!">#2453</a>
-                  </td>
-                  <td
-                    class="total align-middle text-end fw-semibold text-body-highlight"
-                  >
-                    $87
-                  </td>
-                  <td class="customer align-middle white-space-nowrap ps-8">
+                  <td class="customer align-middle white-space-nowrap pe-5">
                     <a
-                      class="d-flex align-items-center text-body"
-                      href="../../../apps/e-commerce/landing/profile.html"
+                      class="d-flex align-items-center text-body-emphasis"
+                      href="../../../apps/e-commerce/admin/customer-details.html"
                     >
                       <div class="avatar avatar-m">
                         <img
@@ -258,42 +225,38 @@
                           alt=""
                         />
                       </div>
-                      <h6 class="mb-0 ms-3 text-body">Carry Anna</h6>
+                      <p class="mb-0 ms-3 text-body-emphasis fw-bold">
+                        Carry Anna
+                      </p>
                     </a>
                   </td>
-                  <td
-                    class="payment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span
-                      class="badge badge-phoenix fs-10 badge-phoenix-success"
-                      ><span class="badge-label">Complete</span
-                      ><span
-                        class="ms-1"
-                        data-feather="check"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
+                  <td class="email align-middle white-space-nowrap pe-5">
+                    <a class="fw-semibold" href="mailto:annac34@gmail.com"
+                      >annac34@gmail.com</a
+                    >
                   </td>
                   <td
-                    class="fulfilment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
+                    class="total-orders align-middle white-space-nowrap fw-semibold text-end text-body-highlight"
                   >
-                    <span
-                      class="badge badge-phoenix fs-10 badge-phoenix-secondary"
-                      ><span class="badge-label">Cancelled</span
-                      ><span
-                        class="ms-1"
-                        data-feather="x"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
+                    89
                   </td>
                   <td
-                    class="delivery_type align-middle white-space-nowrap text-body fs-9 text-start"
+                    class="total-spent align-middle white-space-nowrap fw-bold text-end ps-3 text-body-emphasis"
                   >
-                    Cash on delivery
+                    $ 23987
                   </td>
                   <td
-                    class="date align-middle white-space-nowrap text-body-tertiary fs-9 ps-4 text-end"
+                    class="city align-middle white-space-nowrap text-body-highlight ps-7"
+                  >
+                    Budapest
+                  </td>
+                  <td
+                    class="last-seen align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    34 min ago
+                  </td>
+                  <td
+                    class="last-order align-middle white-space-nowrap text-body-tertiary text-end"
                   >
                     Dec 12, 12:56 PM
                   </td>
@@ -301,810 +264,19 @@
                 <tr
                   class="hover-actions-trigger btn-reveal-trigger position-static"
                 >
-                  <td class="fs-9 align-middle px-0 py-3">
+                  <td class="fs-9 align-middle ps-0 py-3">
                     <div class="form-check mb-0 fs-8">
                       <input
                         class="form-check-input"
                         type="checkbox"
-                        data-bulk-select-row='{"order":2452,"total":7264,"customer":{"avatar":"","name":"Milind Mikuja"},"fulfilment_status":{"label":"Ready to pickup","type":"badge-phoenix-info","icon":"info"},"payment_status":{"label":"Cancelled","type":"badge-phoenix-secondary","icon":"x"},"delivery_type":"Free shipping","date":"Dec 9, 2:28PM"}'
+                        data-bulk-select-row='{"customer":{"avatar":"/team/avatar.webp","name":"Milind Mikuja","placeholder":true},"email":"mimiku@yahoo.com","city":"Manchester","totalOrders":76,"totalSpent":21567,"lastSeen":"6 hours ago","lastOrder":"Dec 9, 2:28 PM"}'
                       />
                     </div>
                   </td>
-                  <td class="order align-middle white-space-nowrap py-0">
-                    <a class="fw-semibold" href="#!">#2452</a>
-                  </td>
-                  <td
-                    class="total align-middle text-end fw-semibold text-body-highlight"
-                  >
-                    $7264
-                  </td>
-                  <td class="customer align-middle white-space-nowrap ps-8">
+                  <td class="customer align-middle white-space-nowrap pe-5">
                     <a
-                      class="d-flex align-items-center text-body"
-                      href="../../../apps/e-commerce/landing/profile.html"
-                    >
-                      <div class="avatar avatar-m">
-                        <div class="avatar-name rounded-circle">
-                          <span>M</span>
-                        </div>
-                      </div>
-                      <h6 class="mb-0 ms-3 text-body">Milind Mikuja</h6>
-                    </a>
-                  </td>
-                  <td
-                    class="payment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span
-                      class="badge badge-phoenix fs-10 badge-phoenix-secondary"
-                      ><span class="badge-label">Cancelled</span
-                      ><span
-                        class="ms-1"
-                        data-feather="x"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
-                  </td>
-                  <td
-                    class="fulfilment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span class="badge badge-phoenix fs-10 badge-phoenix-info"
-                      ><span class="badge-label">Ready to pickup</span
-                      ><span
-                        class="ms-1"
-                        data-feather="info"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
-                  </td>
-                  <td
-                    class="delivery_type align-middle white-space-nowrap text-body fs-9 text-start"
-                  >
-                    Free shipping
-                  </td>
-                  <td
-                    class="date align-middle white-space-nowrap text-body-tertiary fs-9 ps-4 text-end"
-                  >
-                    Dec 9, 2:28PM
-                  </td>
-                </tr>
-                <tr
-                  class="hover-actions-trigger btn-reveal-trigger position-static"
-                >
-                  <td class="fs-9 align-middle px-0 py-3">
-                    <div class="form-check mb-0 fs-8">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        data-bulk-select-row='{"order":2451,"total":375,"customer":{"avatar":"/team/35.webp","name":"Stanly Drinkwater"},"payment_status":{"label":"Pending","type":"badge-phoenix-warning","icon":"clock"},"fulfilment_status":{"label":"Completed","type":"badge-phoenix-success","icon":"check"},"delivery_type":"Local pickup","date":"Dec 4, 12:56 PM"}'
-                      />
-                    </div>
-                  </td>
-                  <td class="order align-middle white-space-nowrap py-0">
-                    <a class="fw-semibold" href="#!">#2451</a>
-                  </td>
-                  <td
-                    class="total align-middle text-end fw-semibold text-body-highlight"
-                  >
-                    $375
-                  </td>
-                  <td class="customer align-middle white-space-nowrap ps-8">
-                    <a
-                      class="d-flex align-items-center text-body"
-                      href="../../../apps/e-commerce/landing/profile.html"
-                    >
-                      <div class="avatar avatar-m">
-                        <img
-                          class="rounded-circle"
-                          src="../../../assets/img/team/35.webp"
-                          alt=""
-                        />
-                      </div>
-                      <h6 class="mb-0 ms-3 text-body">Stanly Drinkwater</h6>
-                    </a>
-                  </td>
-                  <td
-                    class="payment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span
-                      class="badge badge-phoenix fs-10 badge-phoenix-warning"
-                      ><span class="badge-label">Pending</span
-                      ><span
-                        class="ms-1"
-                        data-feather="clock"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
-                  </td>
-                  <td
-                    class="fulfilment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span
-                      class="badge badge-phoenix fs-10 badge-phoenix-success"
-                      ><span class="badge-label">Completed</span
-                      ><span
-                        class="ms-1"
-                        data-feather="check"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
-                  </td>
-                  <td
-                    class="delivery_type align-middle white-space-nowrap text-body fs-9 text-start"
-                  >
-                    Local pickup
-                  </td>
-                  <td
-                    class="date align-middle white-space-nowrap text-body-tertiary fs-9 ps-4 text-end"
-                  >
-                    Dec 4, 12:56 PM
-                  </td>
-                </tr>
-                <tr
-                  class="hover-actions-trigger btn-reveal-trigger position-static"
-                >
-                  <td class="fs-9 align-middle px-0 py-3">
-                    <div class="form-check mb-0 fs-8">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        data-bulk-select-row='{"order":2450,"total":657,"customer":{"avatar":"/team/57.webp","name":"Josef Stravinsky"},"payment_status":{"label":"Cancelled","type":"badge-phoenix-secondary","icon":"x"},"fulfilment_status":{"label":"Partially Fulfiled","type":"badge-phoenix-warning","icon":"clock"},"delivery_type":"Standard shipping","date":"Dec 1, 4:07 AM"}'
-                      />
-                    </div>
-                  </td>
-                  <td class="order align-middle white-space-nowrap py-0">
-                    <a class="fw-semibold" href="#!">#2450</a>
-                  </td>
-                  <td
-                    class="total align-middle text-end fw-semibold text-body-highlight"
-                  >
-                    $657
-                  </td>
-                  <td class="customer align-middle white-space-nowrap ps-8">
-                    <a
-                      class="d-flex align-items-center text-body"
-                      href="../../../apps/e-commerce/landing/profile.html"
-                    >
-                      <div class="avatar avatar-m">
-                        <img
-                          class="rounded-circle"
-                          src="../../../assets/img/team/57.webp"
-                          alt=""
-                        />
-                      </div>
-                      <h6 class="mb-0 ms-3 text-body">Josef Stravinsky</h6>
-                    </a>
-                  </td>
-                  <td
-                    class="payment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span
-                      class="badge badge-phoenix fs-10 badge-phoenix-secondary"
-                      ><span class="badge-label">Cancelled</span
-                      ><span
-                        class="ms-1"
-                        data-feather="x"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
-                  </td>
-                  <td
-                    class="fulfilment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span
-                      class="badge badge-phoenix fs-10 badge-phoenix-warning"
-                      ><span class="badge-label">Partially Fulfiled</span
-                      ><span
-                        class="ms-1"
-                        data-feather="clock"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
-                  </td>
-                  <td
-                    class="delivery_type align-middle white-space-nowrap text-body fs-9 text-start"
-                  >
-                    Standard shipping
-                  </td>
-                  <td
-                    class="date align-middle white-space-nowrap text-body-tertiary fs-9 ps-4 text-end"
-                  >
-                    Dec 1, 4:07 AM
-                  </td>
-                </tr>
-                <tr
-                  class="hover-actions-trigger btn-reveal-trigger position-static"
-                >
-                  <td class="fs-9 align-middle px-0 py-3">
-                    <div class="form-check mb-0 fs-8">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        data-bulk-select-row='{"order":2449,"total":9562,"customer":{"avatar":"/team/58.webp","name":"Igor Borvibson"},"payment_status":{"label":"Failed","type":"badge-phoenix-danger","icon":"x"},"fulfilment_status":{"label":"Partially Fulfiled","type":"badge-phoenix-success","icon":"check"},"delivery_type":"Express","date":"Nov 28, 7:28 PM"}'
-                      />
-                    </div>
-                  </td>
-                  <td class="order align-middle white-space-nowrap py-0">
-                    <a class="fw-semibold" href="#!">#2449</a>
-                  </td>
-                  <td
-                    class="total align-middle text-end fw-semibold text-body-highlight"
-                  >
-                    $9562
-                  </td>
-                  <td class="customer align-middle white-space-nowrap ps-8">
-                    <a
-                      class="d-flex align-items-center text-body"
-                      href="../../../apps/e-commerce/landing/profile.html"
-                    >
-                      <div class="avatar avatar-m">
-                        <img
-                          class="rounded-circle"
-                          src="../../../assets/img/team/58.webp"
-                          alt=""
-                        />
-                      </div>
-                      <h6 class="mb-0 ms-3 text-body">Igor Borvibson</h6>
-                    </a>
-                  </td>
-                  <td
-                    class="payment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span class="badge badge-phoenix fs-10 badge-phoenix-danger"
-                      ><span class="badge-label">Failed</span
-                      ><span
-                        class="ms-1"
-                        data-feather="x"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
-                  </td>
-                  <td
-                    class="fulfilment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span
-                      class="badge badge-phoenix fs-10 badge-phoenix-success"
-                      ><span class="badge-label">Partially Fulfiled</span
-                      ><span
-                        class="ms-1"
-                        data-feather="check"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
-                  </td>
-                  <td
-                    class="delivery_type align-middle white-space-nowrap text-body fs-9 text-start"
-                  >
-                    Express
-                  </td>
-                  <td
-                    class="date align-middle white-space-nowrap text-body-tertiary fs-9 ps-4 text-end"
-                  >
-                    Nov 28, 7:28 PM
-                  </td>
-                </tr>
-                <tr
-                  class="hover-actions-trigger btn-reveal-trigger position-static"
-                >
-                  <td class="fs-9 align-middle px-0 py-3">
-                    <div class="form-check mb-0 fs-8">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        data-bulk-select-row='{"order":2448,"total":46,"customer":{"avatar":"/team/59.webp","name":"Katerina Karenin"},"payment_status":{"label":"Paid","type":"badge-phoenix-success","icon":"check"},"fulfilment_status":{"label":"Unfulfiled","type":"badge-phoenix-danger","icon":"x"},"delivery_type":"Local delivery","date":"Nov 24, 10:16 AM"}'
-                      />
-                    </div>
-                  </td>
-                  <td class="order align-middle white-space-nowrap py-0">
-                    <a class="fw-semibold" href="#!">#2448</a>
-                  </td>
-                  <td
-                    class="total align-middle text-end fw-semibold text-body-highlight"
-                  >
-                    $46
-                  </td>
-                  <td class="customer align-middle white-space-nowrap ps-8">
-                    <a
-                      class="d-flex align-items-center text-body"
-                      href="../../../apps/e-commerce/landing/profile.html"
-                    >
-                      <div class="avatar avatar-m">
-                        <img
-                          class="rounded-circle"
-                          src="../../../assets/img/team/59.webp"
-                          alt=""
-                        />
-                      </div>
-                      <h6 class="mb-0 ms-3 text-body">Katerina Karenin</h6>
-                    </a>
-                  </td>
-                  <td
-                    class="payment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span
-                      class="badge badge-phoenix fs-10 badge-phoenix-success"
-                      ><span class="badge-label">Paid</span
-                      ><span
-                        class="ms-1"
-                        data-feather="check"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
-                  </td>
-                  <td
-                    class="fulfilment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span class="badge badge-phoenix fs-10 badge-phoenix-danger"
-                      ><span class="badge-label">Unfulfiled</span
-                      ><span
-                        class="ms-1"
-                        data-feather="x"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
-                  </td>
-                  <td
-                    class="delivery_type align-middle white-space-nowrap text-body fs-9 text-start"
-                  >
-                    Local delivery
-                  </td>
-                  <td
-                    class="date align-middle white-space-nowrap text-body-tertiary fs-9 ps-4 text-end"
-                  >
-                    Nov 24, 10:16 AM
-                  </td>
-                </tr>
-                <tr
-                  class="hover-actions-trigger btn-reveal-trigger position-static"
-                >
-                  <td class="fs-9 align-middle px-0 py-3">
-                    <div class="form-check mb-0 fs-8">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        data-bulk-select-row='{"order":2447,"total":953,"customer":{"avatar":"","name":"Roy Anderson"},"payment_status":{"label":"Pending","type":"badge-phoenix-warning","icon":"clock"},"fulfilment_status":{"label":"Fulfiled","type":"badge-phoenix-success","icon":"check"},"delivery_type":"Cash on delivery","date":"Nov 18, 5:43 PM"}'
-                      />
-                    </div>
-                  </td>
-                  <td class="order align-middle white-space-nowrap py-0">
-                    <a class="fw-semibold" href="#!">#2447</a>
-                  </td>
-                  <td
-                    class="total align-middle text-end fw-semibold text-body-highlight"
-                  >
-                    $953
-                  </td>
-                  <td class="customer align-middle white-space-nowrap ps-8">
-                    <a
-                      class="d-flex align-items-center text-body"
-                      href="../../../apps/e-commerce/landing/profile.html"
-                    >
-                      <div class="avatar avatar-m">
-                        <div class="avatar-name rounded-circle">
-                          <span>R</span>
-                        </div>
-                      </div>
-                      <h6 class="mb-0 ms-3 text-body">Roy Anderson</h6>
-                    </a>
-                  </td>
-                  <td
-                    class="payment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span
-                      class="badge badge-phoenix fs-10 badge-phoenix-warning"
-                      ><span class="badge-label">Pending</span
-                      ><span
-                        class="ms-1"
-                        data-feather="clock"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
-                  </td>
-                  <td
-                    class="fulfilment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span
-                      class="badge badge-phoenix fs-10 badge-phoenix-success"
-                      ><span class="badge-label">Fulfiled</span
-                      ><span
-                        class="ms-1"
-                        data-feather="check"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
-                  </td>
-                  <td
-                    class="delivery_type align-middle white-space-nowrap text-body fs-9 text-start"
-                  >
-                    Cash on delivery
-                  </td>
-                  <td
-                    class="date align-middle white-space-nowrap text-body-tertiary fs-9 ps-4 text-end"
-                  >
-                    Nov 18, 5:43 PM
-                  </td>
-                </tr>
-                <tr
-                  class="hover-actions-trigger btn-reveal-trigger position-static"
-                >
-                  <td class="fs-9 align-middle px-0 py-3">
-                    <div class="form-check mb-0 fs-8">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        data-bulk-select-row='{"order":2446,"total":12,"customer":{"avatar":"/team/31.webp","name":"Martina scorcese"},"payment_status":{"label":"Pending","type":"badge-phoenix-warning","icon":"clock"},"fulfilment_status":{"label":"Fulfiled","type":"badge-phoenix-success","icon":"check"},"delivery_type":"Standard shipping","date":"Nov 18, 2:09 AM"}'
-                      />
-                    </div>
-                  </td>
-                  <td class="order align-middle white-space-nowrap py-0">
-                    <a class="fw-semibold" href="#!">#2446</a>
-                  </td>
-                  <td
-                    class="total align-middle text-end fw-semibold text-body-highlight"
-                  >
-                    $12
-                  </td>
-                  <td class="customer align-middle white-space-nowrap ps-8">
-                    <a
-                      class="d-flex align-items-center text-body"
-                      href="../../../apps/e-commerce/landing/profile.html"
-                    >
-                      <div class="avatar avatar-m">
-                        <img
-                          class="rounded-circle"
-                          src="../../../assets/img/team/31.webp"
-                          alt=""
-                        />
-                      </div>
-                      <h6 class="mb-0 ms-3 text-body">Martina scorcese</h6>
-                    </a>
-                  </td>
-                  <td
-                    class="payment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span
-                      class="badge badge-phoenix fs-10 badge-phoenix-warning"
-                      ><span class="badge-label">Pending</span
-                      ><span
-                        class="ms-1"
-                        data-feather="clock"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
-                  </td>
-                  <td
-                    class="fulfilment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span
-                      class="badge badge-phoenix fs-10 badge-phoenix-success"
-                      ><span class="badge-label">Fulfiled</span
-                      ><span
-                        class="ms-1"
-                        data-feather="check"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
-                  </td>
-                  <td
-                    class="delivery_type align-middle white-space-nowrap text-body fs-9 text-start"
-                  >
-                    Standard shipping
-                  </td>
-                  <td
-                    class="date align-middle white-space-nowrap text-body-tertiary fs-9 ps-4 text-end"
-                  >
-                    Nov 18, 2:09 AM
-                  </td>
-                </tr>
-                <tr
-                  class="hover-actions-trigger btn-reveal-trigger position-static"
-                >
-                  <td class="fs-9 align-middle px-0 py-3">
-                    <div class="form-check mb-0 fs-8">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        data-bulk-select-row='{"order":2445,"total":3927,"customer":{"avatar":"/team/33.webp","name":"Luis Bunuel"},"payment_status":{"label":"Paid","type":"badge-phoenix-success","icon":"check"},"fulfilment_status":{"label":"Canceled","type":"badge-phoenix-secondary","icon":"x"},"delivery_type":"Cash on delivery","date":"Nov 16, 3:22 PM"}'
-                      />
-                    </div>
-                  </td>
-                  <td class="order align-middle white-space-nowrap py-0">
-                    <a class="fw-semibold" href="#!">#2445</a>
-                  </td>
-                  <td
-                    class="total align-middle text-end fw-semibold text-body-highlight"
-                  >
-                    $3927
-                  </td>
-                  <td class="customer align-middle white-space-nowrap ps-8">
-                    <a
-                      class="d-flex align-items-center text-body"
-                      href="../../../apps/e-commerce/landing/profile.html"
-                    >
-                      <div class="avatar avatar-m">
-                        <img
-                          class="rounded-circle"
-                          src="../../../assets/img/team/33.webp"
-                          alt=""
-                        />
-                      </div>
-                      <h6 class="mb-0 ms-3 text-body">Luis Bunuel</h6>
-                    </a>
-                  </td>
-                  <td
-                    class="payment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span
-                      class="badge badge-phoenix fs-10 badge-phoenix-success"
-                      ><span class="badge-label">Paid</span
-                      ><span
-                        class="ms-1"
-                        data-feather="check"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
-                  </td>
-                  <td
-                    class="fulfilment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span
-                      class="badge badge-phoenix fs-10 badge-phoenix-secondary"
-                      ><span class="badge-label">Canceled</span
-                      ><span
-                        class="ms-1"
-                        data-feather="x"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
-                  </td>
-                  <td
-                    class="delivery_type align-middle white-space-nowrap text-body fs-9 text-start"
-                  >
-                    Cash on delivery
-                  </td>
-                  <td
-                    class="date align-middle white-space-nowrap text-body-tertiary fs-9 ps-4 text-end"
-                  >
-                    Nov 16, 3:22 PM
-                  </td>
-                </tr>
-                <tr
-                  class="hover-actions-trigger btn-reveal-trigger position-static"
-                >
-                  <td class="fs-9 align-middle px-0 py-3">
-                    <div class="form-check mb-0 fs-8">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        data-bulk-select-row='{"order":2444,"total":5937,"customer":{"avatar":"/team/34.webp","name":"Jean Renoir"},"payment_status":{"label":"Paid","type":"badge-phoenix-success","icon":"check"},"fulfilment_status":{"label":"Ready to pickup","type":"badge-phoenix-secondary","icon":"info"},"delivery_type":"Local pickup","date":"Nov 09, 8:49 AM"}'
-                      />
-                    </div>
-                  </td>
-                  <td class="order align-middle white-space-nowrap py-0">
-                    <a class="fw-semibold" href="#!">#2444</a>
-                  </td>
-                  <td
-                    class="total align-middle text-end fw-semibold text-body-highlight"
-                  >
-                    $5937
-                  </td>
-                  <td class="customer align-middle white-space-nowrap ps-8">
-                    <a
-                      class="d-flex align-items-center text-body"
-                      href="../../../apps/e-commerce/landing/profile.html"
-                    >
-                      <div class="avatar avatar-m">
-                        <img
-                          class="rounded-circle"
-                          src="../../../assets/img/team/34.webp"
-                          alt=""
-                        />
-                      </div>
-                      <h6 class="mb-0 ms-3 text-body">Jean Renoir</h6>
-                    </a>
-                  </td>
-                  <td
-                    class="payment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span
-                      class="badge badge-phoenix fs-10 badge-phoenix-success"
-                      ><span class="badge-label">Paid</span
-                      ><span
-                        class="ms-1"
-                        data-feather="check"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
-                  </td>
-                  <td
-                    class="fulfilment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span
-                      class="badge badge-phoenix fs-10 badge-phoenix-secondary"
-                      ><span class="badge-label">Ready to pickup</span
-                      ><span
-                        class="ms-1"
-                        data-feather="info"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
-                  </td>
-                  <td
-                    class="delivery_type align-middle white-space-nowrap text-body fs-9 text-start"
-                  >
-                    Local pickup
-                  </td>
-                  <td
-                    class="date align-middle white-space-nowrap text-body-tertiary fs-9 ps-4 text-end"
-                  >
-                    Nov 09, 8:49 AM
-                  </td>
-                </tr>
-                <tr
-                  class="hover-actions-trigger btn-reveal-trigger position-static"
-                >
-                  <td class="fs-9 align-middle px-0 py-3">
-                    <div class="form-check mb-0 fs-8">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        data-bulk-select-row='{"order":2443,"total":124,"customer":{"avatar":"/team/29.webp","name":"Ricky Antony"},"payment_status":{"label":"Failed","type":"badge-phoenix-danger","icon":"x"},"fulfilment_status":{"label":"Unfulfiled","type":"badge-phoenix-danger","icon":"x"},"delivery_type":"Cash on delivery","date":"Nov 05, 4:35 PM"}'
-                      />
-                    </div>
-                  </td>
-                  <td class="order align-middle white-space-nowrap py-0">
-                    <a class="fw-semibold" href="#!">#2443</a>
-                  </td>
-                  <td
-                    class="total align-middle text-end fw-semibold text-body-highlight"
-                  >
-                    $124
-                  </td>
-                  <td class="customer align-middle white-space-nowrap ps-8">
-                    <a
-                      class="d-flex align-items-center text-body"
-                      href="../../../apps/e-commerce/landing/profile.html"
-                    >
-                      <div class="avatar avatar-m">
-                        <img
-                          class="rounded-circle"
-                          src="../../../assets/img/team/29.webp"
-                          alt=""
-                        />
-                      </div>
-                      <h6 class="mb-0 ms-3 text-body">Ricky Antony</h6>
-                    </a>
-                  </td>
-                  <td
-                    class="payment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span class="badge badge-phoenix fs-10 badge-phoenix-danger"
-                      ><span class="badge-label">Failed</span
-                      ><span
-                        class="ms-1"
-                        data-feather="x"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
-                  </td>
-                  <td
-                    class="fulfilment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span class="badge badge-phoenix fs-10 badge-phoenix-danger"
-                      ><span class="badge-label">Unfulfiled</span
-                      ><span
-                        class="ms-1"
-                        data-feather="x"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
-                  </td>
-                  <td
-                    class="delivery_type align-middle white-space-nowrap text-body fs-9 text-start"
-                  >
-                    Cash on delivery
-                  </td>
-                  <td
-                    class="date align-middle white-space-nowrap text-body-tertiary fs-9 ps-4 text-end"
-                  >
-                    Nov 05, 4:35 PM
-                  </td>
-                </tr>
-                <tr
-                  class="hover-actions-trigger btn-reveal-trigger position-static"
-                >
-                  <td class="fs-9 align-middle px-0 py-3">
-                    <div class="form-check mb-0 fs-8">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        data-bulk-select-row='{"order":2442,"total":542,"customer":{"avatar":"/team/3.webp","name":"Emma Watson"},"payment_status":{"label":"Pending","type":"badge-phoenix-warning","icon":"clock"},"fulfilment_status":{"label":"Fulfiled","type":"badge-phoenix-success","icon":"check"},"delivery_type":"Standard shipping","date":"Nov 05, 12:00 PM"}'
-                      />
-                    </div>
-                  </td>
-                  <td class="order align-middle white-space-nowrap py-0">
-                    <a class="fw-semibold" href="#!">#2442</a>
-                  </td>
-                  <td
-                    class="total align-middle text-end fw-semibold text-body-highlight"
-                  >
-                    $542
-                  </td>
-                  <td class="customer align-middle white-space-nowrap ps-8">
-                    <a
-                      class="d-flex align-items-center text-body"
-                      href="../../../apps/e-commerce/landing/profile.html"
-                    >
-                      <div class="avatar avatar-m">
-                        <img
-                          class="rounded-circle"
-                          src="../../../assets/img/team/3.webp"
-                          alt=""
-                        />
-                      </div>
-                      <h6 class="mb-0 ms-3 text-body">Emma Watson</h6>
-                    </a>
-                  </td>
-                  <td
-                    class="payment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span
-                      class="badge badge-phoenix fs-10 badge-phoenix-warning"
-                      ><span class="badge-label">Pending</span
-                      ><span
-                        class="ms-1"
-                        data-feather="clock"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
-                  </td>
-                  <td
-                    class="fulfilment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span
-                      class="badge badge-phoenix fs-10 badge-phoenix-success"
-                      ><span class="badge-label">Fulfiled</span
-                      ><span
-                        class="ms-1"
-                        data-feather="check"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
-                  </td>
-                  <td
-                    class="delivery_type align-middle white-space-nowrap text-body fs-9 text-start"
-                  >
-                    Standard shipping
-                  </td>
-                  <td
-                    class="date align-middle white-space-nowrap text-body-tertiary fs-9 ps-4 text-end"
-                  >
-                    Nov 05, 12:00 PM
-                  </td>
-                </tr>
-                <tr
-                  class="hover-actions-trigger btn-reveal-trigger position-static"
-                >
-                  <td class="fs-9 align-middle px-0 py-3">
-                    <div class="form-check mb-0 fs-8">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        data-bulk-select-row='{"order":2441,"total":1480,"customer":{"avatar":"/team/avatar.webp","name":"Jennifer Schramm","placeholder":true},"payment_status":{"label":"Paid","type":"badge-phoenix-success","icon":"check"},"fulfilment_status":{"label":"Ready to pickup","type":"badge-phoenix-info","icon":"info"},"delivery_type":"Local delivery","date":"Nov 02, 2:00 AM"}'
-                      />
-                    </div>
-                  </td>
-                  <td class="order align-middle white-space-nowrap py-0">
-                    <a class="fw-semibold" href="#!">#2441</a>
-                  </td>
-                  <td
-                    class="total align-middle text-end fw-semibold text-body-highlight"
-                  >
-                    $1480
-                  </td>
-                  <td class="customer align-middle white-space-nowrap ps-8">
-                    <a
-                      class="d-flex align-items-center text-body"
-                      href="../../../apps/e-commerce/landing/profile.html"
+                      class="d-flex align-items-center text-body-emphasis"
+                      href="../../../apps/e-commerce/admin/customer-details.html"
                     >
                       <div class="avatar avatar-m">
                         <img
@@ -1113,140 +285,720 @@
                           alt=""
                         />
                       </div>
-                      <h6 class="mb-0 ms-3 text-body">Jennifer Schramm</h6>
+                      <p class="mb-0 ms-3 text-body-emphasis fw-bold">
+                        Milind Mikuja
+                      </p>
                     </a>
                   </td>
-                  <td
-                    class="payment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span
-                      class="badge badge-phoenix fs-10 badge-phoenix-success"
-                      ><span class="badge-label">Paid</span
-                      ><span
-                        class="ms-1"
-                        data-feather="check"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
+                  <td class="email align-middle white-space-nowrap pe-5">
+                    <a class="fw-semibold" href="mailto:mimiku@yahoo.com"
+                      >mimiku@yahoo.com</a
+                    >
                   </td>
                   <td
-                    class="fulfilment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
+                    class="total-orders align-middle white-space-nowrap fw-semibold text-end text-body-highlight"
                   >
-                    <span class="badge badge-phoenix fs-10 badge-phoenix-info"
-                      ><span class="badge-label">Ready to pickup</span
-                      ><span
-                        class="ms-1"
-                        data-feather="info"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
+                    76
                   </td>
                   <td
-                    class="delivery_type align-middle white-space-nowrap text-body fs-9 text-start"
+                    class="total-spent align-middle white-space-nowrap fw-bold text-end ps-3 text-body-emphasis"
                   >
-                    Local delivery
+                    $ 21567
                   </td>
                   <td
-                    class="date align-middle white-space-nowrap text-body-tertiary fs-9 ps-4 text-end"
+                    class="city align-middle white-space-nowrap text-body-highlight ps-7"
                   >
-                    Nov 02, 2:00 AM
+                    Manchester
+                  </td>
+                  <td
+                    class="last-seen align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    6 hours ago
+                  </td>
+                  <td
+                    class="last-order align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    Dec 9, 2:28 PM
                   </td>
                 </tr>
                 <tr
                   class="hover-actions-trigger btn-reveal-trigger position-static"
                 >
-                  <td class="fs-9 align-middle px-0 py-3">
+                  <td class="fs-9 align-middle ps-0 py-3">
                     <div class="form-check mb-0 fs-8">
                       <input
                         class="form-check-input"
                         type="checkbox"
-                        data-bulk-select-row='{"order":2440,"total":80,"customer":{"avatar":"/team/25.webp","name":"Michael Jenkins"},"payment_status":{"label":"Cancelled","type":"badge-phoenix-secondary","icon":"x"},"fulfilment_status":{"label":"Unfulfiled","type":"badge-phoenix-danger","icon":"x"},"delivery_type":"Free shipping","date":"Oct 30, 4:25 PM"}'
+                        data-bulk-select-row='{"customer":{"avatar":"/team/35.webp","name":"Stanly Drinkwater"},"email":"stnlwasser@hotmail.com","city":"Smallville","totalOrders":69,"totalSpent":19872,"lastSeen":"43 min ago","lastOrder":"Dec 4, 12:56 PM"}'
                       />
                     </div>
                   </td>
-                  <td class="order align-middle white-space-nowrap py-0">
-                    <a class="fw-semibold" href="#!">#2440</a>
-                  </td>
-                  <td
-                    class="total align-middle text-end fw-semibold text-body-highlight"
-                  >
-                    $80
-                  </td>
-                  <td class="customer align-middle white-space-nowrap ps-8">
+                  <td class="customer align-middle white-space-nowrap pe-5">
                     <a
-                      class="d-flex align-items-center text-body"
-                      href="../../../apps/e-commerce/landing/profile.html"
+                      class="d-flex align-items-center text-body-emphasis"
+                      href="../../../apps/e-commerce/admin/customer-details.html"
                     >
                       <div class="avatar avatar-m">
                         <img
                           class="rounded-circle"
-                          src="../../../assets/img/team/25.webp"
+                          src="../../../assets/img/team/35.webp"
                           alt=""
                         />
                       </div>
-                      <h6 class="mb-0 ms-3 text-body">Michael Jenkins</h6>
+                      <p class="mb-0 ms-3 text-body-emphasis fw-bold">
+                        Stanly Drinkwater
+                      </p>
                     </a>
                   </td>
-                  <td
-                    class="payment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span
-                      class="badge badge-phoenix fs-10 badge-phoenix-secondary"
-                      ><span class="badge-label">Cancelled</span
-                      ><span
-                        class="ms-1"
-                        data-feather="x"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
+                  <td class="email align-middle white-space-nowrap pe-5">
+                    <a class="fw-semibold" href="mailto:stnlwasser@hotmail.com"
+                      >stnlwasser@hotmail.com</a
+                    >
                   </td>
                   <td
-                    class="fulfilment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
+                    class="total-orders align-middle white-space-nowrap fw-semibold text-end text-body-highlight"
                   >
-                    <span class="badge badge-phoenix fs-10 badge-phoenix-danger"
-                      ><span class="badge-label">Unfulfiled</span
-                      ><span
-                        class="ms-1"
-                        data-feather="x"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
+                    69
                   </td>
                   <td
-                    class="delivery_type align-middle white-space-nowrap text-body fs-9 text-start"
+                    class="total-spent align-middle white-space-nowrap fw-bold text-end ps-3 text-body-emphasis"
                   >
-                    Free shipping
+                    $ 19872
                   </td>
                   <td
-                    class="date align-middle white-space-nowrap text-body-tertiary fs-9 ps-4 text-end"
+                    class="city align-middle white-space-nowrap text-body-highlight ps-7"
                   >
-                    Oct 30, 4:25 PM
+                    Smallville
+                  </td>
+                  <td
+                    class="last-seen align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    43 min ago
+                  </td>
+                  <td
+                    class="last-order align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    Dec 4, 12:56 PM
                   </td>
                 </tr>
                 <tr
                   class="hover-actions-trigger btn-reveal-trigger position-static"
                 >
-                  <td class="fs-9 align-middle px-0 py-3">
+                  <td class="fs-9 align-middle ps-0 py-3">
                     <div class="form-check mb-0 fs-8">
                       <input
                         class="form-check-input"
                         type="checkbox"
-                        data-bulk-select-row='{"order":2439,"total":999,"customer":{"avatar":"/team/32.webp","name":"Raymond Mims"},"payment_status":{"label":"Pending","type":"badge-phoenix-warning","icon":"clock"},"fulfilment_status":{"label":"Fulfiled","type":"badge-phoenix-success","icon":"check"},"delivery_type":"Cash on delivery","date":"Oct 28, 3:00 PM"}'
+                        data-bulk-select-row='{"customer":{"avatar":"/team/57.webp","name":"Josef Stravinsky"},"email":"Josefsky@sni.it","city":"Metropolis","totalOrders":67,"totalSpent":17996,"lastSeen":"2 hours ago","lastOrder":"Dec 1,  4:07 AM"}'
                       />
                     </div>
                   </td>
-                  <td class="order align-middle white-space-nowrap py-0">
-                    <a class="fw-semibold" href="#!">#2439</a>
+                  <td class="customer align-middle white-space-nowrap pe-5">
+                    <a
+                      class="d-flex align-items-center text-body-emphasis"
+                      href="../../../apps/e-commerce/admin/customer-details.html"
+                    >
+                      <div class="avatar avatar-m">
+                        <img
+                          class="rounded-circle"
+                          src="../../../assets/img/team/57.webp"
+                          alt=""
+                        />
+                      </div>
+                      <p class="mb-0 ms-3 text-body-emphasis fw-bold">
+                        Josef Stravinsky
+                      </p>
+                    </a>
+                  </td>
+                  <td class="email align-middle white-space-nowrap pe-5">
+                    <a class="fw-semibold" href="mailto:Josefsky@sni.it"
+                      >Josefsky@sni.it</a
+                    >
                   </td>
                   <td
-                    class="total align-middle text-end fw-semibold text-body-highlight"
+                    class="total-orders align-middle white-space-nowrap fw-semibold text-end text-body-highlight"
                   >
-                    $999
+                    67
                   </td>
-                  <td class="customer align-middle white-space-nowrap ps-8">
+                  <td
+                    class="total-spent align-middle white-space-nowrap fw-bold text-end ps-3 text-body-emphasis"
+                  >
+                    $ 17996
+                  </td>
+                  <td
+                    class="city align-middle white-space-nowrap text-body-highlight ps-7"
+                  >
+                    Metropolis
+                  </td>
+                  <td
+                    class="last-seen align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    2 hours ago
+                  </td>
+                  <td
+                    class="last-order align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    Dec 1, 4:07 AM
+                  </td>
+                </tr>
+                <tr
+                  class="hover-actions-trigger btn-reveal-trigger position-static"
+                >
+                  <td class="fs-9 align-middle ps-0 py-3">
+                    <div class="form-check mb-0 fs-8">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        data-bulk-select-row='{"customer":{"avatar":"/team/58.webp","name":"Igor Borvibson"},"email":"vibigorr@technext.it","city":"Central city","totalOrders":61,"totalSpent":16785,"lastSeen":"5 days ago","lastOrder":"Nov 28, 7:28 PM"}'
+                      />
+                    </div>
+                  </td>
+                  <td class="customer align-middle white-space-nowrap pe-5">
                     <a
-                      class="d-flex align-items-center text-body"
-                      href="../../../apps/e-commerce/landing/profile.html"
+                      class="d-flex align-items-center text-body-emphasis"
+                      href="../../../apps/e-commerce/admin/customer-details.html"
+                    >
+                      <div class="avatar avatar-m">
+                        <img
+                          class="rounded-circle"
+                          src="../../../assets/img/team/58.webp"
+                          alt=""
+                        />
+                      </div>
+                      <p class="mb-0 ms-3 text-body-emphasis fw-bold">
+                        Igor Borvibson
+                      </p>
+                    </a>
+                  </td>
+                  <td class="email align-middle white-space-nowrap pe-5">
+                    <a class="fw-semibold" href="mailto:vibigorr@technext.it"
+                      >vibigorr@technext.it</a
+                    >
+                  </td>
+                  <td
+                    class="total-orders align-middle white-space-nowrap fw-semibold text-end text-body-highlight"
+                  >
+                    61
+                  </td>
+                  <td
+                    class="total-spent align-middle white-space-nowrap fw-bold text-end ps-3 text-body-emphasis"
+                  >
+                    $ 16785
+                  </td>
+                  <td
+                    class="city align-middle white-space-nowrap text-body-highlight ps-7"
+                  >
+                    Central city
+                  </td>
+                  <td
+                    class="last-seen align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    5 days ago
+                  </td>
+                  <td
+                    class="last-order align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    Nov 28, 7:28 PM
+                  </td>
+                </tr>
+                <tr
+                  class="hover-actions-trigger btn-reveal-trigger position-static"
+                >
+                  <td class="fs-9 align-middle ps-0 py-3">
+                    <div class="form-check mb-0 fs-8">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        data-bulk-select-row='{"customer":{"avatar":"/team/59.webp","name":"Katerina Karenin"},"email":"karkat99@gmail.com","city":"Gotham","totalOrders":58,"totalSpent":14956,"lastSeen":"2 weeks ago","lastOrder":"Nov 24, 10:16 AM"}'
+                      />
+                    </div>
+                  </td>
+                  <td class="customer align-middle white-space-nowrap pe-5">
+                    <a
+                      class="d-flex align-items-center text-body-emphasis"
+                      href="../../../apps/e-commerce/admin/customer-details.html"
+                    >
+                      <div class="avatar avatar-m">
+                        <img
+                          class="rounded-circle"
+                          src="../../../assets/img/team/59.webp"
+                          alt=""
+                        />
+                      </div>
+                      <p class="mb-0 ms-3 text-body-emphasis fw-bold">
+                        Katerina Karenin
+                      </p>
+                    </a>
+                  </td>
+                  <td class="email align-middle white-space-nowrap pe-5">
+                    <a class="fw-semibold" href="mailto:karkat99@gmail.com"
+                      >karkat99@gmail.com</a
+                    >
+                  </td>
+                  <td
+                    class="total-orders align-middle white-space-nowrap fw-semibold text-end text-body-highlight"
+                  >
+                    58
+                  </td>
+                  <td
+                    class="total-spent align-middle white-space-nowrap fw-bold text-end ps-3 text-body-emphasis"
+                  >
+                    $ 14956
+                  </td>
+                  <td
+                    class="city align-middle white-space-nowrap text-body-highlight ps-7"
+                  >
+                    Gotham
+                  </td>
+                  <td
+                    class="last-seen align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    2 weeks ago
+                  </td>
+                  <td
+                    class="last-order align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    Nov 24, 10:16 AM
+                  </td>
+                </tr>
+                <tr
+                  class="hover-actions-trigger btn-reveal-trigger position-static"
+                >
+                  <td class="fs-9 align-middle ps-0 py-3">
+                    <div class="form-check mb-0 fs-8">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        data-bulk-select-row='{"customer":{"avatar":"","name":"Roy Anderson"},"email":"andersonroy@netflix.chill","city":"Vancouver","totalOrders":52,"totalSpent":12509,"lastSeen":"4 days ago","lastOrder":"Nov 18, 5:43 PM"}'
+                      />
+                    </div>
+                  </td>
+                  <td class="customer align-middle white-space-nowrap pe-5">
+                    <a
+                      class="d-flex align-items-center text-body-emphasis"
+                      href="../../../apps/e-commerce/admin/customer-details.html"
+                    >
+                      <div class="avatar avatar-m">
+                        <div class="avatar-name rounded-circle">
+                          <span>R</span>
+                        </div>
+                      </div>
+                      <p class="mb-0 ms-3 text-body-emphasis fw-bold">
+                        Roy Anderson
+                      </p>
+                    </a>
+                  </td>
+                  <td class="email align-middle white-space-nowrap pe-5">
+                    <a
+                      class="fw-semibold"
+                      href="mailto:andersonroy@netflix.chill"
+                      >andersonroy@netflix.chill</a
+                    >
+                  </td>
+                  <td
+                    class="total-orders align-middle white-space-nowrap fw-semibold text-end text-body-highlight"
+                  >
+                    52
+                  </td>
+                  <td
+                    class="total-spent align-middle white-space-nowrap fw-bold text-end ps-3 text-body-emphasis"
+                  >
+                    $ 12509
+                  </td>
+                  <td
+                    class="city align-middle white-space-nowrap text-body-highlight ps-7"
+                  >
+                    Vancouver
+                  </td>
+                  <td
+                    class="last-seen align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    4 days ago
+                  </td>
+                  <td
+                    class="last-order align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    Nov 18, 5:43 PM
+                  </td>
+                </tr>
+                <tr
+                  class="hover-actions-trigger btn-reveal-trigger position-static"
+                >
+                  <td class="fs-9 align-middle ps-0 py-3">
+                    <div class="form-check mb-0 fs-8">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        data-bulk-select-row='{"customer":{"avatar":"/team/31.webp","name":"Martina scorcese"},"email":"cesetina1@gmail.com","city":"Viena","totalOrders":49,"totalSpent":11003,"lastSeen":"6 min ago","lastOrder":"Nov 18, 2:09 AM"}'
+                      />
+                    </div>
+                  </td>
+                  <td class="customer align-middle white-space-nowrap pe-5">
+                    <a
+                      class="d-flex align-items-center text-body-emphasis"
+                      href="../../../apps/e-commerce/admin/customer-details.html"
+                    >
+                      <div class="avatar avatar-m">
+                        <img
+                          class="rounded-circle"
+                          src="../../../assets/img/team/31.webp"
+                          alt=""
+                        />
+                      </div>
+                      <p class="mb-0 ms-3 text-body-emphasis fw-bold">
+                        Martina scorcese
+                      </p>
+                    </a>
+                  </td>
+                  <td class="email align-middle white-space-nowrap pe-5">
+                    <a class="fw-semibold" href="mailto:cesetina1@gmail.com"
+                      >cesetina1@gmail.com</a
+                    >
+                  </td>
+                  <td
+                    class="total-orders align-middle white-space-nowrap fw-semibold text-end text-body-highlight"
+                  >
+                    49
+                  </td>
+                  <td
+                    class="total-spent align-middle white-space-nowrap fw-bold text-end ps-3 text-body-emphasis"
+                  >
+                    $ 11003
+                  </td>
+                  <td
+                    class="city align-middle white-space-nowrap text-body-highlight ps-7"
+                  >
+                    Viena
+                  </td>
+                  <td
+                    class="last-seen align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    6 min ago
+                  </td>
+                  <td
+                    class="last-order align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    Nov 18, 2:09 AM
+                  </td>
+                </tr>
+                <tr
+                  class="hover-actions-trigger btn-reveal-trigger position-static"
+                >
+                  <td class="fs-9 align-middle ps-0 py-3">
+                    <div class="form-check mb-0 fs-8">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        data-bulk-select-row='{"customer":{"avatar":"/team/33.webp","name":"Luis Bunuel"},"email":"luisuel@live.com","city":"Bangalore","totalOrders":44,"totalSpent":7897,"lastSeen":"56 min ago","lastOrder":"Nov 16, 3:22 PM"}'
+                      />
+                    </div>
+                  </td>
+                  <td class="customer align-middle white-space-nowrap pe-5">
+                    <a
+                      class="d-flex align-items-center text-body-emphasis"
+                      href="../../../apps/e-commerce/admin/customer-details.html"
+                    >
+                      <div class="avatar avatar-m">
+                        <img
+                          class="rounded-circle"
+                          src="../../../assets/img/team/33.webp"
+                          alt=""
+                        />
+                      </div>
+                      <p class="mb-0 ms-3 text-body-emphasis fw-bold">
+                        Luis Bunuel
+                      </p>
+                    </a>
+                  </td>
+                  <td class="email align-middle white-space-nowrap pe-5">
+                    <a class="fw-semibold" href="mailto:luisuel@live.com"
+                      >luisuel@live.com</a
+                    >
+                  </td>
+                  <td
+                    class="total-orders align-middle white-space-nowrap fw-semibold text-end text-body-highlight"
+                  >
+                    44
+                  </td>
+                  <td
+                    class="total-spent align-middle white-space-nowrap fw-bold text-end ps-3 text-body-emphasis"
+                  >
+                    $ 7897
+                  </td>
+                  <td
+                    class="city align-middle white-space-nowrap text-body-highlight ps-7"
+                  >
+                    Bangalore
+                  </td>
+                  <td
+                    class="last-seen align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    56 min ago
+                  </td>
+                  <td
+                    class="last-order align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    Nov 16, 3:22 PM
+                  </td>
+                </tr>
+                <tr
+                  class="hover-actions-trigger btn-reveal-trigger position-static"
+                >
+                  <td class="fs-9 align-middle ps-0 py-3">
+                    <div class="form-check mb-0 fs-8">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        data-bulk-select-row='{"customer":{"avatar":"/team/34.webp","name":"Jean Renoir"},"email":"renoirjean1836@gmail.com","city":"Chittagong","totalOrders":37,"totalSpent":7781,"lastSeen":"Yesterday","lastOrder":"Nov 09, 8:49 AM"}'
+                      />
+                    </div>
+                  </td>
+                  <td class="customer align-middle white-space-nowrap pe-5">
+                    <a
+                      class="d-flex align-items-center text-body-emphasis"
+                      href="../../../apps/e-commerce/admin/customer-details.html"
+                    >
+                      <div class="avatar avatar-m">
+                        <img
+                          class="rounded-circle"
+                          src="../../../assets/img/team/34.webp"
+                          alt=""
+                        />
+                      </div>
+                      <p class="mb-0 ms-3 text-body-emphasis fw-bold">
+                        Jean Renoir
+                      </p>
+                    </a>
+                  </td>
+                  <td class="email align-middle white-space-nowrap pe-5">
+                    <a
+                      class="fw-semibold"
+                      href="mailto:renoirjean1836@gmail.com"
+                      >renoirjean1836@gmail.com</a
+                    >
+                  </td>
+                  <td
+                    class="total-orders align-middle white-space-nowrap fw-semibold text-end text-body-highlight"
+                  >
+                    37
+                  </td>
+                  <td
+                    class="total-spent align-middle white-space-nowrap fw-bold text-end ps-3 text-body-emphasis"
+                  >
+                    $ 7781
+                  </td>
+                  <td
+                    class="city align-middle white-space-nowrap text-body-highlight ps-7"
+                  >
+                    Chittagong
+                  </td>
+                  <td
+                    class="last-seen align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    Yesterday
+                  </td>
+                  <td
+                    class="last-order align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    Nov 09, 8:49 AM
+                  </td>
+                </tr>
+                <tr
+                  class="hover-actions-trigger btn-reveal-trigger position-static"
+                >
+                  <td class="fs-9 align-middle ps-0 py-3">
+                    <div class="form-check mb-0 fs-8">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        data-bulk-select-row='{"customer":{"avatar":"/team/29.webp","name":"Ricky Antony"},"email":"ricky@example.com","city":"New Jersey","totalOrders":33,"totalSpent":7825,"lastSeen":"1 hour ago","lastOrder":"Oct 19, 8:00 AM"}'
+                      />
+                    </div>
+                  </td>
+                  <td class="customer align-middle white-space-nowrap pe-5">
+                    <a
+                      class="d-flex align-items-center text-body-emphasis"
+                      href="../../../apps/e-commerce/admin/customer-details.html"
+                    >
+                      <div class="avatar avatar-m">
+                        <img
+                          class="rounded-circle"
+                          src="../../../assets/img/team/29.webp"
+                          alt=""
+                        />
+                      </div>
+                      <p class="mb-0 ms-3 text-body-emphasis fw-bold">
+                        Ricky Antony
+                      </p>
+                    </a>
+                  </td>
+                  <td class="email align-middle white-space-nowrap pe-5">
+                    <a class="fw-semibold" href="mailto:ricky@example.com"
+                      >ricky@example.com</a
+                    >
+                  </td>
+                  <td
+                    class="total-orders align-middle white-space-nowrap fw-semibold text-end text-body-highlight"
+                  >
+                    33
+                  </td>
+                  <td
+                    class="total-spent align-middle white-space-nowrap fw-bold text-end ps-3 text-body-emphasis"
+                  >
+                    $ 7825
+                  </td>
+                  <td
+                    class="city align-middle white-space-nowrap text-body-highlight ps-7"
+                  >
+                    New Jersey
+                  </td>
+                  <td
+                    class="last-seen align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    1 hour ago
+                  </td>
+                  <td
+                    class="last-order align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    Oct 19, 8:00 AM
+                  </td>
+                </tr>
+                <tr
+                  class="hover-actions-trigger btn-reveal-trigger position-static"
+                >
+                  <td class="fs-9 align-middle ps-0 py-3">
+                    <div class="form-check mb-0 fs-8">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        data-bulk-select-row='{"customer":{"avatar":"/team/3.webp","name":"Emma Watson"},"email":"emma@example.com","city":"New York","totalOrders":45,"totalSpent":18975,"lastSeen":"6 hours ago","lastOrder":"Oct 15, 12:00 PM"}'
+                      />
+                    </div>
+                  </td>
+                  <td class="customer align-middle white-space-nowrap pe-5">
+                    <a
+                      class="d-flex align-items-center text-body-emphasis"
+                      href="../../../apps/e-commerce/admin/customer-details.html"
+                    >
+                      <div class="avatar avatar-m">
+                        <img
+                          class="rounded-circle"
+                          src="../../../assets/img/team/3.webp"
+                          alt=""
+                        />
+                      </div>
+                      <p class="mb-0 ms-3 text-body-emphasis fw-bold">
+                        Emma Watson
+                      </p>
+                    </a>
+                  </td>
+                  <td class="email align-middle white-space-nowrap pe-5">
+                    <a class="fw-semibold" href="mailto:emma@example.com"
+                      >emma@example.com</a
+                    >
+                  </td>
+                  <td
+                    class="total-orders align-middle white-space-nowrap fw-semibold text-end text-body-highlight"
+                  >
+                    45
+                  </td>
+                  <td
+                    class="total-spent align-middle white-space-nowrap fw-bold text-end ps-3 text-body-emphasis"
+                  >
+                    $ 18975
+                  </td>
+                  <td
+                    class="city align-middle white-space-nowrap text-body-highlight ps-7"
+                  >
+                    New York
+                  </td>
+                  <td
+                    class="last-seen align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    6 hours ago
+                  </td>
+                  <td
+                    class="last-order align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    Oct 15, 12:00 PM
+                  </td>
+                </tr>
+                <tr
+                  class="hover-actions-trigger btn-reveal-trigger position-static"
+                >
+                  <td class="fs-9 align-middle ps-0 py-3">
+                    <div class="form-check mb-0 fs-8">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        data-bulk-select-row='{"customer":{"avatar":"/team/avatar.webp","name":"Jennifer Schramm","placeholder":true},"email":"jennifer@example.com","city":"Charlotte","totalOrders":39,"totalSpent":8967,"lastSeen":"12 hours ago","lastOrder":"Oct 12, 11:00 AM"}'
+                      />
+                    </div>
+                  </td>
+                  <td class="customer align-middle white-space-nowrap pe-5">
+                    <a
+                      class="d-flex align-items-center text-body-emphasis"
+                      href="../../../apps/e-commerce/admin/customer-details.html"
+                    >
+                      <div class="avatar avatar-m">
+                        <img
+                          class="rounded-circle avatar-placeholder"
+                          src="../../../assets/img/team/avatar.webp"
+                          alt=""
+                        />
+                      </div>
+                      <p class="mb-0 ms-3 text-body-emphasis fw-bold">
+                        Jennifer Schramm
+                      </p>
+                    </a>
+                  </td>
+                  <td class="email align-middle white-space-nowrap pe-5">
+                    <a class="fw-semibold" href="mailto:jennifer@example.com"
+                      >jennifer@example.com</a
+                    >
+                  </td>
+                  <td
+                    class="total-orders align-middle white-space-nowrap fw-semibold text-end text-body-highlight"
+                  >
+                    39
+                  </td>
+                  <td
+                    class="total-spent align-middle white-space-nowrap fw-bold text-end ps-3 text-body-emphasis"
+                  >
+                    $ 8967
+                  </td>
+                  <td
+                    class="city align-middle white-space-nowrap text-body-highlight ps-7"
+                  >
+                    Charlotte
+                  </td>
+                  <td
+                    class="last-seen align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    12 hours ago
+                  </td>
+                  <td
+                    class="last-order align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    Oct 12, 11:00 AM
+                  </td>
+                </tr>
+                <tr
+                  class="hover-actions-trigger btn-reveal-trigger position-static"
+                >
+                  <td class="fs-9 align-middle ps-0 py-3">
+                    <div class="form-check mb-0 fs-8">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        data-bulk-select-row='{"customer":{"avatar":"/team/32.webp","name":"Raymond Mims"},"email":"raymond@example.com","city":"Artesia","totalOrders":30,"totalSpent":14587,"lastSeen":"2 day ago","lastOrder":"Oct 10, 8:30 AM"}'
+                      />
+                    </div>
+                  </td>
+                  <td class="customer align-middle white-space-nowrap pe-5">
+                    <a
+                      class="d-flex align-items-center text-body-emphasis"
+                      href="../../../apps/e-commerce/admin/customer-details.html"
                     >
                       <div class="avatar avatar-m">
                         <img
@@ -1255,44 +1007,100 @@
                           alt=""
                         />
                       </div>
-                      <h6 class="mb-0 ms-3 text-body">Raymond Mims</h6>
+                      <p class="mb-0 ms-3 text-body-emphasis fw-bold">
+                        Raymond Mims
+                      </p>
                     </a>
                   </td>
-                  <td
-                    class="payment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
-                  >
-                    <span
-                      class="badge badge-phoenix fs-10 badge-phoenix-warning"
-                      ><span class="badge-label">Pending</span
-                      ><span
-                        class="ms-1"
-                        data-feather="clock"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
+                  <td class="email align-middle white-space-nowrap pe-5">
+                    <a class="fw-semibold" href="mailto:raymond@example.com"
+                      >raymond@example.com</a
+                    >
                   </td>
                   <td
-                    class="fulfilment_status align-middle white-space-nowrap text-start fw-bold text-body-tertiary"
+                    class="total-orders align-middle white-space-nowrap fw-semibold text-end text-body-highlight"
                   >
-                    <span
-                      class="badge badge-phoenix fs-10 badge-phoenix-success"
-                      ><span class="badge-label">Fulfiled</span
-                      ><span
-                        class="ms-1"
-                        data-feather="check"
-                        style="height: 12.8px; width: 12.8px"
-                      ></span
-                    ></span>
+                    30
                   </td>
                   <td
-                    class="delivery_type align-middle white-space-nowrap text-body fs-9 text-start"
+                    class="total-spent align-middle white-space-nowrap fw-bold text-end ps-3 text-body-emphasis"
                   >
-                    Cash on delivery
+                    $ 14587
                   </td>
                   <td
-                    class="date align-middle white-space-nowrap text-body-tertiary fs-9 ps-4 text-end"
+                    class="city align-middle white-space-nowrap text-body-highlight ps-7"
                   >
-                    Oct 28, 3:00 PM
+                    Artesia
+                  </td>
+                  <td
+                    class="last-seen align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    2 day ago
+                  </td>
+                  <td
+                    class="last-order align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    Oct 10, 8:30 AM
+                  </td>
+                </tr>
+                <tr
+                  class="hover-actions-trigger btn-reveal-trigger position-static"
+                >
+                  <td class="fs-9 align-middle ps-0 py-3">
+                    <div class="form-check mb-0 fs-8">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        data-bulk-select-row='{"customer":{"avatar":"/team/25.webp","name":"Michael Jenkins"},"email":"jenkins@example.com","city":"Philadelphia","totalOrders":43,"totalSpent":45697,"lastSeen":"12 hours ago","lastOrder":"Oct 3, 8:30 AM"}'
+                      />
+                    </div>
+                  </td>
+                  <td class="customer align-middle white-space-nowrap pe-5">
+                    <a
+                      class="d-flex align-items-center text-body-emphasis"
+                      href="../../../apps/e-commerce/admin/customer-details.html"
+                    >
+                      <div class="avatar avatar-m">
+                        <img
+                          class="rounded-circle"
+                          src="../../../assets/img/team/25.webp"
+                          alt=""
+                        />
+                      </div>
+                      <p class="mb-0 ms-3 text-body-emphasis fw-bold">
+                        Michael Jenkins
+                      </p>
+                    </a>
+                  </td>
+                  <td class="email align-middle white-space-nowrap pe-5">
+                    <a class="fw-semibold" href="mailto:jenkins@example.com"
+                      >jenkins@example.com</a
+                    >
+                  </td>
+                  <td
+                    class="total-orders align-middle white-space-nowrap fw-semibold text-end text-body-highlight"
+                  >
+                    43
+                  </td>
+                  <td
+                    class="total-spent align-middle white-space-nowrap fw-bold text-end ps-3 text-body-emphasis"
+                  >
+                    $ 45697
+                  </td>
+                  <td
+                    class="city align-middle white-space-nowrap text-body-highlight ps-7"
+                  >
+                    Philadelphia
+                  </td>
+                  <td
+                    class="last-seen align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    12 hours ago
+                  </td>
+                  <td
+                    class="last-order align-middle white-space-nowrap text-body-tertiary text-end"
+                  >
+                    Oct 3, 8:30 AM
                   </td>
                 </tr>
               </tbody>
