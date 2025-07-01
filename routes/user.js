@@ -8,12 +8,14 @@ import {
   getUserById,
   updateUser,
   deleteUser,
+  verifyUserEmail,
 } from "../controllers/user.js";
 import {
   signupValidator,
   loginValidator,
   createUserValidator,
   updateUserValidator,
+  
 } from "../validators/user.js";
 import { validationResultHandler } from "../middlewares/validateResult.js";
 import { protect } from "../middlewares/auth.js";
@@ -24,6 +26,7 @@ const router = express.Router();
 router.post("/signup", signupValidator, validationResultHandler, signup);
 router.post("/login", loginValidator, validationResultHandler, login);
 router.get("/logout", logout);
+router.get("/verify/:id", verifyUserEmail);
 
 /* ---------- Admin CRUD ---------- */
 router.get("/", protect(["admin"]), getAllUsers);

@@ -1,6 +1,8 @@
 import User from "../models/User.js";
 import jwt from "jsonwebtoken";
 import secrets from "../config/secrets.js";
+import {sendEmail,getVerificationEmailTemplate} from "../utils/emailService.js";
+
 
 const generateToken = (userId) =>
   jwt.sign({ id: userId }, secrets.jwt.accessTokenSecret, {
@@ -23,6 +25,19 @@ export const signup = async (req, res) => {
       sameSite: "strict",
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
     });
+
+    const htmlContent = getVerificationEmailTemplate({
+      userName: user.firstName,
+      userId: user._id,
+    });
+    
+    sendEmail({
+      to: user.email,
+      subject: "Verify your email!",
+      text: `Hello ${user.firstName}, please verify your email by clicking this link: /api/auth/verify/${user._id}`,
+      html: htmlContent,
+    });
+
     res.status(201).json({
       status: "success",
       message: "User created successfully",
@@ -143,5 +158,21 @@ export const deleteUser = async (req, res) => {
       .json({ status: "success", message: "User deleted successfully" });
   } catch (err) {
     res.status(500).json({ status: "error", message: err.message });
+  }
+};
+
+export const verifyUserEmail = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+    if (!user) {
+      return res.status(404).json({ message: "User not found." });
+    }
+
+    user.isVerified = true;
+    await user.save();
+    res.redirect("/");
+  } catch (error) {
+    console.error("❌ Error during email verification:", error);
+    res.status(500).json({ message: "Server error." });
   }
 };

@@ -115,6 +115,11 @@ const userSchema = new mongoose.Schema(
     lastLogin: {
       type: Date,
     },
+    isVerified: {
+      type: Boolean,
+      default: false,
+    },
+    
   },
   { timestamps: true }
 );
