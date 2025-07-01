@@ -532,6 +532,55 @@
                         >
                       </div>
                     </form>
+                    <script>
+                      document.getElementById("loginForm")?.addEventListener("submit", async function (e) {
+                        e.preventDefault();
+
+                        const email = document.getElementById("loginEmail")?.value.trim();
+                        const password = document.getElementById("loginPassword")?.value;
+
+                        if (!email || !password) {
+                          return showToast({
+                            text: "Please enter both email and password.",
+                            status: "error",
+                          });
+                        }
+
+                        const formData = {
+                          email,
+                          password,
+                        };
+
+                        try {
+                          const response = await fetch("/api/user/login", {
+                            method: "POST",
+                            headers: {
+                              "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify(formData),
+                          });
+
+                          const result = await response.json();
+
+                          showToast({
+                            text: result.message,
+                            status: result.status,
+                          });
+
+                          if (result.status === "success") {
+                            setTimeout(
+                              () => (window.location.href = "/"),
+                              1200
+                            );
+                          }
+                        } catch (error) {
+                          showToast({
+                            text: error.message || "❗ Something went wrong.",
+                            status: "error",
+                          });
+                        }
+                      });
+                    </script>
                     <!-- Sign Up Form -->
                     <form
                       id="signupForm"
