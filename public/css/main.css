@@ -139,7 +139,6 @@ h6 {
   color: var(--default-color);
   background-color: var(--background-color);
   transition: all 0.5s;
-  z-index: 997;
 }
 
 .header .top-bar {
