@@ -67,11 +67,10 @@ export const login = async (req, res) => {
 };
 
 // purely client-side in SPA; this endpoint just keeps parity for future refresh-token flow
-export const logout = (_req, res) =>
-  res
-    .clearCookie("token")
-    .status(200)
-    .json({ status: "success", message: "Logged out successfully" });
+export const logout = (_req, res) => {
+  res.clearCookie("token");
+  res.redirect("/");
+};
 
 /* ---------- CRUD (admin) ---------- */
 export const createUser = async (req, res) => {

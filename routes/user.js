@@ -23,7 +23,7 @@ const router = express.Router();
 /* ---------- Auth ---------- */
 router.post("/signup", signupValidator, validationResultHandler, signup);
 router.post("/login", loginValidator, validationResultHandler, login);
-router.post("/logout", logout); // client removes token
+router.get("/logout", logout);
 
 /* ---------- Admin CRUD ---------- */
 router.get("/", protect(["admin"]), getAllUsers);
