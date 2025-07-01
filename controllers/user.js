@@ -1,8 +1,10 @@
 import User from "../models/User.js";
 import jwt from "jsonwebtoken";
 import secrets from "../config/secrets.js";
-import {sendEmail,getVerificationEmailTemplate} from "../utils/emailService.js";
-
+import {
+  sendEmail,
+  getVerificationEmailTemplate,
+} from "../utils/emailService.js";
 
 const generateToken = (userId) =>
   jwt.sign({ id: userId }, secrets.jwt.accessTokenSecret, {
@@ -30,7 +32,7 @@ export const signup = async (req, res) => {
       userName: user.firstName,
       userId: user._id,
     });
-    
+
     sendEmail({
       to: user.email,
       subject: "Verify your email!",
@@ -168,7 +170,7 @@ export const verifyUserEmail = async (req, res) => {
       return res.status(404).json({ message: "User not found." });
     }
 
-    user.isVerified = true;
+    user.isActiveEmail = true;
     await user.save();
     res.redirect("/");
   } catch (error) {
