@@ -425,10 +425,7 @@
                 <div class="modal-body p-4">
                   <div id="authForms">
                     <!-- Login Form -->
-                    <form
-                      id="loginForm"
-                      style="display: block"
-                    >
+                    <form id="loginForm" style="display: block">
                       <div class="mb-3">
                         <label for="loginEmail" class="form-label"
                           >Email address</label
@@ -703,6 +700,111 @@
                         >
                       </div>
                     </form>
+                    <script>
+                      document
+                        .getElementById("signupForm")
+                        .addEventListener("submit", async (event) => {
+                          event.preventDefault();
+
+                          const firstName = document
+                            .getElementById("signupFirstName")
+                            .value.trim();
+                          const lastName = document
+                            .getElementById("signupLastName")
+                            .value.trim();
+                          const email = document
+                            .getElementById("signupEmail")
+                            .value.trim()
+                            .toLowerCase();
+                          const password =
+                            document.getElementById("signupPassword").value;
+                          const confirmPassword = document.getElementById(
+                            "signupConfirmPassword"
+                          ).value;
+                          const acceptTerms =
+                            document.getElementById("acceptTerms").checked;
+
+                          // 🔎 Validation
+                          if (firstName.length < 2 || firstName.length > 30) {
+                            return showToast({
+                              text: "First name must be 2–30 characters.",
+                              status: "error",
+                            });
+                          }
+
+                          if (lastName.length < 2 || lastName.length > 30) {
+                            return showToast({
+                              text: "Last name must be 2–30 characters.",
+                              status: "error",
+                            });
+                          }
+
+                          if (!/^\S+@\S+\.\S+$/.test(email)) {
+                            return showToast({
+                              text: "Invalid email format.",
+                              status: "error",
+                            });
+                          }
+
+                          if (password.length < 8) {
+                            return showToast({
+                              text: "Password must be at least 8 characters long.",
+                              status: "error",
+                            });
+                          }
+
+                          if (password !== confirmPassword) {
+                            return showToast({
+                              text: "Passwords do not match.",
+                              status: "error",
+                            });
+                          }
+
+                          if (!acceptTerms) {
+                            return showToast({
+                              text: "You must accept the terms and conditions.",
+                              status: "error",
+                            });
+                          }
+
+                          // ✅ Valid — prepare payload
+                          const formData = {
+                            firstName,
+                            lastName,
+                            email,
+                            password,
+                          };
+
+                          try {
+                            const response = await fetch("/api/user/signup", {
+                              method: "POST",
+                              headers: {
+                                "Content-Type": "application/json",
+                              },
+                              body: JSON.stringify(formData),
+                            });
+
+                            const result = await response.json();
+
+                            showToast({
+                              text: result.message,
+                              status: result.status,
+                            });
+
+                            if (result.status === "success") {
+                              setTimeout(
+                                () => (window.location.href = "/"),
+                                1200
+                              );
+                            }
+                          } catch (error) {
+                            showToast({
+                              text: error.message || "❗ Something went wrong.",
+                              status: "error",
+                            });
+                          }
+                        });
+                    </script>
                     <!-- Forgot Password Form -->
                     <form
                       id="forgotForm"
