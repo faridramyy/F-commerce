@@ -36,7 +36,7 @@ router.post(
 );
 router.get("/:id", protect(["admin"]), getUserById);
 router.put(
-  "//:id",
+  "/:id",
   protect(["admin"]),
   updateUserValidator,
   validationResultHandler,
