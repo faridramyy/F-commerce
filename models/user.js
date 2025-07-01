@@ -119,6 +119,10 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    isActivePhone: {
+      type: Boolean,
+      default: false,
+    },
     resetPasswordCode: {
       type: String,
       default: null,

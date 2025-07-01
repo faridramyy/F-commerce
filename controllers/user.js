@@ -1,6 +1,7 @@
 import User from "../models/User.js";
 import jwt from "jsonwebtoken";
 import secrets from "../config/secrets.js";
+import passport from "passport";
 import {
   sendEmail,
   getVerificationEmailTemplate,
@@ -82,6 +83,34 @@ export const login = async (req, res) => {
     res.status(500).json({ status: "error", message: err.message });
   }
 };
+
+export const googleAuth = passport.authenticate("google", {
+  scope: ["profile", "email"],
+});
+
+export const googleCallback = (req, res) => {
+  passport.authenticate("google", { session: false }, async (err, user) => {
+    if (err) {
+      console.error("Google callback error:", err);
+      return res.redirect("/");
+    }
+
+    try {
+      const token = generateToken(user._id);
+      res.cookie("token", token, {
+        httpOnly: true,
+        secure: secrets.env === "production",
+        sameSite: "strict",
+        maxAge: 7 * 24 * 60 * 60 * 1000,
+      });
+      res.redirect("/");
+    } catch (error) {
+      console.error("Error in Google callback:", error);
+      res.redirect("/");
+    }
+  })(req, res);
+};
+
 
 // purely client-side in SPA; this endpoint just keeps parity for future refresh-token flow
 export const logout = (_req, res) => {

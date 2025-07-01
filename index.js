@@ -1,4 +1,5 @@
 import express from "express";
+import "./config/passport.js";
 import morgan from "morgan";
 import helmet from "helmet";
 import cors from "cors";
