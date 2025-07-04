@@ -279,7 +279,9 @@
                 </a>
               </div>
               <div class="dropdown-footer">
-                <a href="/api/user/logout" class="btn btn-primary w-100 mb-2">Logout</a>
+                <a href="/api/user/logout" class="btn btn-primary w-100 mb-2"
+                  >Logout</a
+                >
               </div>
             </div>
           </div>
@@ -532,53 +534,59 @@
                       </div>
                     </form>
                     <script>
-                      document.getElementById("loginForm")?.addEventListener("submit", async function (e) {
-                        e.preventDefault();
+                      document
+                        .getElementById("loginForm")
+                        ?.addEventListener("submit", async function (e) {
+                          e.preventDefault();
 
-                        const email = document.getElementById("loginEmail")?.value.trim();
-                        const password = document.getElementById("loginPassword")?.value;
+                          const email = document
+                            .getElementById("loginEmail")
+                            ?.value.trim();
+                          const password =
+                            document.getElementById("loginPassword")?.value;
 
-                        if (!email || !password) {
-                          return showToast({
-                            text: "Please enter both email and password.",
-                            status: "error",
-                          });
-                        }
-
-                        const formData = {
-                          email,
-                          password,
-                        };
-
-                        try {
-                          const response = await fetch("/api/user/login", {
-                            method: "POST",
-                            headers: {
-                              "Content-Type": "application/json",
-                            },
-                            body: JSON.stringify(formData),
-                          });
-
-                          const result = await response.json();
-
-                          showToast({
-                            text: result.message,
-                            status: result.status,
-                          });
-
-                          if (result.status === "success") {
-                            setTimeout(
-                              () => (window.location.href = "/"),
-                              1200
-                            );
+                          if (!email || !password) {
+                            return showToast({
+                              text: "Please enter both email and password.",
+                              status: "error",
+                            });
                           }
-                        } catch (error) {
-                          showToast({
-                            text: error.message || "❗ Something went wrong.",
-                            status: "error",
-                          });
-                        }
-                      });
+
+                          const formData = {
+                            email,
+                            password,
+                          };
+
+                          try {
+                            const response = await fetch("/api/user/login", {
+                              method: "POST",
+                              headers: {
+                                "Content-Type": "application/json",
+                              },
+                              body: JSON.stringify(formData),
+                            });
+
+                            const result = await response.json();
+
+                            showToast({
+                              text: result.message,
+                              status: result.status,
+                            });
+
+                            if (result.status === "success") {
+                              setTimeout(
+                                () =>
+                                  (window.location.href = `/${result.data.role}`),
+                                1200
+                              );
+                            }
+                          } catch (error) {
+                            showToast({
+                              text: error.message || "❗ Something went wrong.",
+                              status: "error",
+                            });
+                          }
+                        });
                     </script>
                     <!-- Sign Up Form -->
                     <form
@@ -841,7 +849,8 @@
 
                             if (result.status === "success") {
                               setTimeout(
-                                () => (window.location.href = "/"),
+                                () =>
+                                  (window.location.href = `/${result.data.role}`),
                                 1200
                               );
                             }

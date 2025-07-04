@@ -44,6 +44,8 @@ router.use(async (req, res, next) => {
   }
 });
 
+router.get("/customer", (req, res) => res.redirect("/"));
+
 // Route mappings
 router.get("/", (req, res) => res.render("index"));
 router.get("/about-us", (req, res) => res.render("about-us"));
