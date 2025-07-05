@@ -2,9 +2,11 @@ import User from "../models/User.js";
 import jwt from "jsonwebtoken";
 import secrets from "../config/secrets.js";
 import passport from "passport";
+import crypto from 'crypto';
 import {
   sendEmail,
   getVerificationEmailTemplate,
+  generatePasswordResetEmail,
 } from "../utils/emailService.js";
 
 const generateToken = (userId) =>
@@ -207,3 +209,52 @@ export const verifyUserEmail = async (req, res) => {
     res.status(500).json({ message: "Server error." });
   }
 };
+
+
+export const forgotPassword = async (req, res) => {
+  const { email } = req.body;
+
+  if (!email) {
+    return res.status(400).json({ message: "Email is required." });
+  }
+
+  try {
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res
+        .status(404)
+        .json({ message: "No user found with that email." });
+    }
+
+    // Use crypto to generate a 6-character random string
+    const verificationCode = crypto
+      .randomBytes(3) // 3 bytes = 6 characters of hexadecimal code
+      .toString('hex')
+      .toUpperCase(); // Convert to uppercase for better readability
+
+
+    user.resetPasswordCode = verificationCode;
+    user.resetPasswordCodeExpires = Date.now() + 10 * 60 * 1000; // 10 minutes from now
+    await user.save();
+
+    // Now send the email
+    const htmlContent = generatePasswordResetEmail({
+      userName: user.firstName,
+      verificationCode,
+    });
+    
+    await sendEmail({
+      to: email,
+      subject: "Password Reset Verification Code",
+      text: `Your verification code is: ${verificationCode}`,
+      html: htmlContent,
+    });
+
+    res.status(200).json({ message: "Verification code sent to your email." });
+  } catch (error) {
+    console.error("❌ Error during forgot password:", error);
+    res.status(500).json({ message: "Server error." });
+  }
+};
+

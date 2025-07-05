@@ -65,3 +65,35 @@ export function getVerificationEmailTemplate({ userName, userId }) {
     </div>
   `;
 }
+
+export function generatePasswordResetEmail({ userName, verificationCode }) {
+  return `
+    <div style="background: #f8f4f6; padding: 40px 0; font-family: 'Roboto', Arial, sans-serif; color: #212529;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width: 600px; margin: 0 auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(140,13,79,0.05);">
+        <tr>
+          <td style="padding: 32px 32px 0 32px; text-align: center;">
+            <span style="font-family: 'Quicksand', Arial, sans-serif; font-size: 32px; color: #8c0d4f; font-weight: bold; letter-spacing: 1px;">FashionStore</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 24px 32px 0 32px; text-align: center;">
+            <h2 style="color: #3e0925; font-family: 'Quicksand', Arial, sans-serif; margin-bottom: 8px;">Hello, ${userName}!</h2>
+            <p style="font-size: 16px; color: #212529; margin: 0 0 16px 0;">Your OTP code for resetting your password is:</p>
+            <h3 style="font-size: 24px; color: #8c0d4f; font-family: 'Quicksand', Arial, sans-serif; font-weight: bold; margin: 8px 0;">${verificationCode}</h3>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 16px 32px 0 32px; text-align: center;">
+            <p style="font-size: 14px; color: #888; margin-top: 16px;">If the OTP code above does not work, copy and paste the following code into your app or website:</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 32px 32px 0 32px; text-align: center; border-top: 1px solid #eee;">
+            <p style="font-size: 13px; color: #888; margin: 0;">&copy; ${new Date().getFullYear()} FashionStore. All rights reserved.</p>
+            <p style="font-size: 13px; color: #888; margin: 0;">123 Fashion Street, New York, NY 10001</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  `;
+}

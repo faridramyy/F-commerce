@@ -11,6 +11,7 @@ import {
   updateUser,
   deleteUser,
   verifyUserEmail,
+  forgotPassword,
 } from "../controllers/user.js";
 import {
   signupValidator,
@@ -31,6 +32,8 @@ router.get("/logout", logout);
 router.get("/google", googleAuth);
 router.get("/google/callback", googleCallback);
 router.get("/verify/:id", verifyUserEmail);
+router.post("/forgotPassword", forgotPassword);
+
 
 /* ---------- Admin CRUD ---------- */
 router.get("/", protect(["admin"]), getAllUsers);
