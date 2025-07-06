@@ -907,39 +907,50 @@
                     <script>
                       // Forgot Password Form Handler
                       const forgotForm = document.getElementById("forgotForm");
-                      const forgotEmail = document.getElementById("forgotEmail");
-                      const sendCodeBtn = document.getElementById("sendCodeBtn");
+                      const forgotEmail =
+                        document.getElementById("forgotEmail");
+                      const sendCodeBtn =
+                        document.getElementById("sendCodeBtn");
 
                       forgotForm.addEventListener("submit", async function (e) {
                         e.preventDefault();
-                        
+
                         try {
                           sendCodeBtn.disabled = true;
                           sendCodeBtn.textContent = "Sending...";
-                          
-                          const response = await fetch("/api/user/forgotPassword", {
-                            method: "POST",
-                            headers: {
-                              "Content-Type": "application/json",
-                            },
-                            body: JSON.stringify({
-                              email: forgotEmail.value,
-                            }),
-                          });
+
+                          const response = await fetch(
+                            "/api/user/forgotPassword",
+                            {
+                              method: "POST",
+                              headers: {
+                                "Content-Type": "application/json",
+                              },
+                              body: JSON.stringify({
+                                email: forgotEmail.value,
+                              }),
+                            }
+                          );
 
                           const data = await response.json();
 
                           if (response.ok) {
                             showToast({
-                              text: data.message || "✅ Verification code sent to your email!",
+                              text:
+                                data.message ||
+                                "✅ Verification code sent to your email!",
                               status: "success",
                             });
                             // Show OTP form
                             forgotForm.style.display = "none";
-                            document.getElementById("forgotOtpForm").style.display = "block";
+                            document.getElementById(
+                              "forgotOtpForm"
+                            ).style.display = "block";
                           } else {
                             showToast({
-                              text: data.message || "❗ Failed to send verification code.",
+                              text:
+                                data.message ||
+                                "❗ Failed to send verification code.",
                               status: "error",
                             });
                           }
