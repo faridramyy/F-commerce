@@ -498,7 +498,7 @@
                         <span class="small text-muted">or</span>
                       </div>
                       <a
-                        href="/auth/google"
+                        href="/api/user/google"
                         class="btn w-100 mb-2"
                         style="
                           background: #fff;
@@ -721,7 +721,7 @@
                         <span class="small text-muted">or</span>
                       </div>
                       <a
-                        href="/auth/google"
+                        href="/api/user/google"
                         class="btn w-100 mb-2"
                         style="
                           background: #fff;
@@ -904,6 +904,56 @@
                         >
                       </div>
                     </form>
+                    <script>
+                      // Forgot Password Form Handler
+                      const forgotForm = document.getElementById("forgotForm");
+                      const forgotEmail = document.getElementById("forgotEmail");
+                      const sendCodeBtn = document.getElementById("sendCodeBtn");
+
+                      forgotForm.addEventListener("submit", async function (e) {
+                        e.preventDefault();
+                        
+                        try {
+                          sendCodeBtn.disabled = true;
+                          sendCodeBtn.textContent = "Sending...";
+                          
+                          const response = await fetch("/api/user/forgotPassword", {
+                            method: "POST",
+                            headers: {
+                              "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({
+                              email: forgotEmail.value,
+                            }),
+                          });
+
+                          const data = await response.json();
+
+                          if (response.ok) {
+                            showToast({
+                              text: data.message || "✅ Verification code sent to your email!",
+                              status: "success",
+                            });
+                            // Show OTP form
+                            forgotForm.style.display = "none";
+                            document.getElementById("forgotOtpForm").style.display = "block";
+                          } else {
+                            showToast({
+                              text: data.message || "❗ Failed to send verification code.",
+                              status: "error",
+                            });
+                          }
+                        } catch (error) {
+                          showToast({
+                            text: "❗ Something went wrong. Please try again.",
+                            status: "error",
+                          });
+                        } finally {
+                          sendCodeBtn.disabled = false;
+                          sendCodeBtn.textContent = "Send Code";
+                        }
+                      });
+                    </script>
                     <!-- OTP Entry Form (Forgot Password) -->
                     <form
                       id="forgotOtpForm"
@@ -1077,15 +1127,6 @@
                 });
               }
 
-              // Show OTP form after "Send Code" is pressed
-              if (sendCodeBtn) {
-                sendCodeBtn.addEventListener("click", function (e) {
-                  // Prevent actual form submission for demo; remove this in production
-                  e.preventDefault();
-                  forgotForm.style.display = "none";
-                  forgotOtpForm.style.display = "block";
-                });
-              }
 
               // Resend OTP logic (optional, for demo)
               if (resendForgotOtp) {
