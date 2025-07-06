@@ -1,8 +1,2930 @@
-<main class="main" id="top">
-  <%- include("./partials/nav.ejs")%>
-  <div class="content">
-    <div class="pb-5">
-      <h1>Dashboard</h1>
-    </div>
+<main id="main" class="main">
+  <div class="pagetitle">
+    <h1>Dashboard</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Dashboard</li>
+      </ol>
+    </nav>
   </div>
+  <!-- End Page Title -->
+
+  <section class="section dashboard">
+    <div class="row">
+      <!-- Left side columns -->
+      <div class="col-lg-8">
+        <div class="row">
+          <!-- Sales Card -->
+          <div class="col-xxl-4 col-md-6">
+            <div class="card info-card sales-card">
+              <div class="filter">
+                <a
+                  class="icon"
+                  href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                  data-bs-toggle="dropdown"
+                  ><i class="bi bi-three-dots"></i
+                ></a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                  <li class="dropdown-header text-start">
+                    <h6>Filter</h6>
+                  </li>
+
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                      >Today</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                      >This Month</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                      >This Year</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title">Sales <span>| Today</span></h5>
+
+                <div class="d-flex align-items-center">
+                  <div
+                    class="card-icon rounded-circle d-flex align-items-center justify-content-center"
+                  >
+                    <i class="bi bi-cart"></i>
+                  </div>
+                  <div class="ps-3">
+                    <h6>145</h6>
+                    <span class="text-success small pt-1 fw-bold">12%</span>
+                    <span class="text-muted small pt-2 ps-1">increase</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Sales Card -->
+
+          <!-- Revenue Card -->
+          <div class="col-xxl-4 col-md-6">
+            <div class="card info-card revenue-card">
+              <div class="filter">
+                <a
+                  class="icon"
+                  href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                  data-bs-toggle="dropdown"
+                  ><i class="bi bi-three-dots"></i
+                ></a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                  <li class="dropdown-header text-start">
+                    <h6>Filter</h6>
+                  </li>
+
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                      >Today</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                      >This Month</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                      >This Year</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title">Revenue <span>| This Month</span></h5>
+
+                <div class="d-flex align-items-center">
+                  <div
+                    class="card-icon rounded-circle d-flex align-items-center justify-content-center"
+                  >
+                    <i class="bi bi-currency-dollar"></i>
+                  </div>
+                  <div class="ps-3">
+                    <h6>$3,264</h6>
+                    <span class="text-success small pt-1 fw-bold">8%</span>
+                    <span class="text-muted small pt-2 ps-1">increase</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Revenue Card -->
+
+          <!-- Customers Card -->
+          <div class="col-xxl-4 col-xl-12">
+            <div class="card info-card customers-card">
+              <div class="filter">
+                <a
+                  class="icon"
+                  href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                  data-bs-toggle="dropdown"
+                  ><i class="bi bi-three-dots"></i
+                ></a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                  <li class="dropdown-header text-start">
+                    <h6>Filter</h6>
+                  </li>
+
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                      >Today</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                      >This Month</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                      >This Year</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title">Customers <span>| This Year</span></h5>
+
+                <div class="d-flex align-items-center">
+                  <div
+                    class="card-icon rounded-circle d-flex align-items-center justify-content-center"
+                  >
+                    <i class="bi bi-people"></i>
+                  </div>
+                  <div class="ps-3">
+                    <h6>1244</h6>
+                    <span class="text-danger small pt-1 fw-bold">12%</span>
+                    <span class="text-muted small pt-2 ps-1">decrease</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Customers Card -->
+
+          <!-- Reports -->
+          <div class="col-12">
+            <div class="card">
+              <div class="filter">
+                <a
+                  class="icon"
+                  href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                  data-bs-toggle="dropdown"
+                  ><i class="bi bi-three-dots"></i
+                ></a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                  <li class="dropdown-header text-start">
+                    <h6>Filter</h6>
+                  </li>
+
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                      >Today</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                      >This Month</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                      >This Year</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title">Reports <span>/Today</span></h5>
+
+                <!-- Line Chart -->
+                <div id="reportsChart" style="min-height: 365px" class="">
+                  <div
+                    id="apexchartsooycytcs"
+                    class="apexcharts-canvas apexchartsooycytcs apexcharts-theme-light"
+                    style="width: 692px; height: 350px"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      version="1.1"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      class="apexcharts-svg apexcharts-zoomable"
+                      xmlns:data="ApexChartsNS"
+                      transform="translate(0, 0)"
+                      width="692"
+                      height="350"
+                    >
+                      <foreignobject x="0" y="0" width="692" height="350">
+                        <style type="text/css">
+                          .apexcharts-flip-y {
+                            transform: scaleY(-1) translateY(-100%);
+                            transform-origin: top;
+                            transform-box: fill-box;
+                          }
+                          .apexcharts-flip-x {
+                            transform: scaleX(-1);
+                            transform-origin: center;
+                            transform-box: fill-box;
+                          }
+                          .apexcharts-legend {
+                            display: flex;
+                            overflow: auto;
+                            padding: 0 10px;
+                          }
+                          .apexcharts-legend.apexcharts-legend-group-horizontal {
+                            flex-direction: column;
+                          }
+                          .apexcharts-legend-group {
+                            display: flex;
+                          }
+                          .apexcharts-legend-group-vertical {
+                            flex-direction: column-reverse;
+                          }
+                          .apexcharts-legend.apx-legend-position-bottom,
+                          .apexcharts-legend.apx-legend-position-top {
+                            flex-wrap: wrap;
+                          }
+                          .apexcharts-legend.apx-legend-position-right,
+                          .apexcharts-legend.apx-legend-position-left {
+                            flex-direction: column;
+                            bottom: 0;
+                          }
+                          .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-left,
+                          .apexcharts-legend.apx-legend-position-top.apexcharts-align-left,
+                          .apexcharts-legend.apx-legend-position-right,
+                          .apexcharts-legend.apx-legend-position-left {
+                            justify-content: flex-start;
+                            align-items: flex-start;
+                          }
+                          .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-center,
+                          .apexcharts-legend.apx-legend-position-top.apexcharts-align-center {
+                            justify-content: center;
+                            align-items: center;
+                          }
+                          .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-right,
+                          .apexcharts-legend.apx-legend-position-top.apexcharts-align-right {
+                            justify-content: flex-end;
+                            align-items: flex-end;
+                          }
+                          .apexcharts-legend-series {
+                            cursor: pointer;
+                            line-height: normal;
+                            display: flex;
+                            align-items: center;
+                          }
+                          .apexcharts-legend-text {
+                            position: relative;
+                            font-size: 14px;
+                          }
+                          .apexcharts-legend-text *,
+                          .apexcharts-legend-marker * {
+                            pointer-events: none;
+                          }
+                          .apexcharts-legend-marker {
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            cursor: pointer;
+                            margin-right: 1px;
+                          }
+
+                          .apexcharts-legend-series.apexcharts-no-click {
+                            cursor: auto;
+                          }
+                          .apexcharts-legend .apexcharts-hidden-zero-series,
+                          .apexcharts-legend .apexcharts-hidden-null-series {
+                            display: none !important;
+                          }
+                          .apexcharts-inactive-legend {
+                            opacity: 0.45;
+                          }
+                        </style>
+                      </foreignobject>
+                      <rect
+                        width="0"
+                        height="0"
+                        x="0"
+                        y="0"
+                        rx="0"
+                        ry="0"
+                        opacity="1"
+                        stroke-width="0"
+                        stroke="none"
+                        stroke-dasharray="0"
+                        fill="#fefefe"
+                      ></rect>
+                      <g
+                        class="apexcharts-datalabels-group"
+                        transform="translate(0, 0) scale(1)"
+                      ></g>
+                      <g
+                        class="apexcharts-datalabels-group"
+                        transform="translate(0, 0) scale(1)"
+                      ></g>
+                      <g
+                        class="apexcharts-yaxis"
+                        rel="0"
+                        transform="translate(15.359375, 0)"
+                      >
+                        <g class="apexcharts-yaxis-texts-g">
+                          <text
+                            x="20"
+                            y="33.666666666666664"
+                            text-anchor="end"
+                            dominant-baseline="auto"
+                            font-size="11px"
+                            font-family="Helvetica, Arial, sans-serif"
+                            font-weight="400"
+                            fill="#373d3f"
+                            class="apexcharts-text apexcharts-yaxis-label"
+                            style="font-family: Helvetica, Arial, sans-serif"
+                          >
+                            <tspan>100</tspan>
+                            <title>100</title>
+                          </text>
+                          <text
+                            x="20"
+                            y="86.50666666666666"
+                            text-anchor="end"
+                            dominant-baseline="auto"
+                            font-size="11px"
+                            font-family="Helvetica, Arial, sans-serif"
+                            font-weight="400"
+                            fill="#373d3f"
+                            class="apexcharts-text apexcharts-yaxis-label"
+                            style="font-family: Helvetica, Arial, sans-serif"
+                          >
+                            <tspan>80</tspan>
+                            <title>80</title>
+                          </text>
+                          <text
+                            x="20"
+                            y="139.34666666666666"
+                            text-anchor="end"
+                            dominant-baseline="auto"
+                            font-size="11px"
+                            font-family="Helvetica, Arial, sans-serif"
+                            font-weight="400"
+                            fill="#373d3f"
+                            class="apexcharts-text apexcharts-yaxis-label"
+                            style="font-family: Helvetica, Arial, sans-serif"
+                          >
+                            <tspan>60</tspan>
+                            <title>60</title>
+                          </text>
+                          <text
+                            x="20"
+                            y="192.18666666666667"
+                            text-anchor="end"
+                            dominant-baseline="auto"
+                            font-size="11px"
+                            font-family="Helvetica, Arial, sans-serif"
+                            font-weight="400"
+                            fill="#373d3f"
+                            class="apexcharts-text apexcharts-yaxis-label"
+                            style="font-family: Helvetica, Arial, sans-serif"
+                          >
+                            <tspan>40</tspan>
+                            <title>40</title>
+                          </text>
+                          <text
+                            x="20"
+                            y="245.02666666666667"
+                            text-anchor="end"
+                            dominant-baseline="auto"
+                            font-size="11px"
+                            font-family="Helvetica, Arial, sans-serif"
+                            font-weight="400"
+                            fill="#373d3f"
+                            class="apexcharts-text apexcharts-yaxis-label"
+                            style="font-family: Helvetica, Arial, sans-serif"
+                          >
+                            <tspan>20</tspan>
+                            <title>20</title>
+                          </text>
+                          <text
+                            x="20"
+                            y="297.8666666666667"
+                            text-anchor="end"
+                            dominant-baseline="auto"
+                            font-size="11px"
+                            font-family="Helvetica, Arial, sans-serif"
+                            font-weight="400"
+                            fill="#373d3f"
+                            class="apexcharts-text apexcharts-yaxis-label"
+                            style="font-family: Helvetica, Arial, sans-serif"
+                          >
+                            <tspan>0</tspan>
+                            <title>0</title>
+                          </text>
+                        </g>
+                      </g>
+                      <g
+                        class="apexcharts-inner apexcharts-graphical"
+                        transform="translate(45.359375, 30)"
+                      >
+                        <defs>
+                          <clippath id="gridRectMaskooycytcs">
+                            <rect
+                              width="642.640625"
+                              height="270.2"
+                              x="-3"
+                              y="-3"
+                              rx="0"
+                              ry="0"
+                              opacity="1"
+                              stroke-width="0"
+                              stroke="none"
+                              stroke-dasharray="0"
+                              fill="#fff"
+                            ></rect>
+                          </clippath>
+                          <clippath id="gridRectBarMaskooycytcs">
+                            <rect
+                              width="642.640625"
+                              height="270.2"
+                              x="-3"
+                              y="-3"
+                              rx="0"
+                              ry="0"
+                              opacity="1"
+                              stroke-width="0"
+                              stroke="none"
+                              stroke-dasharray="0"
+                              fill="#fff"
+                            ></rect>
+                          </clippath>
+                          <clippath id="gridRectMarkerMaskooycytcs">
+                            <rect
+                              width="656.640625"
+                              height="284.2"
+                              x="-10"
+                              y="-10"
+                              rx="0"
+                              ry="0"
+                              opacity="1"
+                              stroke-width="0"
+                              stroke="none"
+                              stroke-dasharray="0"
+                              fill="#fff"
+                            ></rect>
+                          </clippath>
+                          <clippath id="forecastMaskooycytcs"></clippath>
+                          <clippath id="nonForecastMaskooycytcs"></clippath>
+                          <lineargradient
+                            x1="0"
+                            y1="0"
+                            x2="0"
+                            y2="1"
+                            id="SvgjsLinearGradient1009"
+                          >
+                            <stop
+                              stop-opacity="0.3"
+                              stop-color="rgba(65,84,241,0.3)"
+                              offset="0"
+                            ></stop>
+                            <stop
+                              stop-opacity="0.4"
+                              stop-color="rgba(255,255,255,0.4)"
+                              offset="0.9"
+                            ></stop>
+                            <stop
+                              stop-opacity="0.4"
+                              stop-color="rgba(255,255,255,0.4)"
+                              offset="1"
+                            ></stop>
+                          </lineargradient>
+                          <lineargradient
+                            x1="0"
+                            y1="0"
+                            x2="0"
+                            y2="1"
+                            id="SvgjsLinearGradient1010"
+                          >
+                            <stop
+                              stop-opacity="0.3"
+                              stop-color="rgba(46,202,106,0.3)"
+                              offset="0"
+                            ></stop>
+                            <stop
+                              stop-opacity="0.4"
+                              stop-color="rgba(255,255,255,0.4)"
+                              offset="0.9"
+                            ></stop>
+                            <stop
+                              stop-opacity="0.4"
+                              stop-color="rgba(255,255,255,0.4)"
+                              offset="1"
+                            ></stop>
+                          </lineargradient>
+                          <lineargradient
+                            x1="0"
+                            y1="0"
+                            x2="0"
+                            y2="1"
+                            id="SvgjsLinearGradient1011"
+                          >
+                            <stop
+                              stop-opacity="0.3"
+                              stop-color="rgba(255,119,29,0.3)"
+                              offset="0"
+                            ></stop>
+                            <stop
+                              stop-opacity="0.4"
+                              stop-color="rgba(255,255,255,0.4)"
+                              offset="0.9"
+                            ></stop>
+                            <stop
+                              stop-opacity="0.4"
+                              stop-color="rgba(255,255,255,0.4)"
+                              offset="1"
+                            ></stop>
+                          </lineargradient>
+                        </defs>
+                        <line
+                          x1="0"
+                          y1="0"
+                          x2="0"
+                          y2="264.2"
+                          stroke="#b6b6b6"
+                          stroke-dasharray="3"
+                          stroke-linecap="butt"
+                          class="apexcharts-xcrosshairs"
+                          x="0"
+                          y="0"
+                          width="1"
+                          height="264.2"
+                          fill="#b1b9c4"
+                          filter="none"
+                          fill-opacity="0.9"
+                          stroke-width="1"
+                        ></line>
+                        <line
+                          x1="0"
+                          y1="264.2"
+                          x2="0"
+                          y2="270.2"
+                          stroke="#e0e0e0"
+                          stroke-dasharray="0"
+                          stroke-linecap="butt"
+                          class="apexcharts-xaxis-tick"
+                        ></line>
+                        <line
+                          x1="97.94471153846155"
+                          y1="264.2"
+                          x2="97.94471153846155"
+                          y2="270.2"
+                          stroke="#e0e0e0"
+                          stroke-dasharray="0"
+                          stroke-linecap="butt"
+                          class="apexcharts-xaxis-tick"
+                        ></line>
+                        <line
+                          x1="195.8894230769231"
+                          y1="264.2"
+                          x2="195.8894230769231"
+                          y2="270.2"
+                          stroke="#e0e0e0"
+                          stroke-dasharray="0"
+                          stroke-linecap="butt"
+                          class="apexcharts-xaxis-tick"
+                        ></line>
+                        <line
+                          x1="293.83413461538464"
+                          y1="264.2"
+                          x2="293.83413461538464"
+                          y2="270.2"
+                          stroke="#e0e0e0"
+                          stroke-dasharray="0"
+                          stroke-linecap="butt"
+                          class="apexcharts-xaxis-tick"
+                        ></line>
+                        <line
+                          x1="391.7788461538462"
+                          y1="264.2"
+                          x2="391.7788461538462"
+                          y2="270.2"
+                          stroke="#e0e0e0"
+                          stroke-dasharray="0"
+                          stroke-linecap="butt"
+                          class="apexcharts-xaxis-tick"
+                        ></line>
+                        <line
+                          x1="489.72355769230774"
+                          y1="264.2"
+                          x2="489.72355769230774"
+                          y2="270.2"
+                          stroke="#e0e0e0"
+                          stroke-dasharray="0"
+                          stroke-linecap="butt"
+                          class="apexcharts-xaxis-tick"
+                        ></line>
+                        <line
+                          x1="587.6682692307693"
+                          y1="264.2"
+                          x2="587.6682692307693"
+                          y2="270.2"
+                          stroke="#e0e0e0"
+                          stroke-dasharray="0"
+                          stroke-linecap="butt"
+                          class="apexcharts-xaxis-tick"
+                        ></line>
+                        <g class="apexcharts-grid">
+                          <g class="apexcharts-gridlines-horizontal">
+                            <line
+                              x1="0"
+                              y1="52.839999999999996"
+                              x2="636.640625"
+                              y2="52.839999999999996"
+                              stroke="#e0e0e0"
+                              stroke-dasharray="0"
+                              stroke-linecap="butt"
+                              class="apexcharts-gridline"
+                            ></line>
+                            <line
+                              x1="0"
+                              y1="105.67999999999999"
+                              x2="636.640625"
+                              y2="105.67999999999999"
+                              stroke="#e0e0e0"
+                              stroke-dasharray="0"
+                              stroke-linecap="butt"
+                              class="apexcharts-gridline"
+                            ></line>
+                            <line
+                              x1="0"
+                              y1="158.51999999999998"
+                              x2="636.640625"
+                              y2="158.51999999999998"
+                              stroke="#e0e0e0"
+                              stroke-dasharray="0"
+                              stroke-linecap="butt"
+                              class="apexcharts-gridline"
+                            ></line>
+                            <line
+                              x1="0"
+                              y1="211.35999999999999"
+                              x2="636.640625"
+                              y2="211.35999999999999"
+                              stroke="#e0e0e0"
+                              stroke-dasharray="0"
+                              stroke-linecap="butt"
+                              class="apexcharts-gridline"
+                            ></line>
+                          </g>
+                          <g class="apexcharts-gridlines-vertical"></g>
+                          <line
+                            x1="0"
+                            y1="264.2"
+                            x2="636.640625"
+                            y2="264.2"
+                            stroke="transparent"
+                            stroke-dasharray="0"
+                            stroke-linecap="butt"
+                          ></line>
+                          <line
+                            x1="0"
+                            y1="1"
+                            x2="0"
+                            y2="264.2"
+                            stroke="transparent"
+                            stroke-dasharray="0"
+                            stroke-linecap="butt"
+                          ></line>
+                        </g>
+                        <g class="apexcharts-grid-borders">
+                          <line
+                            x1="0"
+                            y1="0"
+                            x2="636.640625"
+                            y2="0"
+                            stroke="#e0e0e0"
+                            stroke-dasharray="0"
+                            stroke-linecap="butt"
+                            class="apexcharts-gridline"
+                          ></line>
+                          <line
+                            x1="0"
+                            y1="264.2"
+                            x2="636.640625"
+                            y2="264.2"
+                            stroke="#e0e0e0"
+                            stroke-dasharray="0"
+                            stroke-linecap="butt"
+                            class="apexcharts-gridline"
+                          ></line>
+                          <line
+                            x1="0"
+                            y1="264.2"
+                            x2="636.640625"
+                            y2="264.2"
+                            stroke="#e0e0e0"
+                            stroke-dasharray="0"
+                            stroke-width="1"
+                            stroke-linecap="butt"
+                          ></line>
+                        </g>
+                        <g
+                          class="apexcharts-area-series apexcharts-plot-series"
+                        >
+                          <g
+                            class="apexcharts-series"
+                            zIndex="0"
+                            seriesName="Sales"
+                            data:longestSeries="true"
+                            rel="1"
+                            data:realIndex="0"
+                          >
+                            <path
+                              d="M 0 182.298C 51.4209735576923 182.298 95.49609375 158.51999999999998 146.9170673076923 158.51999999999998C 181.1977163461538 158.51999999999998 210.5811298076923 190.224 244.8617788461538 190.224C 279.14242788461536 190.224 308.5258413461538 129.458 342.80649038461536 129.458C 377.0871394230769 129.458 406.47055288461536 153.236 440.7512019230769 153.236C 475.03185096153845 153.236 504.4152644230769 47.55600000000001 538.6959134615385 47.55600000000001C 572.9765625 47.55600000000001 602.3599759615383 116.24799999999999 636.6406249999999 116.24799999999999C 636.6406249999999 116.24799999999999 636.6406249999999 116.24799999999999 636.6406249999999 264.2 L 0 264.2z"
+                              fill="url(#SvgjsLinearGradient1009)"
+                              fill-opacity="1"
+                              stroke="none"
+                              stroke-opacity="1"
+                              stroke-linecap="butt"
+                              stroke-width="0"
+                              stroke-dasharray="0"
+                              class="apexcharts-area"
+                              index="0"
+                              clip-path="url(#gridRectMaskooycytcs)"
+                              pathTo="M 0 182.298C 51.4209735576923 182.298 95.49609375 158.51999999999998 146.9170673076923 158.51999999999998C 181.1977163461538 158.51999999999998 210.5811298076923 190.224 244.8617788461538 190.224C 279.14242788461536 190.224 308.5258413461538 129.458 342.80649038461536 129.458C 377.0871394230769 129.458 406.47055288461536 153.236 440.7512019230769 153.236C 475.03185096153845 153.236 504.4152644230769 47.55600000000001 538.6959134615385 47.55600000000001C 572.9765625 47.55600000000001 602.3599759615383 116.24799999999999 636.6406249999999 116.24799999999999C 636.6406249999999 116.24799999999999 636.6406249999999 116.24799999999999 636.6406249999999 264.2 L 0 264.2z"
+                              pathFrom="M 0 264.2 L 0 264.2 L 146.9170673076923 264.2 L 244.8617788461538 264.2 L 342.80649038461536 264.2 L 440.7512019230769 264.2 L 538.6959134615385 264.2 L 636.6406249999999 264.2z"
+                            ></path>
+                            <path
+                              d="M 0 182.298C 51.4209735576923 182.298 95.49609375 158.51999999999998 146.9170673076923 158.51999999999998C 181.1977163461538 158.51999999999998 210.5811298076923 190.224 244.8617788461538 190.224C 279.14242788461536 190.224 308.5258413461538 129.458 342.80649038461536 129.458C 377.0871394230769 129.458 406.47055288461536 153.236 440.7512019230769 153.236C 475.03185096153845 153.236 504.4152644230769 47.55600000000001 538.6959134615385 47.55600000000001C 572.9765625 47.55600000000001 602.3599759615383 116.24799999999999 636.6406249999999 116.24799999999999"
+                              fill="none"
+                              fill-opacity="1"
+                              stroke="#4154f1"
+                              stroke-opacity="1"
+                              stroke-linecap="butt"
+                              stroke-width="2"
+                              stroke-dasharray="0"
+                              class="apexcharts-area"
+                              index="0"
+                              clip-path="url(#gridRectMaskooycytcs)"
+                              pathTo="M 0 182.298C 51.4209735576923 182.298 95.49609375 158.51999999999998 146.9170673076923 158.51999999999998C 181.1977163461538 158.51999999999998 210.5811298076923 190.224 244.8617788461538 190.224C 279.14242788461536 190.224 308.5258413461538 129.458 342.80649038461536 129.458C 377.0871394230769 129.458 406.47055288461536 153.236 440.7512019230769 153.236C 475.03185096153845 153.236 504.4152644230769 47.55600000000001 538.6959134615385 47.55600000000001C 572.9765625 47.55600000000001 602.3599759615383 116.24799999999999 636.6406249999999 116.24799999999999"
+                              pathFrom="M 0 264.2 L 0 264.2 L 146.9170673076923 264.2 L 244.8617788461538 264.2 L 342.80649038461536 264.2 L 440.7512019230769 264.2 L 538.6959134615385 264.2 L 636.6406249999999 264.2"
+                              fill-rule="evenodd"
+                            ></path>
+                            <g
+                              class="apexcharts-series-markers-wrap apexcharts-hidden-element-shown"
+                              data:realIndex="0"
+                            >
+                              <g
+                                class="apexcharts-series-markers"
+                                clip-path="url(#gridRectMarkerMaskooycytcs)"
+                              >
+                                <path
+                                  d="M 0, 182.298 
+       m -4, 0 
+       a 4,4 0 1,0 8,0 
+       a 4,4 0 1,0 -8,0"
+                                  fill="#4154f1"
+                                  fill-opacity="1"
+                                  stroke="#ffffff"
+                                  stroke-opacity="0.9"
+                                  stroke-linecap="butt"
+                                  stroke-width="2"
+                                  stroke-dasharray="0"
+                                  cx="0"
+                                  cy="182.298"
+                                  shape="circle"
+                                  class="apexcharts-marker no-pointer-events wgrzy0x5l"
+                                  rel="0"
+                                  j="0"
+                                  index="0"
+                                  default-marker-size="4"
+                                ></path>
+                                <path
+                                  d="M 146.9170673076923, 158.51999999999998 
+       m -4, 0 
+       a 4,4 0 1,0 8,0 
+       a 4,4 0 1,0 -8,0"
+                                  fill="#4154f1"
+                                  fill-opacity="1"
+                                  stroke="#ffffff"
+                                  stroke-opacity="0.9"
+                                  stroke-linecap="butt"
+                                  stroke-width="2"
+                                  stroke-dasharray="0"
+                                  cx="146.9170673076923"
+                                  cy="158.51999999999998"
+                                  shape="circle"
+                                  class="apexcharts-marker no-pointer-events wilazi2q3i"
+                                  rel="1"
+                                  j="1"
+                                  index="0"
+                                  default-marker-size="4"
+                                ></path>
+                              </g>
+                              <g
+                                class="apexcharts-series-markers"
+                                clip-path="url(#gridRectMarkerMaskooycytcs)"
+                              >
+                                <path
+                                  d="M 244.8617788461538, 190.224 
+       m -4, 0 
+       a 4,4 0 1,0 8,0 
+       a 4,4 0 1,0 -8,0"
+                                  fill="#4154f1"
+                                  fill-opacity="1"
+                                  stroke="#ffffff"
+                                  stroke-opacity="0.9"
+                                  stroke-linecap="butt"
+                                  stroke-width="2"
+                                  stroke-dasharray="0"
+                                  cx="244.8617788461538"
+                                  cy="190.224"
+                                  shape="circle"
+                                  class="apexcharts-marker no-pointer-events wqly5w23c"
+                                  rel="2"
+                                  j="2"
+                                  index="0"
+                                  default-marker-size="4"
+                                ></path>
+                              </g>
+                              <g
+                                class="apexcharts-series-markers"
+                                clip-path="url(#gridRectMarkerMaskooycytcs)"
+                              >
+                                <path
+                                  d="M 342.80649038461536, 129.458 
+       m -4, 0 
+       a 4,4 0 1,0 8,0 
+       a 4,4 0 1,0 -8,0"
+                                  fill="#4154f1"
+                                  fill-opacity="1"
+                                  stroke="#ffffff"
+                                  stroke-opacity="0.9"
+                                  stroke-linecap="butt"
+                                  stroke-width="2"
+                                  stroke-dasharray="0"
+                                  cx="342.80649038461536"
+                                  cy="129.458"
+                                  shape="circle"
+                                  class="apexcharts-marker no-pointer-events w3g4oi0bs"
+                                  rel="3"
+                                  j="3"
+                                  index="0"
+                                  default-marker-size="4"
+                                ></path>
+                              </g>
+                              <g
+                                class="apexcharts-series-markers"
+                                clip-path="url(#gridRectMarkerMaskooycytcs)"
+                              >
+                                <path
+                                  d="M 440.7512019230769, 153.236 
+       m -4, 0 
+       a 4,4 0 1,0 8,0 
+       a 4,4 0 1,0 -8,0"
+                                  fill="#4154f1"
+                                  fill-opacity="1"
+                                  stroke="#ffffff"
+                                  stroke-opacity="0.9"
+                                  stroke-linecap="butt"
+                                  stroke-width="2"
+                                  stroke-dasharray="0"
+                                  cx="440.7512019230769"
+                                  cy="153.236"
+                                  shape="circle"
+                                  class="apexcharts-marker no-pointer-events ww8zq3wm3j"
+                                  rel="4"
+                                  j="4"
+                                  index="0"
+                                  default-marker-size="4"
+                                ></path>
+                              </g>
+                              <g
+                                class="apexcharts-series-markers"
+                                clip-path="url(#gridRectMarkerMaskooycytcs)"
+                              >
+                                <path
+                                  d="M 538.6959134615385, 47.55600000000001 
+       m -4, 0 
+       a 4,4 0 1,0 8,0 
+       a 4,4 0 1,0 -8,0"
+                                  fill="#4154f1"
+                                  fill-opacity="1"
+                                  stroke="#ffffff"
+                                  stroke-opacity="0.9"
+                                  stroke-linecap="butt"
+                                  stroke-width="2"
+                                  stroke-dasharray="0"
+                                  cx="538.6959134615385"
+                                  cy="47.55600000000001"
+                                  shape="circle"
+                                  class="apexcharts-marker no-pointer-events wpqlgj9az"
+                                  rel="5"
+                                  j="5"
+                                  index="0"
+                                  default-marker-size="4"
+                                ></path>
+                              </g>
+                              <g
+                                class="apexcharts-series-markers"
+                                clip-path="url(#gridRectMarkerMaskooycytcs)"
+                              >
+                                <path
+                                  d="M 636.6406249999999, 116.24799999999999 
+       m -4, 0 
+       a 4,4 0 1,0 8,0 
+       a 4,4 0 1,0 -8,0"
+                                  fill="#4154f1"
+                                  fill-opacity="1"
+                                  stroke="#ffffff"
+                                  stroke-opacity="0.9"
+                                  stroke-linecap="butt"
+                                  stroke-width="2"
+                                  stroke-dasharray="0"
+                                  cx="636.6406249999999"
+                                  cy="116.24799999999999"
+                                  shape="circle"
+                                  class="apexcharts-marker no-pointer-events wfuybyw1qg"
+                                  rel="6"
+                                  j="6"
+                                  index="0"
+                                  default-marker-size="4"
+                                ></path>
+                              </g>
+                            </g>
+                          </g>
+                          <g
+                            class="apexcharts-series"
+                            zIndex="1"
+                            seriesName="Revenue"
+                            data:longestSeries="true"
+                            rel="2"
+                            data:realIndex="1"
+                          >
+                            <path
+                              d="M 0 235.13799999999998C 51.4209735576923 235.13799999999998 95.49609375 179.656 146.9170673076923 179.656C 181.1977163461538 179.656 210.5811298076923 145.31 244.8617788461538 145.31C 279.14242788461536 145.31 308.5258413461538 179.656 342.80649038461536 179.656C 377.0871394230769 179.656 406.47055288461536 174.37199999999999 440.7512019230769 174.37199999999999C 475.03185096153845 174.37199999999999 504.4152644230769 126.816 538.6959134615385 126.816C 572.9765625 126.816 602.3599759615383 155.878 636.6406249999999 155.878C 636.6406249999999 155.878 636.6406249999999 155.878 636.6406249999999 264.2 L 0 264.2z"
+                              fill="url(#SvgjsLinearGradient1010)"
+                              fill-opacity="1"
+                              stroke="none"
+                              stroke-opacity="1"
+                              stroke-linecap="butt"
+                              stroke-width="0"
+                              stroke-dasharray="0"
+                              class="apexcharts-area"
+                              index="1"
+                              clip-path="url(#gridRectMaskooycytcs)"
+                              pathTo="M 0 235.13799999999998C 51.4209735576923 235.13799999999998 95.49609375 179.656 146.9170673076923 179.656C 181.1977163461538 179.656 210.5811298076923 145.31 244.8617788461538 145.31C 279.14242788461536 145.31 308.5258413461538 179.656 342.80649038461536 179.656C 377.0871394230769 179.656 406.47055288461536 174.37199999999999 440.7512019230769 174.37199999999999C 475.03185096153845 174.37199999999999 504.4152644230769 126.816 538.6959134615385 126.816C 572.9765625 126.816 602.3599759615383 155.878 636.6406249999999 155.878C 636.6406249999999 155.878 636.6406249999999 155.878 636.6406249999999 264.2 L 0 264.2z"
+                              pathFrom="M 0 264.2 L 0 264.2 L 146.9170673076923 264.2 L 244.8617788461538 264.2 L 342.80649038461536 264.2 L 440.7512019230769 264.2 L 538.6959134615385 264.2 L 636.6406249999999 264.2z"
+                            ></path>
+                            <path
+                              d="M 0 235.13799999999998C 51.4209735576923 235.13799999999998 95.49609375 179.656 146.9170673076923 179.656C 181.1977163461538 179.656 210.5811298076923 145.31 244.8617788461538 145.31C 279.14242788461536 145.31 308.5258413461538 179.656 342.80649038461536 179.656C 377.0871394230769 179.656 406.47055288461536 174.37199999999999 440.7512019230769 174.37199999999999C 475.03185096153845 174.37199999999999 504.4152644230769 126.816 538.6959134615385 126.816C 572.9765625 126.816 602.3599759615383 155.878 636.6406249999999 155.878"
+                              fill="none"
+                              fill-opacity="1"
+                              stroke="#2eca6a"
+                              stroke-opacity="1"
+                              stroke-linecap="butt"
+                              stroke-width="2"
+                              stroke-dasharray="0"
+                              class="apexcharts-area"
+                              index="1"
+                              clip-path="url(#gridRectMaskooycytcs)"
+                              pathTo="M 0 235.13799999999998C 51.4209735576923 235.13799999999998 95.49609375 179.656 146.9170673076923 179.656C 181.1977163461538 179.656 210.5811298076923 145.31 244.8617788461538 145.31C 279.14242788461536 145.31 308.5258413461538 179.656 342.80649038461536 179.656C 377.0871394230769 179.656 406.47055288461536 174.37199999999999 440.7512019230769 174.37199999999999C 475.03185096153845 174.37199999999999 504.4152644230769 126.816 538.6959134615385 126.816C 572.9765625 126.816 602.3599759615383 155.878 636.6406249999999 155.878"
+                              pathFrom="M 0 264.2 L 0 264.2 L 146.9170673076923 264.2 L 244.8617788461538 264.2 L 342.80649038461536 264.2 L 440.7512019230769 264.2 L 538.6959134615385 264.2 L 636.6406249999999 264.2"
+                              fill-rule="evenodd"
+                            ></path>
+                            <g
+                              class="apexcharts-series-markers-wrap apexcharts-hidden-element-shown"
+                              data:realIndex="1"
+                            >
+                              <g
+                                class="apexcharts-series-markers"
+                                clip-path="url(#gridRectMarkerMaskooycytcs)"
+                              >
+                                <path
+                                  d="M 0, 235.13799999999998 
+       m -4, 0 
+       a 4,4 0 1,0 8,0 
+       a 4,4 0 1,0 -8,0"
+                                  fill="#2eca6a"
+                                  fill-opacity="1"
+                                  stroke="#ffffff"
+                                  stroke-opacity="0.9"
+                                  stroke-linecap="butt"
+                                  stroke-width="2"
+                                  stroke-dasharray="0"
+                                  cx="0"
+                                  cy="235.13799999999998"
+                                  shape="circle"
+                                  class="apexcharts-marker no-pointer-events wwd2gkdr4"
+                                  rel="0"
+                                  j="0"
+                                  index="1"
+                                  default-marker-size="4"
+                                ></path>
+                                <path
+                                  d="M 146.9170673076923, 179.656 
+       m -4, 0 
+       a 4,4 0 1,0 8,0 
+       a 4,4 0 1,0 -8,0"
+                                  fill="#2eca6a"
+                                  fill-opacity="1"
+                                  stroke="#ffffff"
+                                  stroke-opacity="0.9"
+                                  stroke-linecap="butt"
+                                  stroke-width="2"
+                                  stroke-dasharray="0"
+                                  cx="146.9170673076923"
+                                  cy="179.656"
+                                  shape="circle"
+                                  class="apexcharts-marker no-pointer-events wj6qf0yirk"
+                                  rel="1"
+                                  j="1"
+                                  index="1"
+                                  default-marker-size="4"
+                                ></path>
+                              </g>
+                              <g
+                                class="apexcharts-series-markers"
+                                clip-path="url(#gridRectMarkerMaskooycytcs)"
+                              >
+                                <path
+                                  d="M 244.8617788461538, 145.31 
+       m -4, 0 
+       a 4,4 0 1,0 8,0 
+       a 4,4 0 1,0 -8,0"
+                                  fill="#2eca6a"
+                                  fill-opacity="1"
+                                  stroke="#ffffff"
+                                  stroke-opacity="0.9"
+                                  stroke-linecap="butt"
+                                  stroke-width="2"
+                                  stroke-dasharray="0"
+                                  cx="244.8617788461538"
+                                  cy="145.31"
+                                  shape="circle"
+                                  class="apexcharts-marker no-pointer-events ws521j5vs"
+                                  rel="2"
+                                  j="2"
+                                  index="1"
+                                  default-marker-size="4"
+                                ></path>
+                              </g>
+                              <g
+                                class="apexcharts-series-markers"
+                                clip-path="url(#gridRectMarkerMaskooycytcs)"
+                              >
+                                <path
+                                  d="M 342.80649038461536, 179.656 
+       m -4, 0 
+       a 4,4 0 1,0 8,0 
+       a 4,4 0 1,0 -8,0"
+                                  fill="#2eca6a"
+                                  fill-opacity="1"
+                                  stroke="#ffffff"
+                                  stroke-opacity="0.9"
+                                  stroke-linecap="butt"
+                                  stroke-width="2"
+                                  stroke-dasharray="0"
+                                  cx="342.80649038461536"
+                                  cy="179.656"
+                                  shape="circle"
+                                  class="apexcharts-marker no-pointer-events wfi7cdqyg"
+                                  rel="3"
+                                  j="3"
+                                  index="1"
+                                  default-marker-size="4"
+                                ></path>
+                              </g>
+                              <g
+                                class="apexcharts-series-markers"
+                                clip-path="url(#gridRectMarkerMaskooycytcs)"
+                              >
+                                <path
+                                  d="M 440.7512019230769, 174.37199999999999 
+       m -4, 0 
+       a 4,4 0 1,0 8,0 
+       a 4,4 0 1,0 -8,0"
+                                  fill="#2eca6a"
+                                  fill-opacity="1"
+                                  stroke="#ffffff"
+                                  stroke-opacity="0.9"
+                                  stroke-linecap="butt"
+                                  stroke-width="2"
+                                  stroke-dasharray="0"
+                                  cx="440.7512019230769"
+                                  cy="174.37199999999999"
+                                  shape="circle"
+                                  class="apexcharts-marker no-pointer-events w69qs57fv"
+                                  rel="4"
+                                  j="4"
+                                  index="1"
+                                  default-marker-size="4"
+                                ></path>
+                              </g>
+                              <g
+                                class="apexcharts-series-markers"
+                                clip-path="url(#gridRectMarkerMaskooycytcs)"
+                              >
+                                <path
+                                  d="M 538.6959134615385, 126.816 
+       m -4, 0 
+       a 4,4 0 1,0 8,0 
+       a 4,4 0 1,0 -8,0"
+                                  fill="#2eca6a"
+                                  fill-opacity="1"
+                                  stroke="#ffffff"
+                                  stroke-opacity="0.9"
+                                  stroke-linecap="butt"
+                                  stroke-width="2"
+                                  stroke-dasharray="0"
+                                  cx="538.6959134615385"
+                                  cy="126.816"
+                                  shape="circle"
+                                  class="apexcharts-marker no-pointer-events wiphe5rb3"
+                                  rel="5"
+                                  j="5"
+                                  index="1"
+                                  default-marker-size="4"
+                                ></path>
+                              </g>
+                              <g
+                                class="apexcharts-series-markers"
+                                clip-path="url(#gridRectMarkerMaskooycytcs)"
+                              >
+                                <path
+                                  d="M 636.6406249999999, 155.878 
+       m -4, 0 
+       a 4,4 0 1,0 8,0 
+       a 4,4 0 1,0 -8,0"
+                                  fill="#2eca6a"
+                                  fill-opacity="1"
+                                  stroke="#ffffff"
+                                  stroke-opacity="0.9"
+                                  stroke-linecap="butt"
+                                  stroke-width="2"
+                                  stroke-dasharray="0"
+                                  cx="636.6406249999999"
+                                  cy="155.878"
+                                  shape="circle"
+                                  class="apexcharts-marker no-pointer-events wtpo2e0l4"
+                                  rel="6"
+                                  j="6"
+                                  index="1"
+                                  default-marker-size="4"
+                                ></path>
+                              </g>
+                            </g>
+                          </g>
+                          <g
+                            class="apexcharts-series"
+                            zIndex="2"
+                            seriesName="Customers"
+                            data:longestSeries="true"
+                            rel="3"
+                            data:realIndex="2"
+                          >
+                            <path
+                              d="M 0 224.57C 51.4209735576923 224.57 95.49609375 235.13799999999998 146.9170673076923 235.13799999999998C 181.1977163461538 235.13799999999998 210.5811298076923 179.656 244.8617788461538 179.656C 279.14242788461536 179.656 308.5258413461538 216.644 342.80649038461536 216.644C 377.0871394230769 216.644 406.47055288461536 240.422 440.7512019230769 240.422C 475.03185096153845 240.422 504.4152644230769 200.792 538.6959134615385 200.792C 572.9765625 200.792 602.3599759615383 235.13799999999998 636.6406249999999 235.13799999999998C 636.6406249999999 235.13799999999998 636.6406249999999 235.13799999999998 636.6406249999999 264.2 L 0 264.2z"
+                              fill="url(#SvgjsLinearGradient1011)"
+                              fill-opacity="1"
+                              stroke="none"
+                              stroke-opacity="1"
+                              stroke-linecap="butt"
+                              stroke-width="0"
+                              stroke-dasharray="0"
+                              class="apexcharts-area"
+                              index="2"
+                              clip-path="url(#gridRectMaskooycytcs)"
+                              pathTo="M 0 224.57C 51.4209735576923 224.57 95.49609375 235.13799999999998 146.9170673076923 235.13799999999998C 181.1977163461538 235.13799999999998 210.5811298076923 179.656 244.8617788461538 179.656C 279.14242788461536 179.656 308.5258413461538 216.644 342.80649038461536 216.644C 377.0871394230769 216.644 406.47055288461536 240.422 440.7512019230769 240.422C 475.03185096153845 240.422 504.4152644230769 200.792 538.6959134615385 200.792C 572.9765625 200.792 602.3599759615383 235.13799999999998 636.6406249999999 235.13799999999998C 636.6406249999999 235.13799999999998 636.6406249999999 235.13799999999998 636.6406249999999 264.2 L 0 264.2z"
+                              pathFrom="M 0 264.2 L 0 264.2 L 146.9170673076923 264.2 L 244.8617788461538 264.2 L 342.80649038461536 264.2 L 440.7512019230769 264.2 L 538.6959134615385 264.2 L 636.6406249999999 264.2z"
+                            ></path>
+                            <path
+                              d="M 0 224.57C 51.4209735576923 224.57 95.49609375 235.13799999999998 146.9170673076923 235.13799999999998C 181.1977163461538 235.13799999999998 210.5811298076923 179.656 244.8617788461538 179.656C 279.14242788461536 179.656 308.5258413461538 216.644 342.80649038461536 216.644C 377.0871394230769 216.644 406.47055288461536 240.422 440.7512019230769 240.422C 475.03185096153845 240.422 504.4152644230769 200.792 538.6959134615385 200.792C 572.9765625 200.792 602.3599759615383 235.13799999999998 636.6406249999999 235.13799999999998"
+                              fill="none"
+                              fill-opacity="1"
+                              stroke="#ff771d"
+                              stroke-opacity="1"
+                              stroke-linecap="butt"
+                              stroke-width="2"
+                              stroke-dasharray="0"
+                              class="apexcharts-area"
+                              index="2"
+                              clip-path="url(#gridRectMaskooycytcs)"
+                              pathTo="M 0 224.57C 51.4209735576923 224.57 95.49609375 235.13799999999998 146.9170673076923 235.13799999999998C 181.1977163461538 235.13799999999998 210.5811298076923 179.656 244.8617788461538 179.656C 279.14242788461536 179.656 308.5258413461538 216.644 342.80649038461536 216.644C 377.0871394230769 216.644 406.47055288461536 240.422 440.7512019230769 240.422C 475.03185096153845 240.422 504.4152644230769 200.792 538.6959134615385 200.792C 572.9765625 200.792 602.3599759615383 235.13799999999998 636.6406249999999 235.13799999999998"
+                              pathFrom="M 0 264.2 L 0 264.2 L 146.9170673076923 264.2 L 244.8617788461538 264.2 L 342.80649038461536 264.2 L 440.7512019230769 264.2 L 538.6959134615385 264.2 L 636.6406249999999 264.2"
+                              fill-rule="evenodd"
+                            ></path>
+                            <g
+                              class="apexcharts-series-markers-wrap apexcharts-hidden-element-shown"
+                              data:realIndex="2"
+                            >
+                              <g
+                                class="apexcharts-series-markers"
+                                clip-path="url(#gridRectMarkerMaskooycytcs)"
+                              >
+                                <path
+                                  d="M 0, 224.57 
+       m -4, 0 
+       a 4,4 0 1,0 8,0 
+       a 4,4 0 1,0 -8,0"
+                                  fill="#ff771d"
+                                  fill-opacity="1"
+                                  stroke="#ffffff"
+                                  stroke-opacity="0.9"
+                                  stroke-linecap="butt"
+                                  stroke-width="2"
+                                  stroke-dasharray="0"
+                                  cx="0"
+                                  cy="224.57"
+                                  shape="circle"
+                                  class="apexcharts-marker no-pointer-events we3hq7pyzg"
+                                  rel="0"
+                                  j="0"
+                                  index="2"
+                                  default-marker-size="4"
+                                ></path>
+                                <path
+                                  d="M 146.9170673076923, 235.13799999999998 
+       m -4, 0 
+       a 4,4 0 1,0 8,0 
+       a 4,4 0 1,0 -8,0"
+                                  fill="#ff771d"
+                                  fill-opacity="1"
+                                  stroke="#ffffff"
+                                  stroke-opacity="0.9"
+                                  stroke-linecap="butt"
+                                  stroke-width="2"
+                                  stroke-dasharray="0"
+                                  cx="146.9170673076923"
+                                  cy="235.13799999999998"
+                                  shape="circle"
+                                  class="apexcharts-marker no-pointer-events w3ng9d76o"
+                                  rel="1"
+                                  j="1"
+                                  index="2"
+                                  default-marker-size="4"
+                                ></path>
+                              </g>
+                              <g
+                                class="apexcharts-series-markers"
+                                clip-path="url(#gridRectMarkerMaskooycytcs)"
+                              >
+                                <path
+                                  d="M 244.8617788461538, 179.656 
+       m -4, 0 
+       a 4,4 0 1,0 8,0 
+       a 4,4 0 1,0 -8,0"
+                                  fill="#ff771d"
+                                  fill-opacity="1"
+                                  stroke="#ffffff"
+                                  stroke-opacity="0.9"
+                                  stroke-linecap="butt"
+                                  stroke-width="2"
+                                  stroke-dasharray="0"
+                                  cx="244.8617788461538"
+                                  cy="179.656"
+                                  shape="circle"
+                                  class="apexcharts-marker no-pointer-events wq5u41oau"
+                                  rel="2"
+                                  j="2"
+                                  index="2"
+                                  default-marker-size="4"
+                                ></path>
+                              </g>
+                              <g
+                                class="apexcharts-series-markers"
+                                clip-path="url(#gridRectMarkerMaskooycytcs)"
+                              >
+                                <path
+                                  d="M 342.80649038461536, 216.644 
+       m -4, 0 
+       a 4,4 0 1,0 8,0 
+       a 4,4 0 1,0 -8,0"
+                                  fill="#ff771d"
+                                  fill-opacity="1"
+                                  stroke="#ffffff"
+                                  stroke-opacity="0.9"
+                                  stroke-linecap="butt"
+                                  stroke-width="2"
+                                  stroke-dasharray="0"
+                                  cx="342.80649038461536"
+                                  cy="216.644"
+                                  shape="circle"
+                                  class="apexcharts-marker no-pointer-events wsyu7ddx8k"
+                                  rel="3"
+                                  j="3"
+                                  index="2"
+                                  default-marker-size="4"
+                                ></path>
+                              </g>
+                              <g
+                                class="apexcharts-series-markers"
+                                clip-path="url(#gridRectMarkerMaskooycytcs)"
+                              >
+                                <path
+                                  d="M 440.7512019230769, 240.422 
+       m -4, 0 
+       a 4,4 0 1,0 8,0 
+       a 4,4 0 1,0 -8,0"
+                                  fill="#ff771d"
+                                  fill-opacity="1"
+                                  stroke="#ffffff"
+                                  stroke-opacity="0.9"
+                                  stroke-linecap="butt"
+                                  stroke-width="2"
+                                  stroke-dasharray="0"
+                                  cx="440.7512019230769"
+                                  cy="240.422"
+                                  shape="circle"
+                                  class="apexcharts-marker no-pointer-events wz95hdes8"
+                                  rel="4"
+                                  j="4"
+                                  index="2"
+                                  default-marker-size="4"
+                                ></path>
+                              </g>
+                              <g
+                                class="apexcharts-series-markers"
+                                clip-path="url(#gridRectMarkerMaskooycytcs)"
+                              >
+                                <path
+                                  d="M 538.6959134615385, 200.792 
+       m -4, 0 
+       a 4,4 0 1,0 8,0 
+       a 4,4 0 1,0 -8,0"
+                                  fill="#ff771d"
+                                  fill-opacity="1"
+                                  stroke="#ffffff"
+                                  stroke-opacity="0.9"
+                                  stroke-linecap="butt"
+                                  stroke-width="2"
+                                  stroke-dasharray="0"
+                                  cx="538.6959134615385"
+                                  cy="200.792"
+                                  shape="circle"
+                                  class="apexcharts-marker no-pointer-events wblh1f2s6"
+                                  rel="5"
+                                  j="5"
+                                  index="2"
+                                  default-marker-size="4"
+                                ></path>
+                              </g>
+                              <g
+                                class="apexcharts-series-markers"
+                                clip-path="url(#gridRectMarkerMaskooycytcs)"
+                              >
+                                <path
+                                  d="M 636.6406249999999, 235.13799999999998 
+       m -4, 0 
+       a 4,4 0 1,0 8,0 
+       a 4,4 0 1,0 -8,0"
+                                  fill="#ff771d"
+                                  fill-opacity="1"
+                                  stroke="#ffffff"
+                                  stroke-opacity="0.9"
+                                  stroke-linecap="butt"
+                                  stroke-width="2"
+                                  stroke-dasharray="0"
+                                  cx="636.6406249999999"
+                                  cy="235.13799999999998"
+                                  shape="circle"
+                                  class="apexcharts-marker no-pointer-events wsq1o6idn"
+                                  rel="6"
+                                  j="6"
+                                  index="2"
+                                  default-marker-size="4"
+                                ></path>
+                              </g>
+                            </g>
+                          </g>
+                          <g
+                            class="apexcharts-datalabels"
+                            data:realIndex="0"
+                          ></g>
+                          <g
+                            class="apexcharts-datalabels"
+                            data:realIndex="1"
+                          ></g>
+                          <g
+                            class="apexcharts-datalabels"
+                            data:realIndex="2"
+                          ></g>
+                        </g>
+                        <line
+                          x1="0"
+                          y1="0"
+                          x2="636.640625"
+                          y2="0"
+                          stroke="#b6b6b6"
+                          stroke-dasharray="0"
+                          stroke-width="1"
+                          stroke-linecap="butt"
+                          class="apexcharts-ycrosshairs"
+                        ></line>
+                        <line
+                          x1="0"
+                          y1="0"
+                          x2="636.640625"
+                          y2="0"
+                          stroke="#b6b6b6"
+                          stroke-dasharray="0"
+                          stroke-width="0"
+                          stroke-linecap="butt"
+                          class="apexcharts-ycrosshairs-hidden"
+                        ></line>
+                        <g class="apexcharts-xaxis" transform="translate(0, 0)">
+                          <g
+                            class="apexcharts-xaxis-texts-g"
+                            transform="translate(0, -4)"
+                          >
+                            <text
+                              x="0"
+                              y="292.2"
+                              text-anchor="middle"
+                              dominant-baseline="auto"
+                              font-size="12px"
+                              font-family="Helvetica, Arial, sans-serif"
+                              font-weight="400"
+                              fill="#373d3f"
+                              class="apexcharts-text apexcharts-xaxis-label"
+                              style="font-family: Helvetica, Arial, sans-serif"
+                            >
+                              <tspan>00:00</tspan>
+                              <title>00:00</title>
+                            </text>
+                            <text
+                              x="97.94471153846155"
+                              y="292.2"
+                              text-anchor="middle"
+                              dominant-baseline="auto"
+                              font-size="12px"
+                              font-family="Helvetica, Arial, sans-serif"
+                              font-weight="400"
+                              fill="#373d3f"
+                              class="apexcharts-text apexcharts-xaxis-label"
+                              style="font-family: Helvetica, Arial, sans-serif"
+                            >
+                              <tspan>01:00</tspan>
+                              <title>01:00</title>
+                            </text>
+                            <text
+                              x="195.8894230769231"
+                              y="292.2"
+                              text-anchor="middle"
+                              dominant-baseline="auto"
+                              font-size="12px"
+                              font-family="Helvetica, Arial, sans-serif"
+                              font-weight="400"
+                              fill="#373d3f"
+                              class="apexcharts-text apexcharts-xaxis-label"
+                              style="font-family: Helvetica, Arial, sans-serif"
+                            >
+                              <tspan>02:00</tspan>
+                              <title>02:00</title>
+                            </text>
+                            <text
+                              x="293.83413461538464"
+                              y="292.2"
+                              text-anchor="middle"
+                              dominant-baseline="auto"
+                              font-size="12px"
+                              font-family="Helvetica, Arial, sans-serif"
+                              font-weight="400"
+                              fill="#373d3f"
+                              class="apexcharts-text apexcharts-xaxis-label"
+                              style="font-family: Helvetica, Arial, sans-serif"
+                            >
+                              <tspan>03:00</tspan>
+                              <title>03:00</title>
+                            </text>
+                            <text
+                              x="391.7788461538462"
+                              y="292.2"
+                              text-anchor="middle"
+                              dominant-baseline="auto"
+                              font-size="12px"
+                              font-family="Helvetica, Arial, sans-serif"
+                              font-weight="400"
+                              fill="#373d3f"
+                              class="apexcharts-text apexcharts-xaxis-label"
+                              style="font-family: Helvetica, Arial, sans-serif"
+                            >
+                              <tspan>04:00</tspan>
+                              <title>04:00</title>
+                            </text>
+                            <text
+                              x="489.72355769230774"
+                              y="292.2"
+                              text-anchor="middle"
+                              dominant-baseline="auto"
+                              font-size="12px"
+                              font-family="Helvetica, Arial, sans-serif"
+                              font-weight="400"
+                              fill="#373d3f"
+                              class="apexcharts-text apexcharts-xaxis-label"
+                              style="font-family: Helvetica, Arial, sans-serif"
+                            >
+                              <tspan>05:00</tspan>
+                              <title>05:00</title>
+                            </text>
+                            <text
+                              x="587.6682692307693"
+                              y="292.2"
+                              text-anchor="middle"
+                              dominant-baseline="auto"
+                              font-size="12px"
+                              font-family="Helvetica, Arial, sans-serif"
+                              font-weight="400"
+                              fill="#373d3f"
+                              class="apexcharts-text apexcharts-xaxis-label"
+                              style="font-family: Helvetica, Arial, sans-serif"
+                            >
+                              <tspan>06:00</tspan>
+                              <title>06:00</title>
+                            </text>
+                          </g>
+                        </g>
+                        <g class="apexcharts-yaxis-annotations"></g>
+                        <g class="apexcharts-xaxis-annotations"></g>
+                        <g class="apexcharts-point-annotations"></g>
+                      </g>
+                      <rect
+                        width="0"
+                        height="0"
+                        x="0"
+                        y="0"
+                        rx="0"
+                        ry="0"
+                        opacity="1"
+                        stroke-width="0"
+                        stroke="none"
+                        stroke-dasharray="0"
+                        fill="#fefefe"
+                        class="apexcharts-zoom-rect"
+                      ></rect>
+                      <rect
+                        width="0"
+                        height="0"
+                        x="0"
+                        y="0"
+                        rx="0"
+                        ry="0"
+                        opacity="1"
+                        stroke-width="0"
+                        stroke="none"
+                        stroke-dasharray="0"
+                        fill="#fefefe"
+                        class="apexcharts-selection-rect"
+                      ></rect>
+                    </svg>
+                    <div
+                      class="apexcharts-legend apexcharts-align-center apx-legend-position-bottom"
+                      style="
+                        right: 0px;
+                        position: absolute;
+                        left: 0px;
+                        top: 325px;
+                        max-height: 175px;
+                      "
+                    >
+                      <div
+                        class="apexcharts-legend-series"
+                        rel="1"
+                        seriesname="Sales"
+                        data:collapsed="false"
+                        style="margin: 4px 5px"
+                      >
+                        <span
+                          class="apexcharts-legend-marker"
+                          rel="1"
+                          data:collapsed="false"
+                          style="height: 16px; width: 16px; left: 0px; top: 0px"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            version="1.1"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="100%"
+                            height="100%"
+                          >
+                            <path
+                              d="M 0, 0 
+       m -7, 0 
+       a 7,7 0 1,0 14,0 
+       a 7,7 0 1,0 -14,0"
+                              fill="#4154f1"
+                              fill-opacity="1"
+                              stroke="#ffffff"
+                              stroke-opacity="0.9"
+                              stroke-linecap="butt"
+                              stroke-width="1"
+                              stroke-dasharray="0"
+                              cx="0"
+                              cy="0"
+                              shape="circle"
+                              class="apexcharts-legend-marker apexcharts-marker apexcharts-marker-circle"
+                              style="transform: translate(50%, 50%)"
+                            ></path></svg></span
+                        ><span
+                          class="apexcharts-legend-text"
+                          rel="1"
+                          i="0"
+                          data:default-text="Sales"
+                          data:collapsed="false"
+                          style="
+                            color: rgb(55, 61, 63);
+                            font-size: 12px;
+                            font-weight: 400;
+                            font-family: Helvetica, Arial, sans-serif;
+                          "
+                          >Sales</span
+                        >
+                      </div>
+                      <div
+                        class="apexcharts-legend-series"
+                        rel="2"
+                        seriesname="Revenue"
+                        data:collapsed="false"
+                        style="margin: 4px 5px"
+                      >
+                        <span
+                          class="apexcharts-legend-marker"
+                          rel="2"
+                          data:collapsed="false"
+                          style="height: 16px; width: 16px; left: 0px; top: 0px"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            version="1.1"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="100%"
+                            height="100%"
+                          >
+                            <path
+                              d="M 0, 0 
+       m -7, 0 
+       a 7,7 0 1,0 14,0 
+       a 7,7 0 1,0 -14,0"
+                              fill="#2eca6a"
+                              fill-opacity="1"
+                              stroke="#ffffff"
+                              stroke-opacity="0.9"
+                              stroke-linecap="butt"
+                              stroke-width="1"
+                              stroke-dasharray="0"
+                              cx="0"
+                              cy="0"
+                              shape="circle"
+                              class="apexcharts-legend-marker apexcharts-marker apexcharts-marker-circle"
+                              style="transform: translate(50%, 50%)"
+                            ></path></svg></span
+                        ><span
+                          class="apexcharts-legend-text"
+                          rel="2"
+                          i="1"
+                          data:default-text="Revenue"
+                          data:collapsed="false"
+                          style="
+                            color: rgb(55, 61, 63);
+                            font-size: 12px;
+                            font-weight: 400;
+                            font-family: Helvetica, Arial, sans-serif;
+                          "
+                          >Revenue</span
+                        >
+                      </div>
+                      <div
+                        class="apexcharts-legend-series"
+                        rel="3"
+                        seriesname="Customers"
+                        data:collapsed="false"
+                        style="margin: 4px 5px"
+                      >
+                        <span
+                          class="apexcharts-legend-marker"
+                          rel="3"
+                          data:collapsed="false"
+                          style="height: 16px; width: 16px; left: 0px; top: 0px"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            version="1.1"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="100%"
+                            height="100%"
+                          >
+                            <path
+                              d="M 0, 0 
+       m -7, 0 
+       a 7,7 0 1,0 14,0 
+       a 7,7 0 1,0 -14,0"
+                              fill="#ff771d"
+                              fill-opacity="1"
+                              stroke="#ffffff"
+                              stroke-opacity="0.9"
+                              stroke-linecap="butt"
+                              stroke-width="1"
+                              stroke-dasharray="0"
+                              cx="0"
+                              cy="0"
+                              shape="circle"
+                              class="apexcharts-legend-marker apexcharts-marker apexcharts-marker-circle"
+                              style="transform: translate(50%, 50%)"
+                            ></path></svg></span
+                        ><span
+                          class="apexcharts-legend-text"
+                          rel="3"
+                          i="2"
+                          data:default-text="Customers"
+                          data:collapsed="false"
+                          style="
+                            color: rgb(55, 61, 63);
+                            font-size: 12px;
+                            font-weight: 400;
+                            font-family: Helvetica, Arial, sans-serif;
+                          "
+                          >Customers</span
+                        >
+                      </div>
+                    </div>
+                    <div class="apexcharts-tooltip apexcharts-theme-light">
+                      <div
+                        class="apexcharts-tooltip-title"
+                        style="
+                          font-family: Helvetica, Arial, sans-serif;
+                          font-size: 12px;
+                        "
+                      ></div>
+                      <div
+                        class="apexcharts-tooltip-series-group apexcharts-tooltip-series-group-0"
+                        style="order: 1"
+                      >
+                        <span
+                          class="apexcharts-tooltip-marker"
+                          shape="circle"
+                          style="color: rgb(65, 84, 241)"
+                        ></span>
+                        <div
+                          class="apexcharts-tooltip-text"
+                          style="
+                            font-family: Helvetica, Arial, sans-serif;
+                            font-size: 12px;
+                          "
+                        >
+                          <div class="apexcharts-tooltip-y-group">
+                            <span class="apexcharts-tooltip-text-y-label"></span
+                            ><span
+                              class="apexcharts-tooltip-text-y-value"
+                            ></span>
+                          </div>
+                          <div class="apexcharts-tooltip-goals-group">
+                            <span
+                              class="apexcharts-tooltip-text-goals-label"
+                            ></span
+                            ><span
+                              class="apexcharts-tooltip-text-goals-value"
+                            ></span>
+                          </div>
+                          <div class="apexcharts-tooltip-z-group">
+                            <span class="apexcharts-tooltip-text-z-label"></span
+                            ><span
+                              class="apexcharts-tooltip-text-z-value"
+                            ></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="apexcharts-tooltip-series-group apexcharts-tooltip-series-group-1"
+                        style="order: 2"
+                      >
+                        <span
+                          class="apexcharts-tooltip-marker"
+                          shape="circle"
+                          style="color: rgb(46, 202, 106)"
+                        ></span>
+                        <div
+                          class="apexcharts-tooltip-text"
+                          style="
+                            font-family: Helvetica, Arial, sans-serif;
+                            font-size: 12px;
+                          "
+                        >
+                          <div class="apexcharts-tooltip-y-group">
+                            <span class="apexcharts-tooltip-text-y-label"></span
+                            ><span
+                              class="apexcharts-tooltip-text-y-value"
+                            ></span>
+                          </div>
+                          <div class="apexcharts-tooltip-goals-group">
+                            <span
+                              class="apexcharts-tooltip-text-goals-label"
+                            ></span
+                            ><span
+                              class="apexcharts-tooltip-text-goals-value"
+                            ></span>
+                          </div>
+                          <div class="apexcharts-tooltip-z-group">
+                            <span class="apexcharts-tooltip-text-z-label"></span
+                            ><span
+                              class="apexcharts-tooltip-text-z-value"
+                            ></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="apexcharts-tooltip-series-group apexcharts-tooltip-series-group-2"
+                        style="order: 3"
+                      >
+                        <span
+                          class="apexcharts-tooltip-marker"
+                          shape="circle"
+                          style="color: rgb(255, 119, 29)"
+                        ></span>
+                        <div
+                          class="apexcharts-tooltip-text"
+                          style="
+                            font-family: Helvetica, Arial, sans-serif;
+                            font-size: 12px;
+                          "
+                        >
+                          <div class="apexcharts-tooltip-y-group">
+                            <span class="apexcharts-tooltip-text-y-label"></span
+                            ><span
+                              class="apexcharts-tooltip-text-y-value"
+                            ></span>
+                          </div>
+                          <div class="apexcharts-tooltip-goals-group">
+                            <span
+                              class="apexcharts-tooltip-text-goals-label"
+                            ></span
+                            ><span
+                              class="apexcharts-tooltip-text-goals-value"
+                            ></span>
+                          </div>
+                          <div class="apexcharts-tooltip-z-group">
+                            <span class="apexcharts-tooltip-text-z-label"></span
+                            ><span
+                              class="apexcharts-tooltip-text-z-value"
+                            ></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="apexcharts-xaxistooltip apexcharts-xaxistooltip-bottom apexcharts-theme-light"
+                    >
+                      <div
+                        class="apexcharts-xaxistooltip-text"
+                        style="
+                          font-family: Helvetica, Arial, sans-serif;
+                          font-size: 12px;
+                        "
+                      ></div>
+                    </div>
+                    <div
+                      class="apexcharts-yaxistooltip apexcharts-yaxistooltip-0 apexcharts-yaxistooltip-left apexcharts-theme-light"
+                    >
+                      <div class="apexcharts-yaxistooltip-text"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <script>
+                  document.addEventListener("DOMContentLoaded", () => {
+                    new ApexCharts(document.querySelector("#reportsChart"), {
+                      series: [
+                        {
+                          name: "Sales",
+                          data: [31, 40, 28, 51, 42, 82, 56],
+                        },
+                        {
+                          name: "Revenue",
+                          data: [11, 32, 45, 32, 34, 52, 41],
+                        },
+                        {
+                          name: "Customers",
+                          data: [15, 11, 32, 18, 9, 24, 11],
+                        },
+                      ],
+                      chart: {
+                        height: 350,
+                        type: "area",
+                        toolbar: {
+                          show: false,
+                        },
+                      },
+                      markers: {
+                        size: 4,
+                      },
+                      colors: ["#4154f1", "#2eca6a", "#ff771d"],
+                      fill: {
+                        type: "gradient",
+                        gradient: {
+                          shadeIntensity: 1,
+                          opacityFrom: 0.3,
+                          opacityTo: 0.4,
+                          stops: [0, 90, 100],
+                        },
+                      },
+                      dataLabels: {
+                        enabled: false,
+                      },
+                      stroke: {
+                        curve: "smooth",
+                        width: 2,
+                      },
+                      xaxis: {
+                        type: "datetime",
+                        categories: [
+                          "2018-09-19T00:00:00.000Z",
+                          "2018-09-19T01:30:00.000Z",
+                          "2018-09-19T02:30:00.000Z",
+                          "2018-09-19T03:30:00.000Z",
+                          "2018-09-19T04:30:00.000Z",
+                          "2018-09-19T05:30:00.000Z",
+                          "2018-09-19T06:30:00.000Z",
+                        ],
+                      },
+                      tooltip: {
+                        x: {
+                          format: "dd/MM/yy HH:mm",
+                        },
+                      },
+                    }).render();
+                  });
+                </script>
+                <!-- End Line Chart -->
+              </div>
+            </div>
+          </div>
+          <!-- End Reports -->
+
+          <!-- Recent Sales -->
+          <div class="col-12">
+            <div class="card recent-sales overflow-auto">
+              <div class="filter">
+                <a
+                  class="icon"
+                  href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                  data-bs-toggle="dropdown"
+                  ><i class="bi bi-three-dots"></i
+                ></a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                  <li class="dropdown-header text-start">
+                    <h6>Filter</h6>
+                  </li>
+
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                      >Today</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                      >This Month</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                      >This Year</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title">Recent Sales <span>| Today</span></h5>
+
+                <div
+                  class="datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns"
+                >
+                  <div class="datatable-top">
+                    <div class="datatable-dropdown">
+                      <label>
+                        <select class="datatable-selector" name="per-page">
+                          <option value="5">5</option>
+                          <option value="10" selected="">10</option>
+                          <option value="15">15</option>
+                          <option value="-1">All</option>
+                        </select>
+                        entries per page
+                      </label>
+                    </div>
+                    <div class="datatable-search">
+                      <input
+                        class="datatable-input"
+                        placeholder="Search..."
+                        type="search"
+                        name="search"
+                        title="Search within table"
+                      />
+                    </div>
+                  </div>
+                  <div class="datatable-container">
+                    <table
+                      class="table table-borderless datatable datatable-table"
+                    >
+                      <thead>
+                        <tr>
+                          <th
+                            scope="col"
+                            data-sortable="true"
+                            style="width: 10.632183908045976%"
+                          >
+                            <button class="datatable-sorter">#</button>
+                          </th>
+                          <th
+                            scope="col"
+                            data-sortable="true"
+                            style="width: 23.419540229885058%"
+                          >
+                            <button class="datatable-sorter">Customer</button>
+                          </th>
+                          <th
+                            scope="col"
+                            data-sortable="true"
+                            style="width: 39.36781609195402%"
+                          >
+                            <button class="datatable-sorter">Product</button>
+                          </th>
+                          <th
+                            scope="col"
+                            data-sortable="true"
+                            style="width: 11.781609195402298%"
+                          >
+                            <button class="datatable-sorter">Price</button>
+                          </th>
+                          <th
+                            scope="col"
+                            data-sortable="true"
+                            class="red"
+                            style="width: 14.798850574712644%"
+                          >
+                            <button class="datatable-sorter">Status</button>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr data-index="0">
+                          <td scope="row">
+                            <a
+                              href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                              >#2457</a
+                            >
+                          </td>
+                          <td>Brandon Jacob</td>
+                          <td>
+                            <a
+                              href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                              class="text-primary"
+                              >At praesentium minu</a
+                            >
+                          </td>
+                          <td>$64</td>
+                          <td class="green">
+                            <span class="badge bg-success">Approved</span>
+                          </td>
+                        </tr>
+                        <tr data-index="1">
+                          <td scope="row">
+                            <a
+                              href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                              >#2147</a
+                            >
+                          </td>
+                          <td>Bridie Kessler</td>
+                          <td>
+                            <a
+                              href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                              class="text-primary"
+                              >Blanditiis dolor omnis similique</a
+                            >
+                          </td>
+                          <td>$47</td>
+                          <td class="green">
+                            <span class="badge bg-warning">Pending</span>
+                          </td>
+                        </tr>
+                        <tr data-index="2">
+                          <td scope="row">
+                            <a
+                              href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                              >#2049</a
+                            >
+                          </td>
+                          <td>Ashleigh Langosh</td>
+                          <td>
+                            <a
+                              href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                              class="text-primary"
+                              >At recusandae consectetur</a
+                            >
+                          </td>
+                          <td>$147</td>
+                          <td class="green">
+                            <span class="badge bg-success">Approved</span>
+                          </td>
+                        </tr>
+                        <tr data-index="3">
+                          <td scope="row">
+                            <a
+                              href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                              >#2644</a
+                            >
+                          </td>
+                          <td>Angus Grady</td>
+                          <td>
+                            <a
+                              href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                              class="text-primar"
+                              >Ut voluptatem id earum et</a
+                            >
+                          </td>
+                          <td>$67</td>
+                          <td class="green">
+                            <span class="badge bg-danger">Rejected</span>
+                          </td>
+                        </tr>
+                        <tr data-index="4">
+                          <td scope="row">
+                            <a
+                              href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                              >#2644</a
+                            >
+                          </td>
+                          <td>Raheem Lehner</td>
+                          <td>
+                            <a
+                              href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                              class="text-primary"
+                              >Sunt similique distinctio</a
+                            >
+                          </td>
+                          <td>$165</td>
+                          <td class="green">
+                            <span class="badge bg-success">Approved</span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="datatable-bottom">
+                    <div class="datatable-info">
+                      Showing 1 to 5 of 5 entries
+                    </div>
+                    <nav class="datatable-pagination">
+                      <ul class="datatable-pagination-list"></ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Recent Sales -->
+
+          <!-- Top Selling -->
+          <div class="col-12">
+            <div class="card top-selling overflow-auto">
+              <div class="filter">
+                <a
+                  class="icon"
+                  href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                  data-bs-toggle="dropdown"
+                  ><i class="bi bi-three-dots"></i
+                ></a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                  <li class="dropdown-header text-start">
+                    <h6>Filter</h6>
+                  </li>
+
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                      >Today</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                      >This Month</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                      >This Year</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="card-body pb-0">
+                <h5 class="card-title">Top Selling <span>| Today</span></h5>
+
+                <table class="table table-borderless">
+                  <thead>
+                    <tr>
+                      <th scope="col">Preview</th>
+                      <th scope="col">Product</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Sold</th>
+                      <th scope="col">Revenue</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">
+                        <a
+                          href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                          ><img
+                            src="./Dashboard - NiceAdmin Bootstrap Template_files/product-1.jpg"
+                            alt=""
+                        /></a>
+                      </th>
+                      <td>
+                        <a
+                          href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                          class="text-primary fw-bold"
+                          >Ut inventore ipsa voluptas nulla</a
+                        >
+                      </td>
+                      <td>$64</td>
+                      <td class="fw-bold">124</td>
+                      <td>$5,828</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        <a
+                          href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                          ><img
+                            src="./Dashboard - NiceAdmin Bootstrap Template_files/product-2.jpg"
+                            alt=""
+                        /></a>
+                      </th>
+                      <td>
+                        <a
+                          href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                          class="text-primary fw-bold"
+                          >Exercitationem similique doloremque</a
+                        >
+                      </td>
+                      <td>$46</td>
+                      <td class="fw-bold">98</td>
+                      <td>$4,508</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        <a
+                          href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                          ><img
+                            src="./Dashboard - NiceAdmin Bootstrap Template_files/product-3.jpg"
+                            alt=""
+                        /></a>
+                      </th>
+                      <td>
+                        <a
+                          href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                          class="text-primary fw-bold"
+                          >Doloribus nisi exercitationem</a
+                        >
+                      </td>
+                      <td>$59</td>
+                      <td class="fw-bold">74</td>
+                      <td>$4,366</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        <a
+                          href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                          ><img
+                            src="./Dashboard - NiceAdmin Bootstrap Template_files/product-4.jpg"
+                            alt=""
+                        /></a>
+                      </th>
+                      <td>
+                        <a
+                          href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                          class="text-primary fw-bold"
+                          >Officiis quaerat sint rerum error</a
+                        >
+                      </td>
+                      <td>$32</td>
+                      <td class="fw-bold">63</td>
+                      <td>$2,016</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        <a
+                          href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                          ><img
+                            src="./Dashboard - NiceAdmin Bootstrap Template_files/product-5.jpg"
+                            alt=""
+                        /></a>
+                      </th>
+                      <td>
+                        <a
+                          href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                          class="text-primary fw-bold"
+                          >Sit unde debitis delectus repellendus</a
+                        >
+                      </td>
+                      <td>$79</td>
+                      <td class="fw-bold">41</td>
+                      <td>$3,239</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- End Top Selling -->
+        </div>
+      </div>
+      <!-- End Left side columns -->
+
+      <!-- Right side columns -->
+      <div class="col-lg-4">
+        <!-- Recent Activity -->
+        <div class="card">
+          <div class="filter">
+            <a
+              class="icon"
+              href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+              data-bs-toggle="dropdown"
+              ><i class="bi bi-three-dots"></i
+            ></a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+              <li class="dropdown-header text-start">
+                <h6>Filter</h6>
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                  >Today</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                  >This Month</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                  >This Year</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="card-body">
+            <h5 class="card-title">Recent Activity <span>| Today</span></h5>
+
+            <div class="activity">
+              <div class="activity-item d-flex">
+                <div class="activite-label">32 min</div>
+                <i
+                  class="bi bi-circle-fill activity-badge text-success align-self-start"
+                ></i>
+                <div class="activity-content">
+                  Quia quae rerum
+                  <a
+                    href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                    class="fw-bold text-dark"
+                    >explicabo officiis</a
+                  >
+                  beatae
+                </div>
+              </div>
+              <!-- End activity item-->
+
+              <div class="activity-item d-flex">
+                <div class="activite-label">56 min</div>
+                <i
+                  class="bi bi-circle-fill activity-badge text-danger align-self-start"
+                ></i>
+                <div class="activity-content">
+                  Voluptatem blanditiis blanditiis eveniet
+                </div>
+              </div>
+              <!-- End activity item-->
+
+              <div class="activity-item d-flex">
+                <div class="activite-label">2 hrs</div>
+                <i
+                  class="bi bi-circle-fill activity-badge text-primary align-self-start"
+                ></i>
+                <div class="activity-content">
+                  Voluptates corrupti molestias voluptatem
+                </div>
+              </div>
+              <!-- End activity item-->
+
+              <div class="activity-item d-flex">
+                <div class="activite-label">1 day</div>
+                <i
+                  class="bi bi-circle-fill activity-badge text-info align-self-start"
+                ></i>
+                <div class="activity-content">
+                  Tempore autem saepe
+                  <a
+                    href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                    class="fw-bold text-dark"
+                    >occaecati voluptatem</a
+                  >
+                  tempore
+                </div>
+              </div>
+              <!-- End activity item-->
+
+              <div class="activity-item d-flex">
+                <div class="activite-label">2 days</div>
+                <i
+                  class="bi bi-circle-fill activity-badge text-warning align-self-start"
+                ></i>
+                <div class="activity-content">
+                  Est sit eum reiciendis exercitationem
+                </div>
+              </div>
+              <!-- End activity item-->
+
+              <div class="activity-item d-flex">
+                <div class="activite-label">4 weeks</div>
+                <i
+                  class="bi bi-circle-fill activity-badge text-muted align-self-start"
+                ></i>
+                <div class="activity-content">
+                  Dicta dolorem harum nulla eius. Ut quidem quidem sit quas
+                </div>
+              </div>
+              <!-- End activity item-->
+            </div>
+          </div>
+        </div>
+        <!-- End Recent Activity -->
+
+        <!-- Budget Report -->
+        <div class="card">
+          <div class="filter">
+            <a
+              class="icon"
+              href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+              data-bs-toggle="dropdown"
+              ><i class="bi bi-three-dots"></i
+            ></a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+              <li class="dropdown-header text-start">
+                <h6>Filter</h6>
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                  >Today</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                  >This Month</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                  >This Year</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="card-body pb-0">
+            <h5 class="card-title">Budget Report <span>| This Month</span></h5>
+
+            <div
+              id="budgetChart"
+              style="
+                min-height: 400px;
+                user-select: none;
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+              "
+              class="echart"
+              _echarts_instance_="ec_1751626620248"
+            >
+              <div
+                style="
+                  position: relative;
+                  width: 314px;
+                  height: 400px;
+                  padding: 0px;
+                  margin: 0px;
+                  border-width: 0px;
+                "
+              >
+                <canvas
+                  data-zr-dom-id="zr_0"
+                  width="628"
+                  height="800"
+                  style="
+                    position: absolute;
+                    left: 0px;
+                    top: 0px;
+                    width: 314px;
+                    height: 400px;
+                    user-select: none;
+                    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                    padding: 0px;
+                    margin: 0px;
+                    border-width: 0px;
+                  "
+                ></canvas>
+              </div>
+            </div>
+
+            <script>
+              document.addEventListener("DOMContentLoaded", () => {
+                var budgetChart = echarts
+                  .init(document.querySelector("#budgetChart"))
+                  .setOption({
+                    legend: {
+                      data: ["Allocated Budget", "Actual Spending"],
+                    },
+                    radar: {
+                      // shape: 'circle',
+                      indicator: [
+                        {
+                          name: "Sales",
+                          max: 6500,
+                        },
+                        {
+                          name: "Administration",
+                          max: 16000,
+                        },
+                        {
+                          name: "Information Technology",
+                          max: 30000,
+                        },
+                        {
+                          name: "Customer Support",
+                          max: 38000,
+                        },
+                        {
+                          name: "Development",
+                          max: 52000,
+                        },
+                        {
+                          name: "Marketing",
+                          max: 25000,
+                        },
+                      ],
+                    },
+                    series: [
+                      {
+                        name: "Budget vs spending",
+                        type: "radar",
+                        data: [
+                          {
+                            value: [4200, 3000, 20000, 35000, 50000, 18000],
+                            name: "Allocated Budget",
+                          },
+                          {
+                            value: [5000, 14000, 28000, 26000, 42000, 21000],
+                            name: "Actual Spending",
+                          },
+                        ],
+                      },
+                    ],
+                  });
+              });
+            </script>
+          </div>
+        </div>
+        <!-- End Budget Report -->
+
+        <!-- Website Traffic -->
+        <div class="card">
+          <div class="filter">
+            <a
+              class="icon"
+              href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+              data-bs-toggle="dropdown"
+              ><i class="bi bi-three-dots"></i
+            ></a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+              <li class="dropdown-header text-start">
+                <h6>Filter</h6>
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                  >Today</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                  >This Month</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                  >This Year</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="card-body pb-0">
+            <h5 class="card-title">Website Traffic <span>| Today</span></h5>
+
+            <div
+              id="trafficChart"
+              style="
+                min-height: 400px;
+                user-select: none;
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                position: relative;
+              "
+              class="echart"
+              _echarts_instance_="ec_1751626620249"
+            >
+              <div
+                style="
+                  position: relative;
+                  width: 314px;
+                  height: 400px;
+                  padding: 0px;
+                  margin: 0px;
+                  border-width: 0px;
+                "
+              >
+                <canvas
+                  data-zr-dom-id="zr_0"
+                  width="628"
+                  height="800"
+                  style="
+                    position: absolute;
+                    left: 0px;
+                    top: 0px;
+                    width: 314px;
+                    height: 400px;
+                    user-select: none;
+                    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                    padding: 0px;
+                    margin: 0px;
+                    border-width: 0px;
+                  "
+                ></canvas>
+              </div>
+              <div class=""></div>
+            </div>
+
+            <script>
+              document.addEventListener("DOMContentLoaded", () => {
+                echarts
+                  .init(document.querySelector("#trafficChart"))
+                  .setOption({
+                    tooltip: {
+                      trigger: "item",
+                    },
+                    legend: {
+                      top: "5%",
+                      left: "center",
+                    },
+                    series: [
+                      {
+                        name: "Access From",
+                        type: "pie",
+                        radius: ["40%", "70%"],
+                        avoidLabelOverlap: false,
+                        label: {
+                          show: false,
+                          position: "center",
+                        },
+                        emphasis: {
+                          label: {
+                            show: true,
+                            fontSize: "18",
+                            fontWeight: "bold",
+                          },
+                        },
+                        labelLine: {
+                          show: false,
+                        },
+                        data: [
+                          {
+                            value: 1048,
+                            name: "Search Engine",
+                          },
+                          {
+                            value: 735,
+                            name: "Direct",
+                          },
+                          {
+                            value: 580,
+                            name: "Email",
+                          },
+                          {
+                            value: 484,
+                            name: "Union Ads",
+                          },
+                          {
+                            value: 300,
+                            name: "Video Ads",
+                          },
+                        ],
+                      },
+                    ],
+                  });
+              });
+            </script>
+          </div>
+        </div>
+        <!-- End Website Traffic -->
+
+        <!-- News & Updates Traffic -->
+        <div class="card">
+          <div class="filter">
+            <a
+              class="icon"
+              href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+              data-bs-toggle="dropdown"
+              ><i class="bi bi-three-dots"></i
+            ></a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+              <li class="dropdown-header text-start">
+                <h6>Filter</h6>
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                  >Today</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                  >This Month</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                  >This Year</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="card-body pb-0">
+            <h5 class="card-title">News &amp; Updates <span>| Today</span></h5>
+
+            <div class="news">
+              <div class="post-item clearfix">
+                <img
+                  src="./Dashboard - NiceAdmin Bootstrap Template_files/news-1.jpg"
+                  alt=""
+                />
+                <h4>
+                  <a href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                    >Nihil blanditiis at in nihil autem</a
+                  >
+                </h4>
+                <p>
+                  Sit recusandae non aspernatur laboriosam. Quia enim eligendi
+                  sed ut harum...
+                </p>
+              </div>
+
+              <div class="post-item clearfix">
+                <img
+                  src="./Dashboard - NiceAdmin Bootstrap Template_files/news-2.jpg"
+                  alt=""
+                />
+                <h4>
+                  <a href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                    >Quidem autem et impedit</a
+                  >
+                </h4>
+                <p>
+                  Illo nemo neque maiores vitae officiis cum eum turos elan
+                  dries werona nande...
+                </p>
+              </div>
+
+              <div class="post-item clearfix">
+                <img
+                  src="./Dashboard - NiceAdmin Bootstrap Template_files/news-3.jpg"
+                  alt=""
+                />
+                <h4>
+                  <a href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                    >Id quia et et ut maxime similique occaecati ut</a
+                  >
+                </h4>
+                <p>
+                  Fugiat voluptas vero eaque accusantium eos. Consequuntur sed
+                  ipsam et totam...
+                </p>
+              </div>
+
+              <div class="post-item clearfix">
+                <img
+                  src="./Dashboard - NiceAdmin Bootstrap Template_files/news-4.jpg"
+                  alt=""
+                />
+                <h4>
+                  <a href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                    >Laborum corporis quo dara net para</a
+                  >
+                </h4>
+                <p>
+                  Qui enim quia optio. Eligendi aut asperiores enim
+                  repellendusvel rerum cuder...
+                </p>
+              </div>
+
+              <div class="post-item clearfix">
+                <img
+                  src="./Dashboard - NiceAdmin Bootstrap Template_files/news-5.jpg"
+                  alt=""
+                />
+                <h4>
+                  <a href="https://bootstrapmade.com/content/demo/NiceAdmin/#"
+                    >Et dolores corrupti quae illo quod dolor</a
+                  >
+                </h4>
+                <p>
+                  Odit ut eveniet modi reiciendis. Atque cupiditate libero
+                  beatae dignissimos eius...
+                </p>
+              </div>
+            </div>
+            <!-- End sidebar recent posts-->
+          </div>
+        </div>
+        <!-- End News & Updates -->
+      </div>
+      <!-- End Right side columns -->
+    </div>
+  </section>
 </main>

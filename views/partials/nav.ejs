@@ -1060,6 +1060,71 @@
                         >
                       </div>
                     </form>
+                    <!-- Password Update Form (after OTP) -->
+                    <form
+                      id="updatePasswordForm"
+                      method="POST"
+                      action="/update-password"
+                      style="display: none"
+                    >
+                      <div class="mb-3 position-relative">
+                        <label for="newPassword" class="form-label"
+                          >New Password</label
+                        >
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="newPassword"
+                          name="newPassword"
+                          autocomplete="new-password"
+                        />
+                        <button
+                          type="button"
+                          class="btn btn-link p-0 position-absolute end-0 top-50 translate-middle-y me-2 mt-3 text-secondary password-toggle"
+                          tabindex="-1"
+                          data-target="newPassword"
+                          aria-label="Show password"
+                        >
+                          <i class="bi bi-eye-slash" id="newPasswordEye"></i>
+                        </button>
+                      </div>
+                      <div class="mb-3 position-relative">
+                        <label for="confirmNewPassword" class="form-label"
+                          >Confirm Password</label
+                        >
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="confirmNewPassword"
+                          name="confirmNewPassword"
+                          autocomplete="new-password"
+                        />
+                        <button
+                          type="button"
+                          class="btn btn-link p-0 position-absolute end-0 top-50 translate-middle-y me-2 mt-3 text-secondary password-toggle"
+                          tabindex="-1"
+                          data-target="confirmNewPassword"
+                          aria-label="Show password"
+                        >
+                          <i
+                            class="bi bi-eye-slash"
+                            id="confirmNewPasswordEye"
+                          ></i>
+                        </button>
+                      </div>
+                      <button
+                        type="submit"
+                        class="btn w-100"
+                        style="
+                          font-weight: 600;
+                          background-color: var(--accent-color);
+                          color: #fff;
+                          border: none;
+                        "
+                      >
+                        Update Password
+                      </button>
+                    </form>
                   </div>
                 </div>
               </div>
@@ -1127,17 +1192,33 @@
                 });
               }
 
-
-              // Resend OTP logic (optional, for demo)
-              if (resendForgotOtp) {
-                resendForgotOtp.addEventListener("click", function (e) {
+              // Show OTP form after "Send Code" is pressed
+              if (sendCodeBtn) {
+                sendCodeBtn.addEventListener("click", function (e) {
+                  // Prevent actual form submission for demo; remove this in production
                   e.preventDefault();
-                  // Here you could trigger resend OTP logic via AJAX
-                  // For demo, maybe show a message or shake the input
+                  forgotForm.style.display = "none";
+                  forgotOtpForm.style.display = "block";
+                  updatePasswordForm.style.display = "none";
                 });
               }
 
-              // Password eye toggle logic
+              // Show password update form after "Verify OTP" is pressed
+              const verifyOtpBtn = forgotOtpForm.querySelector(
+                'button[type="submit"]'
+              );
+              const updatePasswordForm =
+                document.getElementById("updatePasswordForm");
+              if (verifyOtpBtn) {
+                verifyOtpBtn.addEventListener("click", function (e) {
+                  // Prevent actual form submission for demo; remove this in production
+                  e.preventDefault();
+                  forgotOtpForm.style.display = "none";
+                  updatePasswordForm.style.display = "block";
+                });
+              }
+
+              // Password eye toggle logic (add update password form fields)
               document
                 .querySelectorAll(".password-toggle")
                 .forEach(function (btn) {
