@@ -126,7 +126,7 @@ export const createUser = async (req, res) => {
     if (await User.findOne({ email: req.body.email }))
       return res
         .status(400)
-        .json({ status: "error", message: "User already exists" });
+        .json({ status: "error", message: "Email is already taken" });
     const user = await User.create(req.body);
     res.status(201).json({
       status: "success",

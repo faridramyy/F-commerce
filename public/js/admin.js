@@ -333,3 +333,34 @@
     }, 200);
   }
 })();
+
+/**
+ * Show a reusable toast notification using Toastify.
+ * @param {Object} options
+ * @param {string} options.text - The message to display.
+ * @param {"success"|"error"} [options.status="success"] - The status of the toast.
+ */
+function showToast({ text, status = "success" }) {
+  const statusStyles = {
+    success: {
+      background: "linear-gradient(to right, #4CAF50, #8BC34A)", // Changed to green shades
+    },
+    error: {
+      background: "linear-gradient(to right, #e53935, #d32f2f)", // Changed to deeper red shades
+    },
+  };
+
+  Toastify({
+    text: text,
+    duration: 3000,
+    gravity: "bottom",
+    position: "right",
+    stopOnFocus: true,
+    close: true,
+    style: statusStyles[status] || statusStyles.success,
+  }).showToast();
+}
+
+// Example usage:
+// showToast({ text: "Operation successful!", status: "success" });
+// showToast({ text: "Something went wrong.", status: "error" });

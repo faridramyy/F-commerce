@@ -18,7 +18,6 @@ import {
   loginValidator,
   createUserValidator,
   updateUserValidator,
-  
 } from "../validators/user.js";
 import { validationResultHandler } from "../middlewares/validateResult.js";
 import { protect } from "../middlewares/auth.js";
@@ -34,9 +33,6 @@ router.get("/google/callback", googleCallback);
 router.get("/verify/:id", verifyUserEmail);
 router.post("/forgotPassword", forgotPassword);
 
-
-/* ---------- Admin CRUD ---------- */
-router.get("/", protect(["admin"]), getAllUsers);
 router.post(
   "/",
   protect(["admin"]),
@@ -44,7 +40,6 @@ router.post(
   validationResultHandler,
   createUser
 );
-router.get("/:id", protect(["admin"]), getUserById);
 router.put(
   "/:id",
   protect(["admin"]),
@@ -52,6 +47,8 @@ router.put(
   validationResultHandler,
   updateUser
 );
-router.delete("/:id", protect(["admin"]), deleteUser);
+router.delete("/:id", 
+  // protect(["admin"]), 
+  deleteUser);
 
 export default router;
