@@ -111,69 +111,87 @@
                 languages: ["en", "fr", "it", "es", "ar"],
                 wrapper_selector: null, // not needed anymore
               };
-            </script>
-            <script
-              src="https://cdn.gtranslate.net/widgets/latest/dropdown.js"
-              defer
-            ></script>
-            <script>
-              document.addEventListener("DOMContentLoaded", function () {
-                // Map language codes to display names
-                const langNames = {
-                  en: "English",
-                  ar: "Arabic",
-                  es: "Español",
-                  fr: "Français",
-                  de: "Deutsch",
+
+              // Dynamically load GTranslate script
+              (function () {
+                var gtScript = document.createElement("script");
+                gtScript.src =
+                  "https://cdn.gtranslate.net/widgets/latest/dropdown.js";
+                gtScript.defer = true;
+                document.head.appendChild(gtScript);
+
+                gtScript.onload = function () {
+                  // After GTranslate script loads, run the rest
+                  initLangDropdown();
                 };
 
-                // Get current language from cookie or default
-                function getCurrentLang() {
-                  const match = document.cookie.match(
-                    /(^| )googtrans=\/[a-z]{2}\/([a-z]{2})/
-                  );
-                  if (match) return match[2];
-                  return "en";
-                }
+                // In case DOMContentLoaded fires before script loads
+                document.addEventListener("DOMContentLoaded", function () {
+                  if (window.GTranslateDropdown) {
+                    initLangDropdown();
+                  }
+                });
 
-                function setSelectedLangUI(lang) {
-                  // Update dropdown label
-                  document.getElementById("selectedLanguageName").textContent =
-                    langNames[lang] || "English";
-                  // Update checkmarks
-                  ["en", "ar", "es", "fr", "de"].forEach(function (code) {
-                    const check = document.getElementById("lang-check-" + code);
-                    if (check) {
-                      check.classList.toggle("d-inline", code === lang);
-                      check.classList.toggle("d-none", code !== lang);
-                    }
-                  });
-                }
+                function initLangDropdown() {
+                  // Map language codes to display names
+                  const langNames = {
+                    en: "English",
+                    ar: "Arabic",
+                    es: "Español",
+                    fr: "Français",
+                    de: "Deutsch",
+                  };
 
-                // On dropdown click
-                document
-                  .querySelectorAll(".language-option")
-                  .forEach(function (el) {
-                    el.addEventListener("click", function (e) {
-                      e.preventDefault();
-                      const lang = el.getAttribute("data-lang");
-                      if (
-                        typeof GTranslateDropdown !== "undefined" &&
-                        GTranslateDropdown.switchTo
-                      ) {
-                        GTranslateDropdown.switchTo(lang);
-                      } else {
-                        // fallback: set cookie and reload
-                        document.cookie = "googtrans=/en/" + lang + ";path=/";
-                        location.reload();
+                  // Get current language from cookie or default
+                  function getCurrentLang() {
+                    const match = document.cookie.match(
+                      /(^| )googtrans=\/[a-z]{2}\/([a-z]{2})/
+                    );
+                    if (match) return match[2];
+                    return "en";
+                  }
+
+                  function setSelectedLangUI(lang) {
+                    // Update dropdown label
+                    var label = document.getElementById("selectedLanguageName");
+                    if (label) label.textContent = langNames[lang] || "English";
+                    // Update checkmarks
+                    ["en", "ar", "es", "fr", "de"].forEach(function (code) {
+                      const check = document.getElementById(
+                        "lang-check-" + code
+                      );
+                      if (check) {
+                        check.classList.toggle("d-inline", code === lang);
+                        check.classList.toggle("d-none", code !== lang);
                       }
-                      setSelectedLangUI(lang);
                     });
-                  });
+                  }
 
-                // Set initial UI
-                setSelectedLangUI(getCurrentLang());
-              });
+                  // On dropdown click
+                  document
+                    .querySelectorAll(".language-option")
+                    .forEach(function (el) {
+                      el.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        const lang = el.getAttribute("data-lang");
+                        if (
+                          typeof GTranslateDropdown !== "undefined" &&
+                          GTranslateDropdown.switchTo
+                        ) {
+                          GTranslateDropdown.switchTo(lang);
+                        } else {
+                          // fallback: set cookie and reload
+                          document.cookie = "googtrans=/en/" + lang + ";path=/";
+                          location.reload();
+                        }
+                        setSelectedLangUI(lang);
+                      });
+                    });
+
+                  // Set initial UI
+                  setSelectedLangUI(getCurrentLang());
+                }
+              })();
             </script>
             <div class="top-bar-item dropdown">
               <a href="/#" class="dropdown-toggle" data-bs-toggle="dropdown">
@@ -432,7 +450,7 @@
                           >Email address</label
                         >
                         <input
-                          type="email"
+                          type="text"
                           class="form-control"
                           id="loginEmail"
                           name="email"
@@ -589,12 +607,7 @@
                         });
                     </script>
                     <!-- Sign Up Form -->
-                    <form
-                      id="signupForm"
-                      method="POST"
-                      action="/signup"
-                      style="display: none"
-                    >
+                    <form id="signupForm" style="display: none">
                       <div class="mb-3">
                         <div class="row">
                           <div class="col-6">
@@ -628,7 +641,7 @@
                           >Email address</label
                         >
                         <input
-                          type="email"
+                          type="text"
                           class="form-control"
                           id="signupEmail"
                           name="email"
@@ -694,8 +707,7 @@
                           >
                             I accept the
                             <a
-                              href="/terms"
-                              target="_blank"
+                              href="#"
                               style="
                                 color: var(--accent-color);
                                 text-decoration: underline;
@@ -863,12 +875,7 @@
                         });
                     </script>
                     <!-- Forgot Password Form -->
-                    <form
-                      id="forgotForm"
-                      method="POST"
-                      action="/forgot-password"
-                      style="display: none"
-                    >
+                    <form id="forgotForm" style="display: none">
                       <div class="mb-3">
                         <label for="forgotEmail" class="form-label"
                           >Enter your email to reset password</label
@@ -966,12 +973,7 @@
                       });
                     </script>
                     <!-- OTP Entry Form (Forgot Password) -->
-                    <form
-                      id="forgotOtpForm"
-                      method="POST"
-                      action="/verify-forgot-otp"
-                      style="display: none"
-                    >
+                    <form id="forgotOtpForm" style="display: none">
                       <div class="mb-3">
                         <label for="forgotOtpInput1" class="form-label"
                           >Please enter the OTP sent to your email</label
@@ -1072,12 +1074,7 @@
                       </div>
                     </form>
                     <!-- Password Update Form (after OTP) -->
-                    <form
-                      id="updatePasswordForm"
-                      method="POST"
-                      action="/update-password"
-                      style="display: none"
-                    >
+                    <form id="updatePasswordForm" style="display: none">
                       <div class="mb-3 position-relative">
                         <label for="newPassword" class="form-label"
                           >New Password</label
@@ -1141,6 +1138,7 @@
               </div>
             </div>
           </div>
+
           <script>
             document.addEventListener("DOMContentLoaded", function () {
               // Form switching logic
