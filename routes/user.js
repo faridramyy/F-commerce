@@ -41,14 +41,14 @@ router.post(
   createUser
 );
 router.put(
-  "/:id",
+  "/:userId",
   protect(["admin"]),
   updateUserValidator,
   validationResultHandler,
   updateUser
 );
 router.delete("/:id", 
-  // protect(["admin"]), 
+  protect(["admin"]), 
   deleteUser);
 
 export default router;

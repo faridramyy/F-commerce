@@ -164,7 +164,7 @@ export const getUserById = async (req, res) => {
 
 export const updateUser = async (req, res) => {
   try {
-    const updated = await User.findByIdAndUpdate(req.params.id, req.body, {
+    const updated = await User.findByIdAndUpdate(req.params.userId, req.body, {
       new: true,
       runValidators: true,
     }).select("-password");
