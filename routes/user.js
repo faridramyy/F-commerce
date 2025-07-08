@@ -12,6 +12,7 @@ import {
   deleteUser,
   verifyUserEmail,
   forgotPassword,
+  resetPassword,
 } from "../controllers/user.js";
 import {
   signupValidator,
@@ -32,6 +33,7 @@ router.get("/google", googleAuth);
 router.get("/google/callback", googleCallback);
 router.get("/verify/:id", verifyUserEmail);
 router.post("/forgotPassword", forgotPassword);
+router.post("/verifyForgotOtp", resetPassword);
 
 router.post(
   "/",

@@ -768,9 +768,7 @@
                             id="forgotOtpInput1"
                             name="otp1"
                             maxlength="1"
-                            pattern="[0-9]"
                             autocomplete="one-time-code"
-                            inputmode="numeric"
                             style="width: 40px; font-size: 1.5rem"
                           />
                           <input
@@ -779,9 +777,7 @@
                             id="forgotOtpInput2"
                             name="otp2"
                             maxlength="1"
-                            pattern="[0-9]"
                             autocomplete="one-time-code"
-                            inputmode="numeric"
                             style="width: 40px; font-size: 1.5rem"
                           />
                           <input
@@ -790,9 +786,7 @@
                             id="forgotOtpInput3"
                             name="otp3"
                             maxlength="1"
-                            pattern="[0-9]"
                             autocomplete="one-time-code"
-                            inputmode="numeric"
                             style="width: 40px; font-size: 1.5rem"
                           />
                           <input
@@ -801,9 +795,7 @@
                             id="forgotOtpInput4"
                             name="otp4"
                             maxlength="1"
-                            pattern="[0-9]"
                             autocomplete="one-time-code"
-                            inputmode="numeric"
                             style="width: 40px; font-size: 1.5rem"
                           />
                           <input
@@ -812,9 +804,7 @@
                             id="forgotOtpInput5"
                             name="otp5"
                             maxlength="1"
-                            pattern="[0-9]"
                             autocomplete="one-time-code"
-                            inputmode="numeric"
                             style="width: 40px; font-size: 1.5rem"
                           />
                           <input
@@ -823,9 +813,7 @@
                             id="forgotOtpInput6"
                             name="otp6"
                             maxlength="1"
-                            pattern="[0-9]"
                             autocomplete="one-time-code"
-                            inputmode="numeric"
                             style="width: 40px; font-size: 1.5rem"
                           />
                         </div>
@@ -833,6 +821,7 @@
                       <button
                         type="submit"
                         class="btn w-100"
+                        id="verifyOtp"
                         style="
                           font-weight: 600;
                           background-color: var(--accent-color);
@@ -981,32 +970,10 @@
                 });
               }
 
-              // Show OTP form after "Send Code" is pressed
-              if (sendCodeBtn) {
-                sendCodeBtn.addEventListener("click", function (e) {
-                  // Prevent actual form submission for demo; remove this in production
-                  e.preventDefault();
-                  forgotForm.style.display = "none";
-                  forgotOtpForm.style.display = "block";
-                  updatePasswordForm.style.display = "none";
-                });
-              }
-
               // Show password update form after "Verify OTP" is pressed
               const verifyOtpBtn = forgotOtpForm.querySelector(
                 'button[type="submit"]'
               );
-              const updatePasswordForm =
-                document.getElementById("updatePasswordForm");
-              if (verifyOtpBtn) {
-                verifyOtpBtn.addEventListener("click", function (e) {
-                  // Prevent actual form submission for demo; remove this in production
-                  e.preventDefault();
-                  forgotOtpForm.style.display = "none";
-                  updatePasswordForm.style.display = "block";
-                });
-              }
-
               // Password eye toggle logic (add update password form fields)
               document
                 .querySelectorAll(".password-toggle")
@@ -1046,22 +1013,264 @@
               // Set default active
               setActive(showLogin);
             });
-  
 
-            // sign up
+            //sign up
+            document
+              .getElementById("signupForm")
+              .addEventListener("submit", async (event) => {
+                event.preventDefault();
 
+                const firstName = document
+                  .getElementById("signupFirstName")
+                  .value.trim();
+                const lastName = document
+                  .getElementById("signupLastName")
+                  .value.trim();
+                const email = document
+                  .getElementById("signupEmail")
+                  .value.trim()
+                  .toLowerCase();
+                const password =
+                  document.getElementById("signupPassword").value;
+                const confirmPassword = document.getElementById(
+                  "signupConfirmPassword"
+                ).value;
+                const acceptTerms =
+                  document.getElementById("acceptTerms").checked;
 
-            // login
+                // 🔎 Validation
+                if (firstName.length < 2 || firstName.length > 30) {
+                  return showToast({
+                    text: "First name must be 2–30 characters.",
+                    status: "error",
+                  });
+                }
 
+                if (lastName.length < 2 || lastName.length > 30) {
+                  return showToast({
+                    text: "Last name must be 2–30 characters.",
+                    status: "error",
+                  });
+                }
 
-            //forgetpassword
+                if (!/^\S+@\S+\.\S+$/.test(email)) {
+                  return showToast({
+                    text: "Invalid email format.",
+                    status: "error",
+                  });
+                }
 
+                if (password.length < 8) {
+                  return showToast({
+                    text: "Password must be at least 8 characters long.",
+                    status: "error",
+                  });
+                }
 
-            // verify Otp
+                if (password !== confirmPassword) {
+                  return showToast({
+                    text: "Passwords do not match.",
+                    status: "error",
+                  });
+                }
 
+                if (!acceptTerms) {
+                  return showToast({
+                    text: "You must accept the terms and conditions.",
+                    status: "error",
+                  });
+                }
 
-            // update password
+                // ✅ Valid — prepare payload
+                const formData = {
+                  firstName,
+                  lastName,
+                  email,
+                  password,
+                };
 
+                try {
+                  const response = await fetch("/api/user/signup", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData),
+                  });
+
+                  const result = await response.json();
+
+                  showToast({
+                    text: result.message,
+                    status: result.status,
+                  });
+
+                  if (result.status === "success") {
+                    setTimeout(() => (window.location.href = "/"), 1200);
+                  }
+                } catch (error) {
+                  showToast({
+                    text: error.message || "❗ Something went wrong.",
+                    status: "error",
+                  });
+                }
+              });
+            //login
+            document
+              .getElementById("loginForm")
+              ?.addEventListener("submit", async function (e) {
+                e.preventDefault();
+
+                const email = document
+                  .getElementById("loginEmail")
+                  ?.value.trim();
+                const password =
+                  document.getElementById("loginPassword")?.value;
+
+                if (!email || !password) {
+                  return showToast({
+                    text: "Please enter both email and password.",
+                    status: "error",
+                  });
+                }
+
+                const formData = {
+                  email,
+                  password,
+                };
+
+                try {
+                  const response = await fetch("/api/user/login", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData),
+                  });
+
+                  const result = await response.json();
+
+                  showToast({
+                    text: result.message,
+                    status: result.status,
+                  });
+
+                  if (result.status === "success") {
+                    setTimeout(() => (window.location.href = "/"), 1200);
+                  }
+                } catch (error) {
+                  showToast({
+                    text: error.message || "❗ Something went wrong.",
+                    status: "error",
+                  });
+                }
+              });
+            // Forgot Password
+            const forgotForm = document.getElementById("forgotForm");
+            const forgotEmail = document.getElementById("forgotEmail");
+            const sendCodeBtn = document.getElementById("sendCodeBtn");
+
+            forgotForm.addEventListener("submit", async function (e) {
+              e.preventDefault();
+
+              try {
+                sendCodeBtn.disabled = true;
+                sendCodeBtn.textContent = "Sending...";
+
+                const response = await fetch("/api/user/forgotPassword", {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({
+                    email: forgotEmail.value,
+                  }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                  showToast({
+                    text:
+                      data.message ||
+                      "✅ Verification code sent to your email!",
+                    status: "success",
+                  });
+                  // Show OTP form
+                  forgotForm.style.display = "none";
+                  document.getElementById("forgotOtpForm").style.display =
+                    "block";
+                } else {
+                  showToast({
+                    text:
+                      data.message || "❗ Failed to send verification code.",
+                    status: "error",
+                  });
+                }
+              } catch (error) {
+                showToast({
+                  text: "❗ Something went wrong. Please try again.",
+                  status: "error",
+                });
+              } finally {
+                sendCodeBtn.disabled = false;
+                sendCodeBtn.textContent = "Send Code";
+              }
+            });
+
+            // Check for the OTP
+            const forgotOtpForm = document.getElementById("forgotOtpForm");
+            forgotOtpForm.addEventListener("submit", async function (e) {
+              e.preventDefault();
+
+              const otpInputs = document.querySelectorAll(".otp-input");
+              const resetPasswordCode = Array.from(otpInputs)
+                .map((input) => input.value.trim())
+                .join("");
+
+              if (resetPasswordCode.length !== 6) {
+                showToast({
+                  text: "❗ Please enter the full 6-digit OTP.",
+                  status: "error",
+                });
+                return;
+              }
+
+              try {
+                const response = await fetch("/api/user/verifyForgotOtp", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ resetPasswordCode }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                  showToast({
+                    text: data.message || "✅ OTP verified!",
+                    status: "success",
+                  });
+
+                  // Show the new password form
+                  document.getElementById("forgotOtpForm").style.display =
+                    "none";
+                  document.getElementById("updatePasswordForm").style.display =
+                    "block";
+                } else {
+                  showToast({
+                    text: data.message || "❌ Invalid OTP.",
+                    status: "error",
+                  });
+                }
+              } catch (error) {
+                console.error(error);
+                showToast({
+                  text: "❌ Server error.",
+                  status: "error",
+                });
+              }
+            });
+            //update passowrd
           </script>
           <% } %>
 
