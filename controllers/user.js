@@ -258,14 +258,14 @@ export const forgotPassword = async (req, res) => {
   }
 };
 
-export const resetPassword = async (req, res) => {
-  const { resetPasswordCode } = req.body;
+export const resetOtp = async (req, res) => {
+  const { resetPasswordCode, email } = req.body;
 
   try {
-    const user = await User.findOne({ resetPasswordCode });
+    const user = await User.findOne({ email });
 
     if (!user) {
-      return res.status(400).json({ message: "Invalid verification code." });
+      return res.status(400).json({ message: "Invalid verification request." });
     }
 
     if (
@@ -275,8 +275,34 @@ export const resetPassword = async (req, res) => {
       return res.status(400).json({ message: "Code has expired." });
     }
 
+    if (user.resetPasswordCode !== resetPasswordCode) {
+      return res.status(400).json({ message: "Invalid verification code." });
+    }
 
-    // Clear the reset code and expiry
+    await user.save();
+
+    res.status(200).json({ message: "OTP verified!" });
+  } catch (error) {
+    res.status(500).json({ message: "Server error." });
+  }
+};
+
+
+export const resetPassword = async (req, res) => {
+  const { email, newPassword } = req.body;
+
+  try {
+    // Find the user by email
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found." });
+    }
+
+    // Set the new password (must be already hashed before this step)
+    user.password = newPassword;
+
+    // Clear reset code fields if you're still using them
     user.resetPasswordCode = null;
     user.resetPasswordCodeExpires = null;
 
@@ -284,6 +310,7 @@ export const resetPassword = async (req, res) => {
 
     res.status(200).json({ message: "Password successfully updated." });
   } catch (error) {
+    console.error("Reset password error:", error);
     res.status(500).json({ message: "Server error." });
   }
 };

@@ -1240,7 +1240,10 @@
                 const response = await fetch("/api/user/verifyForgotOtp", {
                   method: "POST",
                   headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify({ resetPasswordCode }),
+                  body: JSON.stringify({
+                    resetPasswordCode,
+                    email: forgotEmail.value,
+                  }),
                 });
 
                 const data = await response.json();
@@ -1271,6 +1274,73 @@
               }
             });
             //update passowrd
+            const updatePasswordForm =
+              document.getElementById("updatePasswordForm");
+
+            updatePasswordForm.addEventListener("submit", async function (e) {
+              e.preventDefault();
+
+              const newPassword = document
+                .getElementById("newPassword")
+                .value.trim();
+              const confirmPassword = document
+                .getElementById("confirmNewPassword")
+                .value.trim();
+
+
+              if (!newPassword || newPassword.length < 8) {
+                showToast({
+                  text: "❗ Password must be at least 8 characters long.",
+                  status: "error",
+                });
+                return;
+              }
+
+              if (newPassword !== confirmPassword) {
+                showToast({
+                  text: "❗ Passwords do not match.",
+                  status: "error",
+                });
+                return;
+              }
+
+              try {
+                const response = await fetch("/api/user/resetPassword", {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({
+                    newPassword,
+                    email: forgotEmail.value,
+                  }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                  showToast({
+                    text: data.message || "✅ Password updated successfully!",
+                    status: "success",
+                  });
+
+                  setTimeout(() => {
+                    window.location.href = "/";
+                  }, 1000);
+                } else {
+                  showToast({
+                    text: data.message || "❌ Failed to update password.",
+                    status: "error",
+                  });
+                }
+              } catch (err) {
+                console.error(err);
+                showToast({
+                  text: "❌ Server error.",
+                  status: "error",
+                });
+              }
+            });
           </script>
           <% } %>
 

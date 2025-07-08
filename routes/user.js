@@ -12,6 +12,7 @@ import {
   deleteUser,
   verifyUserEmail,
   forgotPassword,
+  resetOtp,
   resetPassword,
 } from "../controllers/user.js";
 import {
@@ -33,7 +34,8 @@ router.get("/google", googleAuth);
 router.get("/google/callback", googleCallback);
 router.get("/verify/:id", verifyUserEmail);
 router.post("/forgotPassword", forgotPassword);
-router.post("/verifyForgotOtp", resetPassword);
+router.post("/verifyForgotOtp", resetOtp);
+router.post("/resetPassword", resetPassword);
 
 router.post(
   "/",
