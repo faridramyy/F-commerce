@@ -1127,12 +1127,20 @@
                 const password =
                   document.getElementById("loginPassword")?.value;
 
+                  
+
                 if (!email || !password) {
                   return showToast({
                     text: "Please enter both email and password.",
                     status: "error",
                   });
                 }
+                if (!/^\S+@\S+\.\S+$/.test(email)) {
+                  return showToast({
+                    text: "Invalid email format.",
+                    status: "error",
+                  })};
+
 
                 const formData = {
                   email,
